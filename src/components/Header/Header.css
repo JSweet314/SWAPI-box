@@ -1,9 +1,9 @@
 .header {
+  margin: 2rem;
   border-bottom: 1px solid #AAAAAB;
 }
 
 .header__h1 {
-  margin: 2rem;
   font-size: 3rem;
   text-align: center;
 }
