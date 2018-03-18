@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.main__btnGroup {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0 2rem 0;
+  width: 100%;
+}

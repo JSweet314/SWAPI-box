@@ -1,0 +1,15 @@
+.category-display {
+  align-items: center;
+  display: flex;
+  height: 40rem;
+  justify-content: center;
+  width: 95%;
+  background-color: #18212A;
+  color: white;
+}
+
+.category-display__default-text {
+  margin: 0;
+  font-size: 4rem;
+  text-align: center;
+}

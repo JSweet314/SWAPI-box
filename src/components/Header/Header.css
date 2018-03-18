@@ -1,5 +1,6 @@
 .header {
-  margin: 2rem;
+  width: 95%;
+  margin: auto;
   border-bottom: 1px solid #AAAAAB;
 }
 
@@ -10,7 +11,7 @@
 
 .header__favBtn {
   position: absolute;
-  right: 10rem;
+  right: 2rem;
   top: 2rem;
   padding: 1rem;
   cursor: pointer;
