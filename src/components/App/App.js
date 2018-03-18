@@ -13,18 +13,18 @@ class App extends Component {
       releaseDate: ''
     };
   }
-  componentDidMount() {
-    fetch('https://swapi.co/api/films/1/?format=json')
-      .then(response => response.json())
-      .then(SWAPIData => {
-        this.setState({
-          openingCrawl: SWAPIData.opening_crawl,
-          movieTitle: SWAPIData.title,
-          releaseDate: SWAPIData.release_date
-        });
-      });
-  }
 
+  componentDidMount() {
+    // fetch('https://swapi.co/api/films/1/?format=json')
+    //   .then(response => response.json())
+    //   .then(SWAPIData => {
+    //     this.setState({
+    //       openingCrawl: SWAPIData.opening_crawl,
+    //       movieTitle: SWAPIData.title,
+    //       releaseDate: SWAPIData.release_date
+    //     });
+    //   });
+  }
 
   render() {
     return (
