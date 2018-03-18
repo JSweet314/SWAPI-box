@@ -17,10 +17,26 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Select a Category",
+      "children": <p
+        className="category-display__default-text"
+>
+        Select A Category
+</p>,
+      "className": "category-display",
     },
     "ref": null,
-    "rendered": "Select a Category",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Select A Category",
+        "className": "category-display__default-text",
+      },
+      "ref": null,
+      "rendered": "Select A Category",
+      "type": "p",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +45,26 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Select a Category",
+        "children": <p
+          className="category-display__default-text"
+>
+          Select A Category
+</p>,
+        "className": "category-display",
       },
       "ref": null,
-      "rendered": "Select a Category",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Select A Category",
+          "className": "category-display__default-text",
+        },
+        "ref": null,
+        "rendered": "Select A Category",
+        "type": "p",
+      },
       "type": "div",
     },
   ],
