@@ -6,7 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ScrollingText
     movieTitle=""
-    openingCrawl=""
+    openingCrawl={Array []}
     releaseDate=""
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -22,17 +22,36 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "",
-        "",
-        "",
+        Array [],
+        <p />,
+        <p />,
       ],
       "className": "scrolling-text",
     },
     "ref": null,
     "rendered": Array [
-      "",
-      "",
-      "",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "p",
+      },
     ],
     "type": "aside",
   },
@@ -43,17 +62,36 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "",
-          "",
-          "",
+          Array [],
+          <p />,
+          <p />,
         ],
         "className": "scrolling-text",
       },
       "ref": null,
       "rendered": Array [
-        "",
-        "",
-        "",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "p",
+        },
       ],
       "type": "aside",
     },

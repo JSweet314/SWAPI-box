@@ -3,25 +3,32 @@ import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import ScrollingText from '../ScrollingText/ScrollingText';
+import scrollingTextDataWrangler from '../../scripts/scrollingTextDataWrangler';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      openingCrawl: '',
+      openingCrawl: [],
       movieTitle: '',
       releaseDate: ''
     };
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/films/1/?format=json')
+    this.fetchScrollingText();
+  }
+
+  fetchScrollingText = () => {
+    const randomFilmNumber = Math.floor(Math.random() * 6) + 1;
+    fetch(`https://swapi.co/api/films/${randomFilmNumber}/?format=json`)
       .then(response => response.json())
+      .then(SWAPIData => scrollingTextDataWrangler(SWAPIData))
       .then(SWAPIData => {
         this.setState({
-          openingCrawl: SWAPIData.opening_crawl,
+          openingCrawl: SWAPIData.openingCrawlParagraphs,
           movieTitle: SWAPIData.title,
-          releaseDate: SWAPIData.release_date
+          releaseDate: SWAPIData.releaseDate
         });
       });
   }
