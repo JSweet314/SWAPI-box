@@ -1,10 +1,12 @@
 import React from 'react';
 import './ScrollingText.css';
 import PropTypes from 'prop-types';
+import OpeningCrawlParagraph from 
+  '../OpeningCrawlParagraph/OpeningCrawlParagraph';
 
 const ScrollingText = ({openingCrawl, movieTitle, releaseDate}) => {
   const openingCrawlParagraphs = openingCrawl.map((paragraph, index) => {
-    return <p key={index}>{paragraph}</p>
+    return <OpeningCrawlParagraph key={index} paragraph={paragraph} />
   });
 
   return (

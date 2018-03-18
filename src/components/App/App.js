@@ -16,11 +16,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.fetchScrollingText();
+    this.fetchScrollingText();
   }
 
   fetchScrollingText = () => {
-    fetch('https://swapi.co/api/films/1/?format=json')
+    const randomFilmNumber = Math.floor(Math.random() * 6) + 1;
+    fetch(`https://swapi.co/api/films/${randomFilmNumber}/?format=json`)
       .then(response => response.json())
       .then(SWAPIData => scrollingTextDataWrangler(SWAPIData))
       .then(SWAPIData => {
