@@ -17,87 +17,8 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="main__btnGroup"
->
-        <Button
-                btnText="people"
-        />
-        <Button
-                btnText="planets"
-        />
-        <Button
-                btnText="vehicles"
-        />
-</div>,
-      "className": "main",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <Button
-            btnText="people"
-/>,
-          <Button
-            btnText="planets"
-/>,
-          <Button
-            btnText="vehicles"
-/>,
-        ],
-        "className": "main__btnGroup",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "btnText": "people",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "btnText": "planets",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "btnText": "vehicles",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-    "type": "main",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
+      "children": Array [
+        <div
           className="main__btnGroup"
 >
           <Button
@@ -110,10 +31,13 @@ ShallowWrapper {
                     btnText="vehicles"
           />
 </div>,
-        "className": "main",
-      },
-      "ref": null,
-      "rendered": Object {
+        <CategoryDisplay />,
+      ],
+      "className": "main",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -169,6 +93,110 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="main__btnGroup"
+>
+            <Button
+                        btnText="people"
+            />
+            <Button
+                        btnText="planets"
+            />
+            <Button
+                        btnText="vehicles"
+            />
+</div>,
+          <CategoryDisplay />,
+        ],
+        "className": "main",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Button
+                btnText="people"
+/>,
+              <Button
+                btnText="planets"
+/>,
+              <Button
+                btnText="vehicles"
+/>,
+            ],
+            "className": "main__btnGroup",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "btnText": "people",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "btnText": "planets",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "btnText": "vehicles",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "main",
     },
   ],
