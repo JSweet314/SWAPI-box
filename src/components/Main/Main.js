@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import Button from '../Button/Button';
+import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
         <Button btnText="planets" />
         <Button btnText="vehicles" />
       </div>
+      <CategoryDisplay />
     </main>
   );
 };

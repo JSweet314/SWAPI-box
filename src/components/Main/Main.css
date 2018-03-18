@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__btnGroup {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}

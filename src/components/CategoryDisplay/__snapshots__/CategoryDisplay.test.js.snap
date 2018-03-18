@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`button should match a snapshot 1`] = `
+exports[`CategoryDisplay should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Button
-    btnText="people"
-/>,
+  Symbol(enzyme.__unrendered__): <CategoryDisplay />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,11 +17,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "people",
+      "children": "Select a Category",
     },
     "ref": null,
-    "rendered": "people",
-    "type": "button",
+    "rendered": "Select a Category",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -31,11 +29,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "people",
+        "children": "Select a Category",
       },
       "ref": null,
-      "rendered": "people",
-      "type": "button",
+      "rendered": "Select a Category",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

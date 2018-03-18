@@ -6,7 +6,7 @@ describe('button', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Button />);
+    wrapper = shallow(<Button btnText="people"/>);
   });
 
   it('should match a snapshot', () => {
