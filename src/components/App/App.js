@@ -15,15 +15,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch('https://swapi.co/api/films/1/?format=json')
-    //   .then(response => response.json())
-    //   .then(SWAPIData => {
-    //     this.setState({
-    //       openingCrawl: SWAPIData.opening_crawl,
-    //       movieTitle: SWAPIData.title,
-    //       releaseDate: SWAPIData.release_date
-    //     });
-    //   });
+    fetch('https://swapi.co/api/films/1/?format=json')
+      .then(response => response.json())
+      .then(SWAPIData => {
+        this.setState({
+          openingCrawl: SWAPIData.opening_crawl,
+          movieTitle: SWAPIData.title,
+          releaseDate: SWAPIData.release_date
+        });
+      });
   }
 
   render() {
