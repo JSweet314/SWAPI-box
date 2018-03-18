@@ -1,0 +1,24 @@
+.header {
+  border-bottom: 1px solid #AAAAAB;
+}
+
+.header__h1 {
+  margin: 2rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.header__favBtn {
+  position: absolute;
+  right: 10rem;
+  top: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.header__favCount {
+  margin: 0 0 0 1rem;
+  padding: 0.5rem;
+  background-color: #4B545F;
+  color: #fff;
+}
