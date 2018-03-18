@@ -1,5 +1,6 @@
 const scrollingTextDataWrangler = (movieData) => {
-  const openingCrawlParagraphs = movieData.opening_crawl.split('\r\n\r\n');
+  const openingCrawlParagraphs = movieData.opening_crawl.split('\r\n\r\n')
+    .map(paragraph => paragraph.split('\r\n'));
   const releaseDate = movieData.release_date;
   const title = movieData.title;
 
