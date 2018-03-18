@@ -1,11 +1,11 @@
 import React from 'react';
-import './OpeningCrawlParagraph.css'
+import './OpeningCrawlParagraph.css';
 import PropTypes from 'prop-types';
 
 const OpeningCrawlParagraph = ({paragraph}) => {
   const lines = paragraph.map((line, index) => {
-    return <span className="crawl-line" key={index}>{line}</span>
-  })
+    return <span className="crawl-line" key={index}>{line}</span>;
+  });
   return (
     <p>
       {lines}
@@ -14,7 +14,7 @@ const OpeningCrawlParagraph = ({paragraph}) => {
 };
 
 OpeningCrawlParagraph.propTypes = {
-  paragraph: PropTypes.string
-}
+  paragraph: PropTypes.array
+};
 
 export default OpeningCrawlParagraph;

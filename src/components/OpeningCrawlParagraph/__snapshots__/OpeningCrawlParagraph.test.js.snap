@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <OpeningCrawlParagraph
-    paragraph=""
+    paragraph={Array []}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -19,27 +19,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <span
-          className="crawl-line"
-/>,
-      ],
+      "children": Array [],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": "0",
-        "nodeType": "host",
-        "props": Object {
-          "children": "",
-          "className": "crawl-line",
-        },
-        "ref": null,
-        "rendered": "",
-        "type": "span",
-      },
-    ],
+    "rendered": Array [],
     "type": "p",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -48,27 +31,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <span
-            className="crawl-line"
-/>,
-        ],
+        "children": Array [],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "host",
-          "props": Object {
-            "children": "",
-            "className": "crawl-line",
-          },
-          "ref": null,
-          "rendered": "",
-          "type": "span",
-        },
-      ],
+      "rendered": Array [],
       "type": "p",
     },
   ],

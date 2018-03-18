@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('OpeningCrawlParagraph', () => {
   it('should match a snapshot', () => {
-    const wrapper = shallow(<OpeningCrawlParagraph paragraph={''}/>);
+    const wrapper = shallow(<OpeningCrawlParagraph paragraph={[]}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });
