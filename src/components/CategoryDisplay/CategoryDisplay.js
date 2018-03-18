@@ -3,8 +3,8 @@ import './CategoryDisplay.css';
 
 const CategoryDisplay = () => {
   return (
-    <div>
-      Select a Category
+    <div className="category-display">
+      <p className="category-display__default-text">Select A Category</p>
     </div>
   );
 };
