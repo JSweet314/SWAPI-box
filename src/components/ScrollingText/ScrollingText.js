@@ -5,9 +5,15 @@ import PropTypes from 'prop-types';
 const ScrollingText = ({openingCrawl, movieTitle, releaseDate}) => {
   return (
     <aside className="scrolling-text">
-      {openingCrawl}
-      {movieTitle}
-      {releaseDate}
+      <p>
+        {openingCrawl}
+      </p>
+      <p>
+        {movieTitle}
+      </p>
+      <p>
+        {releaseDate}
+      </p>
     </aside>
   );
 };
