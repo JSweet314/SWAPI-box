@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import ScrollingText from '../ScrollingText/ScrollingText';
+import ScrollingText from '../ScrollingText/index';
 
 class App extends Component {
   constructor() {
