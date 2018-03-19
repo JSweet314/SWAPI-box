@@ -4,7 +4,10 @@ exports[`CategoryDisplay should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CategoryDisplay />,
+  Symbol(enzyme.__unrendered__): <CategoryDisplay
+    categoryResponse={Array []}
+    currentCategory=""
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,43 +20,30 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p
-        className="category-display__default-text"
->
-        Select A Category
-</p>,
-      "className": "category-display",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "Select A Category",
-        "className": "category-display__default-text",
-      },
-      "ref": null,
-      "rendered": "Select A Category",
-      "type": "p",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <p
+      "children": Array [
+        <h2 />,
+        <p
           className="category-display__default-text"
 >
           Select A Category
 </p>,
-        "className": "category-display",
+      ],
+      "className": "category-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -65,6 +55,51 @@ ShallowWrapper {
         "rendered": "Select A Category",
         "type": "p",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2 />,
+          <p
+            className="category-display__default-text"
+>
+            Select A Category
+</p>,
+        ],
+        "className": "category-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Select A Category",
+            "className": "category-display__default-text",
+          },
+          "ref": null,
+          "rendered": "Select A Category",
+          "type": "p",
+        },
+      ],
       "type": "div",
     },
   ],

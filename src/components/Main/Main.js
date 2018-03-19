@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Main.css';
 import MainBtnGroup from '../MainBtnGroup/MainBtnGroup';
 import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
-import PropTypes from 'prop-types';
+import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 
-const Main = ({ currentCategory, selectCategory, categoryResponse }) => {
-  return (
-    <main className="main">
-      <MainBtnGroup 
-        currentCategory={currentCategory}
-        selectCategory={selectCategory} />
-      <CategoryDisplay 
-        categoryResponse={categoryResponse}
-        currentCategory={currentCategory} />
-    </main>
-  );
-};
+export default class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pageNumber: 1,
+      category: '',
+      loading: true,
+      categoryResponse: []
+    };
+  }
 
-Main.propTypes = {
-  currentCategory: PropTypes.string.isRequired,
-  selectCategory: PropTypes.func.isRequired,
-  categoryResponse: PropTypes.array.isRequired
-};
+  selectCategory = (event) => {
+    const category = event.target.name;
+    this.setState({category});
+  }
 
-export default Main;
+  componentDidUpdate(prevProps, prevState) {
+    const { category, pageNumber } = this.state;
+    if (prevState.category !== this.state.category) {
+      fetchCategoryData(category, pageNumber)
+        .then(categoryData => this.setState({
+          loading: false,
+          categoryData: categoryData
+        }));
+    } 
+  }
+
+  render() {
+    const { category, categoryResponse } = this.state
+    return (
+      <main className="main">
+        <MainBtnGroup 
+          selectCategory={this.selectCategory}
+          currentCategory={category}/>
+        <CategoryDisplay 
+          categoryResponse={categoryResponse}
+          currentCategory={category}/>
+      </main>
+    );
+  }
+}

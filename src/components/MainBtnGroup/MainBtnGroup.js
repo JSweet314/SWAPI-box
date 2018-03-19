@@ -5,12 +5,6 @@ import PropTypes from 'prop-types';
 
 const MainBtnGroup  = ({selectCategory, currentCategory}) => {
   const buttonTexts = ['people', 'planets', 'vehicles'];
-  
-  const handleOnClick = (event) => {
-    const selectedButton = event.target.name;
-    selectCategory(selectedButton);
-  };
-
   const buttons = buttonTexts.map((text, index) => {
     const isSelected = text === currentCategory ? 'selected': '';
     return (
@@ -18,7 +12,7 @@ const MainBtnGroup  = ({selectCategory, currentCategory}) => {
         isSelected={isSelected}
         btnText={text} 
         key={index} 
-        handleOnClick={handleOnClick}
+        selectCategory={selectCategory}
       />
     );
   });

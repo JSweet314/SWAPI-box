@@ -4,7 +4,9 @@ import CategoryDisplay from './CategoryDisplay';
 
 describe('CategoryDisplay', () => {
   it('should match a snapshot', () => {
-    const wrapper = shallow(<CategoryDisplay />);
+    const wrapper = shallow(
+      <CategoryDisplay categoryResponse={[]} currentCategory=''/>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });
