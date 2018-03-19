@@ -1,6 +1,7 @@
 .category-display {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   height: 40rem;
   justify-content: center;
   width: 95%;
@@ -11,5 +12,10 @@
 .category-display__default-text {
   margin: 0;
   font-size: 4rem;
+  text-align: center;
+}
+
+.category-display h2 {
+  width: 100%;
   text-align: center;
 }
