@@ -1,4 +1,5 @@
-import scrollingTextDataWrangler from '../dataWrangler/index';
+import scrollingTextDataWrangler from 
+  '../dataWranglers/scrollingTextWrangler/index';
 
 const fetchScrollingText = () => {
   const randomFilmNumber = Math.floor(Math.random() * 7) + 1;

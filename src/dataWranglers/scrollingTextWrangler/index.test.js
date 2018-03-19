@@ -1,5 +1,5 @@
 import scrollingTextDataWrangler from './index';
-import mockFilmFetchResponse from '../__mocks__/mockFilmFetchResponse';
+import mockFilmFetchResponse from '../../__mocks__/mockFilmFetchResponse';
 
 describe('scrollingTextDataWrangler', () => {
   it('should be a function', () => {

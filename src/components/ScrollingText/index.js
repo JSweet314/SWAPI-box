@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import fetchScrollingText from './apiCalls/fetchScrollingText';
+import fetchScrollingText from '../../apiCalls/fetchScrollingText';
 
 class ScrollingText extends Component {
   constructor() {

@@ -1,4 +1,4 @@
-import categoryDataWrangler from '../scripts/categoryDataWrangler';
+import categoryDataWrangler from '../dataWranglers/categoryDataWrangler/index';
 
 const fetchCategoryData = (category, pageNumber) => {
   return fetch(
