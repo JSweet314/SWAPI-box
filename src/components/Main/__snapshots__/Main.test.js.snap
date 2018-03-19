@@ -4,7 +4,10 @@ exports[`Main should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Main />,
+  Symbol(enzyme.__unrendered__): <Main
+    currentCategory=""
+    selectCategory={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,7 +21,10 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <MainBtnGroup />,
+        <MainBtnGroup
+          currentCategory=""
+          selectCategory={[Function]}
+/>,
         <CategoryDisplay />,
       ],
       "className": "main",
@@ -28,8 +34,11 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "nodeType": "function",
+        "props": Object {
+          "currentCategory": "",
+          "selectCategory": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -53,7 +62,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <MainBtnGroup />,
+          <MainBtnGroup
+            currentCategory=""
+            selectCategory={[Function]}
+/>,
           <CategoryDisplay />,
         ],
         "className": "main",
@@ -63,8 +75,11 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "nodeType": "function",
+          "props": Object {
+            "currentCategory": "",
+            "selectCategory": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

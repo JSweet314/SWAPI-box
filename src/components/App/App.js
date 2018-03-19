@@ -8,13 +8,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      selectedCategory: '',
+      currentCategory: '',
       numberOfFavorites: 0
     };
   }
 
-  selectCategory = (selectedCategory) => {
-    this.setState({ selectedCategory });
+  selectCategory = (currentCategory) => {
+    this.setState({ currentCategory });
   }
 
   fetchCategoryData = () => {
@@ -25,7 +25,9 @@ class App extends Component {
     return (
       <div className="app">
         <Header numberOfFavorites={this.state.numberOfFavorites} />
-        <Main selectCategory={this.selectCategory} />
+        <Main 
+          selectCategory={this.selectCategory}
+          currentCategory={this.state.currentCategory} />
         <ScrollingText />
       </div>
     );

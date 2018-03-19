@@ -1,41 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './MainBtnGroup.css';
 import Button from '../Button/Button';
+import PropTypes from 'prop-types';
 
-export default class MainBtnGroup extends Component {
-  constructor() {
-    super();
-    this.buttonTexts = ['people', 'planets', 'vehicles'];
-    this.state = {
-      selectedButton: ''
-    };
-  }
-
-  handleOnClick = (event) => {
+const MainBtnGroup  = ({selectCategory, currentCategory}) => {
+  const buttonTexts = ['people', 'planets', 'vehicles'];
+  
+  const handleOnClick = (event) => {
     const selectedButton = event.target.name;
-    this.setState({selectedButton});
-  }
-
-  buttonGenerator = () => {
-    return this.buttonTexts.map((text, index) => {
-      const isSelected = text === this.state.selectedButton ? 'selected': '';
-      return (
-        <Button 
-          isSelected={isSelected}
-          btnText={text} 
-          key={index} 
-          handleOnClick={this.handleOnClick}
-        />
-      );
-    });
+    selectCategory(selectedButton);
   };
-  
-  
-  render() {
+
+  const buttons = buttonTexts.map((text, index) => {
+    const isSelected = text === currentCategory ? 'selected': '';
     return (
-      <div className="mainBtnGroup">
-        {this.buttonGenerator()}
-      </div>
+      <Button 
+        isSelected={isSelected}
+        btnText={text} 
+        key={index} 
+        handleOnClick={handleOnClick}
+      />
     );
-  }
-}
+  });
+
+  return (
+    <div className="mainBtnGroup">
+      {buttons}
+    </div>
+  );
+};
+
+MainBtnGroup.propTypes = {
+  selectCategory: PropTypes.func.isRequired,
+  currentCategory: PropTypes.string.isRequired
+};
+
+export default MainBtnGroup;
