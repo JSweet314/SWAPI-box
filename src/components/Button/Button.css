@@ -7,6 +7,6 @@
   cursor: pointer;
 }
 
-.button__active {
+.selected {
   background-color: #18212A;
 }
