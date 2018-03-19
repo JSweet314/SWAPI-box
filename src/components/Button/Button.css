@@ -6,3 +6,7 @@
   color: #E0E9FA;
   cursor: pointer;
 }
+
+.button__active {
+  background-color: #18212A;
+}
