@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`MainBtnGroup should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <MainBtnGroup
+    currentCategory=""
+    selectCategory={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,25 +21,34 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header
-          numberOfFavorites={0}
+        <Button
+          btnText="people"
+          handleOnClick={[Function]}
+          isSelected=""
 />,
-        <Main
-          currentCategory=""
-          selectCategory={[Function]}
+        <Button
+          btnText="planets"
+          handleOnClick={[Function]}
+          isSelected=""
 />,
-        <ScrollingText />,
+        <Button
+          btnText="vehicles"
+          handleOnClick={[Function]}
+          isSelected=""
+/>,
       ],
-      "className": "app",
+      "className": "mainBtnGroup",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "0",
         "nodeType": "function",
         "props": Object {
-          "numberOfFavorites": 0,
+          "btnText": "people",
+          "handleOnClick": [Function],
+          "isSelected": "",
         },
         "ref": null,
         "rendered": null,
@@ -44,11 +56,12 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "1",
         "nodeType": "function",
         "props": Object {
-          "currentCategory": "",
-          "selectCategory": [Function],
+          "btnText": "planets",
+          "handleOnClick": [Function],
+          "isSelected": "",
         },
         "ref": null,
         "rendered": null,
@@ -56,9 +69,13 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "key": "2",
+        "nodeType": "function",
+        "props": Object {
+          "btnText": "vehicles",
+          "handleOnClick": [Function],
+          "isSelected": "",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -73,25 +90,34 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header
-            numberOfFavorites={0}
+          <Button
+            btnText="people"
+            handleOnClick={[Function]}
+            isSelected=""
 />,
-          <Main
-            currentCategory=""
-            selectCategory={[Function]}
+          <Button
+            btnText="planets"
+            handleOnClick={[Function]}
+            isSelected=""
 />,
-          <ScrollingText />,
+          <Button
+            btnText="vehicles"
+            handleOnClick={[Function]}
+            isSelected=""
+/>,
         ],
-        "className": "app",
+        "className": "mainBtnGroup",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "0",
           "nodeType": "function",
           "props": Object {
-            "numberOfFavorites": 0,
+            "btnText": "people",
+            "handleOnClick": [Function],
+            "isSelected": "",
           },
           "ref": null,
           "rendered": null,
@@ -99,11 +125,12 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "1",
           "nodeType": "function",
           "props": Object {
-            "currentCategory": "",
-            "selectCategory": [Function],
+            "btnText": "planets",
+            "handleOnClick": [Function],
+            "isSelected": "",
           },
           "ref": null,
           "rendered": null,
@@ -111,9 +138,13 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "key": "2",
+          "nodeType": "function",
+          "props": Object {
+            "btnText": "vehicles",
+            "handleOnClick": [Function],
+            "isSelected": "",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -128,7 +159,6 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
-    "disableLifecycleMethods": true,
   },
 }
 `;

@@ -6,7 +6,7 @@ describe('Header', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Header />);
+    wrapper = shallow(<Header numberOfFavorites={0} />);
   });
 
   it('should match a snapshot', () => {

@@ -4,11 +4,7 @@ exports[`ScrollingText should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ScrollingText
-    movieTitle=""
-    openingCrawl={Array []}
-    releaseDate=""
-/>,
+  Symbol(enzyme.__unrendered__): <ScrollingText />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

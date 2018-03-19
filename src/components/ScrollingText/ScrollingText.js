@@ -1,27 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './ScrollingText.css';
-import PropTypes from 'prop-types';
 import OpeningCrawlParagraph from 
   '../OpeningCrawlParagraph/OpeningCrawlParagraph';
+import scrollingTextDataWrangler from '../../scripts/scrollingTextDataWrangler';
 
-const ScrollingText = ({openingCrawl, movieTitle, releaseDate}) => {
-  const openingCrawlParagraphs = openingCrawl.map((paragraph, index) => {
-    return <OpeningCrawlParagraph key={index} paragraph={paragraph} />
-  });
+class ScrollingText extends Component {
+  constructor() {
+    super();
+    this.state = {
+      openingCrawl: [],
+      movieTitle: '',
+      releaseDate: ''
+    };
+  }
 
-  return (
-    <aside className="scrolling-text">
-      {openingCrawlParagraphs}
-      <p>{movieTitle}</p>
-      <p>{releaseDate}</p>
-    </aside>
-  );
-};
+  componentDidMount() {
+    this.fetchScrollingText();
+  }
 
-ScrollingText.propTypes = {
-  openingCrawl: PropTypes.array.isRequired,
-  movieTitle: PropTypes.string.isRequired,
-  releaseDate: PropTypes.string.isRequired
-};
+  fetchScrollingText = () => {
+    const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
+    fetch(`https://swapi.co/api/films/${randomFilmNumber}/?format=json`)
+      .then(response => response.json())
+      .then(SWAPIData => scrollingTextDataWrangler(SWAPIData))
+      .then(SWAPIData => {
+        this.setState({
+          openingCrawl: SWAPIData.openingCrawlParagraphs,
+          movieTitle: SWAPIData.title,
+          releaseDate: SWAPIData.releaseDate
+        });
+      })
+      .catch(error => alert(error));
+  }
+
+  openingCrawlParagraphs = () => {
+    return this.state.openingCrawl.map((paragraph, index) => {
+      return <OpeningCrawlParagraph key={index} paragraph={paragraph} />;
+    });
+  }
+
+  render() {
+    return (
+      <aside className="scrolling-text">
+        {this.openingCrawlParagraphs()}
+        <p>{this.state.movieTitle}</p>
+        <p>{this.state.releaseDate}</p>
+      </aside>
+    );
+  }
+}
 
 export default ScrollingText;

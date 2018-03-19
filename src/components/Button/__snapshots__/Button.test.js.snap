@@ -6,6 +6,8 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Button
     btnText="people"
+    handleOnClick={[Function]}
+    isSelected=""
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,7 +22,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": "people",
-      "className": "button",
+      "className": "button ",
+      "name": "people",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": "people",
@@ -33,7 +37,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "people",
-        "className": "button",
+        "className": "button ",
+        "name": "people",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": "people",

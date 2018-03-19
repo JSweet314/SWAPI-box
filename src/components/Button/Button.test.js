@@ -6,7 +6,15 @@ describe('button', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Button btnText="people"/>);
+    wrapper = shallow(
+      <Button 
+        btnText="people"
+        isSelected='' 
+        /* eslint-disable no-undef */
+        handleOnClick={jest.fn}
+        /* eslint-enable no-undef */
+      />
+    );
   });
 
   it('should match a snapshot', () => {

@@ -6,3 +6,7 @@
   color: #E0E9FA;
   cursor: pointer;
 }
+
+.selected {
+  background-color: #18212A;
+}
