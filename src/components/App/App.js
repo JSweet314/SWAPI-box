@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   fetchScrollingText = () => {
-    const randomFilmNumber = Math.floor(Math.random() * 6) + 1;
+    const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
     fetch(`https://swapi.co/api/films/${randomFilmNumber}/?format=json`)
       .then(response => response.json())
       .then(SWAPIData => scrollingTextDataWrangler(SWAPIData))
@@ -30,7 +30,8 @@ class App extends Component {
           movieTitle: SWAPIData.title,
           releaseDate: SWAPIData.releaseDate
         });
-      });
+      })
+      .catch(error => alert(error));
   }
 
   render() {
