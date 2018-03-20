@@ -3,6 +3,8 @@ import './Main.css';
 import MainBtnGroup from '../MainBtnGroup/MainBtnGroup';
 import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
+import fetchPlanetData from '../../apiCalls/fetchPlanetData';
+import fetchSpeciesData from '../../apiCalls/fetchSpeciesData'
 
 export default class Main extends Component {
   constructor() {
@@ -11,7 +13,7 @@ export default class Main extends Component {
       pageNumber: 1,
       category: '',
       loading: false,
-      categoryData: {}
+      categoryData: []
     };
   }
 
@@ -24,8 +26,10 @@ export default class Main extends Component {
     const { category, pageNumber } = this.state;
     if (prevState.category !== this.state.category) {
       fetchCategoryData(category, pageNumber)
+        .then(fetchPlanetData)
+        .then(fetchSpeciesData)
         .then(categoryData => this.setState({ categoryData, loading: false }))
-        .catch(error => alert(error));
+        .catch(error => alert(error.message));
     } 
   }
 
