@@ -12,12 +12,16 @@ class App extends Component {
     };
   }
 
+  changeFavCount = (num) => {
+    this.setState({numberOfFavorites: this.state.numberOfFavorites + num});
+  }
+
   render() {
     const { numberOfFavorites } = this.state;
     return (
       <div className="app">
         <Header numberOfFavorites={numberOfFavorites} />
-        <Main />
+        <Main changeFavCount={this.changeFavCount}/>
         <ScrollingText />
       </div>
     );

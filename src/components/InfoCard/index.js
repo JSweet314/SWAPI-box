@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const InfoCard = ({card}) => {
-  return (
-    <article className="info-card">   
-      <div>
-        <h3>{card.name}</h3>
-        <p>Homeworld: {card.homeworld}</p>
-        <p>Species: {card.species}</p>
-        <p>Homeworld Pop.: {card.population}</p>
-      </div>
-    </article>
-  );
-};
+class InfoCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: ''
+    };
+    this.card = props.card;
+  }
+
+  handleOnClick = () => {
+    if (!this.state.selected) {
+      const category = this.props.currentCategory;
+      this.props.selectFavorite({...this.card, category});
+      this.props.changeFavCount(1);
+      this.setState({selected: 'selected'});
+    } else {
+      this.props.changeFavCount(-1);
+      this.props.removeFavorite(this.card.name);
+      this.setState({selected: ''});
+    }
+  }
+
+  render() {
+    return (
+      <article className="info-card">
+        <div>
+          <div className="info-card__top-line">
+            <h3>{this.card.name}</h3>
+            <button className={this.state.selected}
+              onClick={this.handleOnClick}></button>
+          </div>
+          <p>Homeworld: {this.card.homeworld}</p>
+          <p>Species: {this.card.species}</p>
+          <p>Homeworld Pop.: {this.card.population}</p>
+        </div>
+      </article>
+    );
+  }
+}
 
 InfoCard.propTypes = {
   card: PropTypes.shape({
@@ -21,7 +48,11 @@ InfoCard.propTypes = {
     species: PropTypes.string.isRequired,
     homeworld: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  removeFavorite: PropTypes.func.isRequired,
+  selectFavorite: PropTypes.func.isRequired,
+  changeFavCount: PropTypes.func.isRequired,
+  currentCategory: PropTypes.string.isRequired
 };
 
 export default InfoCard;

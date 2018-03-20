@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Main.css';
+import PropTypes from 'prop-types';
 import MainBtnGroup from '../MainBtnGroup/MainBtnGroup';
 import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchPlanetData from '../../apiCalls/fetchPlanetData';
-import fetchSpeciesData from '../../apiCalls/fetchSpeciesData'
+import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
 
 export default class Main extends Component {
   constructor() {
@@ -13,8 +14,18 @@ export default class Main extends Component {
       pageNumber: 1,
       category: '',
       loading: false,
-      categoryData: []
+      categoryData: [],
+      favorites: []
     };
+  }
+
+  selectFavorite = (favObj) => {
+    this.setState({favorites: [...this.state.favorites, favObj]});
+  }
+
+  removeFavorite = (name) => {
+    const favorites = this.state.favorites.filter(fav => fav.name !== name);
+    this.setState({ favorites });
   }
 
   selectCategory = (event) => {
@@ -22,14 +33,44 @@ export default class Main extends Component {
     this.setState({ pageNumber: 1, loading: true, category });
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
+  getPeopleData = () => {
     const { category, pageNumber } = this.state;
-    if (prevState.category !== category && category === 'people') {
-      fetchCategoryData(category, pageNumber)
-        .then(fetchPlanetData)
-        .then(fetchSpeciesData)
-        .then(categoryData => this.setState({ categoryData, loading: false }))
-        .catch(error => alert(error.message));
+    fetchCategoryData(category, pageNumber)
+      .then(fetchPlanetData)
+      .then(fetchSpeciesData)
+      .then(categoryData => this.setState({ categoryData, loading: false }))
+      .catch(error => alert(error.message));
+  }
+
+  getPlanetData = () => {
+    const { category, pageNumber } = this.state;
+    fetchCategoryData(category, pageNumber)
+      .then(categoryData => this.setState({ categoryData }));
+      
+  }
+
+  getVehiclesData = () => {
+    const { category, pageNumber } = this.state;
+    fetchCategoryData(category, pageNumber)
+      .then(categoryData => this.setState({ categoryData }));
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const { category } = this.state;
+    if (prevState.category !== category) {
+      switch (category) {
+      case 'people':
+        this.getPeopleData();
+        break;
+      case 'planets':
+        this.getPlanetData();
+        break;
+      case 'vehicles':
+        this.getVehiclesData();
+        break;
+      default:
+        break;
+      }
     } 
   }
 
@@ -43,8 +84,15 @@ export default class Main extends Component {
         <CategoryDisplay 
           categoryData={categoryData}
           currentCategory={category}
+          changeFavCount={this.props.changeFavCount}
+          selectFavorite={this.selectFavorite}
+          removeFavorite={this.removeFavorite}
           loading={loading} />
       </main>
     );
   }
 }
+
+Main.propTypes = {
+  changeFavCount: PropTypes.func.isRequired
+};
