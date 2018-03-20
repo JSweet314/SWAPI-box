@@ -6,6 +6,7 @@
   width: 95%;
   background-color: #18212A;
   color: white;
+  overflow: scroll;
 }
 
 .category-display--loading,

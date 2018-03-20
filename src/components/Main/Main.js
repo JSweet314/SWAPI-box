@@ -11,7 +11,7 @@ export default class Main extends Component {
       pageNumber: 1,
       category: '',
       loading: false,
-      categoryData: []
+      categoryData: {}
     };
   }
 

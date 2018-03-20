@@ -2,6 +2,7 @@ import React from 'react';
 import './CategoryDisplay.css';
 import PropTypes from 'prop-types';
 import loadingGIF from '../../images/Loading_icon.gif';
+import InfoCard from '../InfoCard/index';
 
 const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {  
   if (loading) {
@@ -12,7 +13,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
     );
   }
 
-  if (!categoryData.length) {
+  if (!categoryData.response) {
     return (
       <div className="category-display category-display--default">
         <p className="category-display__default-text">Select A Category</p>
@@ -20,8 +21,8 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
     );
   } 
   
-  const response = categoryData.map(card => {
-    return <article key={card.name}>{card.name}</article>;
+  const response = categoryData.response.map(card => {
+    return <InfoCard key={card.name} {...card} />;
   });
 
   return (
@@ -33,7 +34,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
 };
 
 CategoryDisplay.propTypes = {
-  categoryData: PropTypes.array.isRequired,
+  categoryData: PropTypes.object.isRequired,
   currentCategory: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired
 };
