@@ -15,16 +15,14 @@ class InfoCard extends Component {
   }
 
   componentDidMount = () => {
+    const { card } = this.state;
     fetchPlanetData(this.planetURL)
       .then(planetData => this.setState({
-        card: Object.assign(
-          {},
-          this.state.card,
-          planetData
-        ),
+        card: Object.assign({}, card, planetData),
         loading: false
       }));
   }
+  
   render() {
     const { loading, card } = this.state;
     return (

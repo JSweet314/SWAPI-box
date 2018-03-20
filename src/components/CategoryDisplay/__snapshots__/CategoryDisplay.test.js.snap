@@ -21,12 +21,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p
-        className="category-display__default-text"
->
-        Select A Category
-</p>,
-      "className": "category-display",
+      "children": <img
+        alt="loading"
+        src="Loading_icon.gif"
+/>,
+      "className": "category-display category-display--loading",
     },
     "ref": null,
     "rendered": Object {
@@ -34,12 +33,12 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Select A Category",
-        "className": "category-display__default-text",
+        "alt": "loading",
+        "src": "Loading_icon.gif",
       },
       "ref": null,
-      "rendered": "Select A Category",
-      "type": "p",
+      "rendered": null,
+      "type": "img",
     },
     "type": "div",
   },
@@ -49,12 +48,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <p
-          className="category-display__default-text"
->
-          Select A Category
-</p>,
-        "className": "category-display",
+        "children": <img
+          alt="loading"
+          src="Loading_icon.gif"
+/>,
+        "className": "category-display category-display--loading",
       },
       "ref": null,
       "rendered": Object {
@@ -62,12 +60,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Select A Category",
-          "className": "category-display__default-text",
+          "alt": "loading",
+          "src": "Loading_icon.gif",
         },
         "ref": null,
-        "rendered": "Select A Category",
-        "type": "p",
+        "rendered": null,
+        "type": "img",
       },
       "type": "div",
     },
