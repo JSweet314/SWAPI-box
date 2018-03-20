@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from "react-router-dom";
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -8,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      numberOfFavorites: 0
+      numberOfFavorites: 0,
+      favorites: []
     };
   }
 

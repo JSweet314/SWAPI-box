@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './Main.css';
-import PropTypes from 'prop-types';
-import MainBtnGroup from '../MainBtnGroup/MainBtnGroup';
 import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
+import MainBtnGroup from '../MainBtnGroup/MainBtnGroup';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import './Main.css';
 
 export default class Main extends Component {
   constructor() {
