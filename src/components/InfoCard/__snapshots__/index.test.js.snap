@@ -9,7 +9,7 @@ ShallowWrapper {
         Object {
             "homeworld": "tatooine",
             "name": "Obi-Wan",
-            "population": 1000,
+            "population": "1000",
             "species": "human",
           }
     }
@@ -26,11 +26,116 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": false,
+      "children": <div>
+        <h3>
+                Obi-Wan
+        </h3>
+        <p>
+                Homeworld: 
+                tatooine
+        </p>
+        <p>
+                Species: 
+                human
+        </p>
+        <p>
+                Homeworld Pop.: 
+                1000
+        </p>
+</div>,
       "className": "info-card",
     },
     "ref": null,
-    "rendered": false,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Obi-Wan
+</h3>,
+          <p>
+            Homeworld: 
+            tatooine
+</p>,
+          <p>
+            Species: 
+            human
+</p>,
+          <p>
+            Homeworld Pop.: 
+            1000
+</p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Obi-Wan",
+          },
+          "ref": null,
+          "rendered": "Obi-Wan",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Homeworld: ",
+              "tatooine",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Homeworld: ",
+            "tatooine",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Species: ",
+              "human",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Species: ",
+            "human",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Homeworld Pop.: ",
+              "1000",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Homeworld Pop.: ",
+            "1000",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
     "type": "article",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -39,11 +144,116 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": false,
+        "children": <div>
+          <h3>
+                    Obi-Wan
+          </h3>
+          <p>
+                    Homeworld: 
+                    tatooine
+          </p>
+          <p>
+                    Species: 
+                    human
+          </p>
+          <p>
+                    Homeworld Pop.: 
+                    1000
+          </p>
+</div>,
         "className": "info-card",
       },
       "ref": null,
-      "rendered": false,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Obi-Wan
+</h3>,
+            <p>
+              Homeworld: 
+              tatooine
+</p>,
+            <p>
+              Species: 
+              human
+</p>,
+            <p>
+              Homeworld Pop.: 
+              1000
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Obi-Wan",
+            },
+            "ref": null,
+            "rendered": "Obi-Wan",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeworld: ",
+                "tatooine",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeworld: ",
+              "tatooine",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Species: ",
+                "human",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Species: ",
+              "human",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeworld Pop.: ",
+                "1000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeworld Pop.: ",
+              "1000",
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
       "type": "article",
     },
   ],

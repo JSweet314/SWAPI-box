@@ -7,7 +7,7 @@ describe('InfoCard', () => {
     homeworld: 'tatooine',
     species: 'human',
     name: 'Obi-Wan',
-    population: 1000
+    population: '1000'
   };
 
   it('should match a snapshot', () => {

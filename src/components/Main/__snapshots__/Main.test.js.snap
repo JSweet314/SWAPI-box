@@ -26,7 +26,7 @@ ShallowWrapper {
           selectCategory={[Function]}
 />,
         <CategoryDisplay
-          categoryData={Object {}}
+          categoryData={Array []}
           currentCategory=""
           loading={false}
 />,
@@ -52,7 +52,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "categoryData": Object {},
+          "categoryData": Array [],
           "currentCategory": "",
           "loading": false,
         },
@@ -75,7 +75,7 @@ ShallowWrapper {
             selectCategory={[Function]}
 />,
           <CategoryDisplay
-            categoryData={Object {}}
+            categoryData={Array []}
             currentCategory=""
             loading={false}
 />,
@@ -101,7 +101,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "categoryData": Object {},
+            "categoryData": Array [],
             "currentCategory": "",
             "loading": false,
           },
