@@ -4,7 +4,16 @@ import PropTypes from 'prop-types';
 import loadingGIF from '../../images/Loading_icon.gif';
 import InfoCard from '../InfoCard/index';
 
-const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {  
+const CategoryDisplay = (
+  { 
+    categoryData,
+    currentCategory,
+    loading, 
+    changeFavCount, 
+    selectFavorite, 
+    removeFavorite 
+  }
+) => {  
   if (loading) {
     return (
       <div className="category-display category-display--loading">
@@ -22,7 +31,13 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
   } 
   
   const response = categoryData.map(card => {
-    return <InfoCard key={card.name} card={card} />;
+    return <InfoCard 
+      currentCategory={currentCategory}
+      changeFavCount={changeFavCount}
+      selectFavorite={selectFavorite}
+      removeFavorite={removeFavorite}
+      key={card.name} 
+      card={card} />;
   });
 
   return (
@@ -36,7 +51,10 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
 CategoryDisplay.propTypes = {
   categoryData: PropTypes.array.isRequired,
   currentCategory: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  changeFavCount: PropTypes.func.isRequired,
+  selectFavorite: PropTypes.func.isRequired,
+  removeFavorite: PropTypes.func.isRequired
 };
 
 export default CategoryDisplay;

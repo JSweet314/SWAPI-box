@@ -4,12 +4,12 @@ import Main from './Main';
 
 describe('Main', () => {
   /* eslint-disable no-undef*/
-  const mockSelectCategory = jest.fn();
+  const mockChangeFavCount = jest.fn();
   /* eslint-enable no-undef*/
   
   it('should match a snapshot', () => {
     const wrapper = shallow(
-      <Main selectCategory={mockSelectCategory} currentCategory=''/>
+      <Main changeFavCount={mockChangeFavCount}/>
     );
     expect(wrapper).toMatchSnapshot();
   });

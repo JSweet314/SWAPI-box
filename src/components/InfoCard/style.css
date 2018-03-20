@@ -1,4 +1,34 @@
 .info-card {
-  width: 30%;
-  height: 50%
+  height: 60%;
+  margin: 1rem;
+  padding: 1rem;
+  width: 40%;
+  border: 1px solid black;
+}
+
+.info-card p {
+  font-size: 1.5rem;
+}
+
+.info-card__top-line {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  border-bottom: 1px dashed lightgray;
+  padding: 0 0 1rem 0;
+}
+
+.info-card button {
+  height: 4rem;
+  width: 4rem;
+  background-color: gray;
+  background-image: url('../../images/star.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+  border: none;
+}
+
+.info-card .selected {
+  background-image: url('../../images/star-active.svg');
 }
