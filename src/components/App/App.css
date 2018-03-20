@@ -1,18 +1,1 @@
-.app {
-  display: grid;
-  grid-template-columns: 400px auto;
-  grid-template-rows: 10% 90%;
-  height: 100vh;
-  font-family: 'Roboto Mono', monospace;
-}
-
-.header {
-  grid-row: 1;
-  grid-column: 2 / 3;
-}
-
-.scrolling-text {
-  grid-column: 1;
-  grid-row: 1 / 3;
-}
 
