@@ -24,7 +24,7 @@ export default class Main extends Component {
 
   componentDidUpdate = (prevProps, prevState) => {
     const { category, pageNumber } = this.state;
-    if (prevState.category !== this.state.category) {
+    if (prevState.category !== category && category === 'people') {
       fetchCategoryData(category, pageNumber)
         .then(fetchPlanetData)
         .then(fetchSpeciesData)
