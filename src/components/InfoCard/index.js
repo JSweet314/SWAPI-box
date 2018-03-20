@@ -31,9 +31,9 @@ class InfoCard extends Component {
           !loading && 
             <div>
               <h3>{card.name}</h3>
-              <p>{card.homeworld}</p>
-              <p>{card.species}</p>
-              <p>{card.population}</p>
+              <p>Homeworld: {card.homeworld}</p>
+              <p>Species: {card.species}</p>
+              <p>Homeworld Pop.: {card.population}</p>
             </div>
         }
       </article>
