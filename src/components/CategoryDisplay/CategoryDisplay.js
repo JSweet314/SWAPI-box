@@ -13,7 +13,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
     );
   }
 
-  if (!categoryData.response) {
+  if (!categoryData.length) {
     return (
       <div className="category-display category-display--default">
         <p className="category-display__default-text">Select A Category</p>
@@ -21,7 +21,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
     );
   } 
   
-  const response = categoryData.response.map(card => {
+  const response = categoryData.map(card => {
     return <InfoCard key={card.name} card={card} />;
   });
 
@@ -34,7 +34,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
 };
 
 CategoryDisplay.propTypes = {
-  categoryData: PropTypes.object.isRequired,
+  categoryData: PropTypes.array.isRequired,
   currentCategory: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired
 };
