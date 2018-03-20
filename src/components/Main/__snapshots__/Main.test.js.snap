@@ -5,8 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Main
-    currentCategory=""
-    selectCategory={[Function]}
+    changeFavCount={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -27,8 +26,11 @@ ShallowWrapper {
 />,
         <CategoryDisplay
           categoryData={Array []}
+          changeFavCount={[Function]}
           currentCategory=""
           loading={false}
+          removeFavorite={[Function]}
+          selectFavorite={[Function]}
 />,
       ],
       "className": "main",
@@ -53,8 +55,11 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "categoryData": Array [],
+          "changeFavCount": [Function],
           "currentCategory": "",
           "loading": false,
+          "removeFavorite": [Function],
+          "selectFavorite": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -76,8 +81,11 @@ ShallowWrapper {
 />,
           <CategoryDisplay
             categoryData={Array []}
+            changeFavCount={[Function]}
             currentCategory=""
             loading={false}
+            removeFavorite={[Function]}
+            selectFavorite={[Function]}
 />,
         ],
         "className": "main",
@@ -102,8 +110,11 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "categoryData": Array [],
+            "changeFavCount": [Function],
             "currentCategory": "",
             "loading": false,
+            "removeFavorite": [Function],
+            "selectFavorite": [Function],
           },
           "ref": null,
           "rendered": null,

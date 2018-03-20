@@ -11,7 +11,17 @@ describe('InfoCard', () => {
   };
 
   it('should match a snapshot', () => {
-    const wrapper = shallow(<InfoCard card={card}/>, {disableLifecycleMethods: true});
+    const wrapper = shallow(
+      <InfoCard 
+        currentCategory={''}
+        /* eslint-disable no-undef */
+        changeFavCount={jest.fn()}
+        selectFavorite={jest.fn()}
+        removeFavorite={jest.fn()}
+        /* eslint-enable no-undef */
+        card={card}/>,
+      {disableLifecycleMethods: true}
+    );
 
     expect(wrapper).toMatchSnapshot();
   });

@@ -13,6 +13,10 @@ ShallowWrapper {
             "species": "human",
           }
     }
+    changeFavCount={[Function]}
+    currentCategory=""
+    removeFavorite={[Function]}
+    selectFavorite={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -27,9 +31,17 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div>
-        <h3>
-                Obi-Wan
-        </h3>
+        <div
+                className="info-card__top-line"
+        >
+                <h3>
+                        Obi-Wan
+                </h3>
+                <button
+                        className=""
+                        onClick={[Function]}
+                />
+        </div>
         <p>
                 Homeworld: 
                 tatooine
@@ -52,9 +64,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Obi-Wan
-</h3>,
+          <div
+            className="info-card__top-line"
+>
+            <h3>
+                        Obi-Wan
+            </h3>
+            <button
+                        className=""
+                        onClick={[Function]}
+            />
+</div>,
           <p>
             Homeworld: 
             tatooine
@@ -76,11 +96,44 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Obi-Wan",
+            "children": Array [
+              <h3>
+                Obi-Wan
+</h3>,
+              <button
+                className=""
+                onClick={[Function]}
+/>,
+            ],
+            "className": "info-card__top-line",
           },
           "ref": null,
-          "rendered": "Obi-Wan",
-          "type": "h3",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Obi-Wan",
+              },
+              "ref": null,
+              "rendered": "Obi-Wan",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -145,9 +198,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div>
-          <h3>
-                    Obi-Wan
-          </h3>
+          <div
+                    className="info-card__top-line"
+          >
+                    <h3>
+                              Obi-Wan
+                    </h3>
+                    <button
+                              className=""
+                              onClick={[Function]}
+                    />
+          </div>
           <p>
                     Homeworld: 
                     tatooine
@@ -170,9 +231,17 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h3>
-              Obi-Wan
-</h3>,
+            <div
+              className="info-card__top-line"
+>
+              <h3>
+                            Obi-Wan
+              </h3>
+              <button
+                            className=""
+                            onClick={[Function]}
+              />
+</div>,
             <p>
               Homeworld: 
               tatooine
@@ -194,11 +263,44 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Obi-Wan",
+              "children": Array [
+                <h3>
+                  Obi-Wan
+</h3>,
+                <button
+                  className=""
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "info-card__top-line",
             },
             "ref": null,
-            "rendered": "Obi-Wan",
-            "type": "h3",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Obi-Wan",
+                },
+                "ref": null,
+                "rendered": "Obi-Wan",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,

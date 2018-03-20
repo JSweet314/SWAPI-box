@@ -21,7 +21,9 @@ ShallowWrapper {
         <Header
           numberOfFavorites={0}
 />,
-        <Main />,
+        <Main
+          changeFavCount={[Function]}
+/>,
         <ScrollingText />,
       ],
       "className": "app",
@@ -43,7 +45,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "changeFavCount": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -70,7 +74,9 @@ ShallowWrapper {
           <Header
             numberOfFavorites={0}
 />,
-          <Main />,
+          <Main
+            changeFavCount={[Function]}
+/>,
           <ScrollingText />,
         ],
         "className": "app",
@@ -92,7 +98,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "changeFavCount": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
