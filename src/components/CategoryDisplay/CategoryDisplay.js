@@ -1,19 +1,29 @@
 import React from 'react';
 import './CategoryDisplay.css';
 import PropTypes from 'prop-types';
+import loadingGIF from '../../images/Loading_icon.gif';
 
-const CategoryDisplay = ({ categoryResponse, currentCategory }) => {
-  let response;
-  if (!categoryResponse.length) {
-    response = (
-      <p className="category-display__default-text">Select A Category</p>
+const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {  
+  if (loading) {
+    return (
+      <div className="category-display category-display--loading">
+        <img src={loadingGIF} alt="loading" />
+      </div>
     );
-  } else {
-    response = categoryResponse.map(card => {
-      return <article key={card.name}>{card.name}</article>;
-    });
   }
+
+  if (!categoryData.length) {
+    return (
+      <div className="category-display category-display--default">
+        <p className="category-display__default-text">Select A Category</p>
+      </div>
+    );
+  } 
   
+  const response = categoryData.map(card => {
+    return <article key={card.name}>{card.name}</article>;
+  });
+
   return (
     <div className="category-display">
       <h2>{currentCategory}</h2>
@@ -23,8 +33,9 @@ const CategoryDisplay = ({ categoryResponse, currentCategory }) => {
 };
 
 CategoryDisplay.propTypes = {
-  categoryResponse: PropTypes.array.isRequired,
-  currentCategory: PropTypes.string.isRequired
+  categoryData: PropTypes.array.isRequired,
+  currentCategory: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 export default CategoryDisplay;

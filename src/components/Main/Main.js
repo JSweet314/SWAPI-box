@@ -10,37 +10,36 @@ export default class Main extends Component {
     this.state = {
       pageNumber: 1,
       category: '',
-      loading: true,
-      categoryResponse: []
+      loading: false,
+      categoryData: []
     };
   }
 
   selectCategory = (event) => {
     const category = event.target.name;
-    this.setState({category});
+    this.setState({ pageNumber: 1, loading: true, category });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate = (prevProps, prevState) => {
     const { category, pageNumber } = this.state;
     if (prevState.category !== this.state.category) {
       fetchCategoryData(category, pageNumber)
-        .then(categoryData => this.setState({
-          loading: false,
-          categoryData: categoryData
-        }));
+        .then(categoryData => this.setState({ categoryData, loading: false }))
+        .catch(error => alert(error));
     } 
   }
 
   render() {
-    const { category, categoryResponse } = this.state
+    const { category, categoryData, loading } = this.state;
     return (
       <main className="main">
         <MainBtnGroup 
           selectCategory={this.selectCategory}
           currentCategory={category}/>
         <CategoryDisplay 
-          categoryResponse={categoryResponse}
-          currentCategory={category}/>
+          categoryData={categoryData}
+          currentCategory={category}
+          loading={loading} />
       </main>
     );
   }

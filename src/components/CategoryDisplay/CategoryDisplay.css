@@ -1,5 +1,4 @@
 .category-display {
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
   height: 40rem;
@@ -7,6 +6,16 @@
   width: 95%;
   background-color: #18212A;
   color: white;
+}
+
+.category-display--loading,
+.category-display--default {
+  align-items: center;
+  justify-content: center;
+}
+
+.category-display--loading {
+  background-color: #fff;
 }
 
 .category-display__default-text {

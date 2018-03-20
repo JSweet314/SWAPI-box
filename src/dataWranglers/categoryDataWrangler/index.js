@@ -15,7 +15,7 @@ const categoryDataWrangler = (categoryData, category) => {
         terrain: planet.terrain,
         populateion: planet.population,
         climate: planet.climate,
-        residents: planet.residents
+        residents: planet.residents // array of urls
       };
     });
   case 'vehicles':
