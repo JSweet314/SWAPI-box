@@ -21,10 +21,7 @@ ShallowWrapper {
         <Header
           numberOfFavorites={0}
 />,
-        <Main
-          currentCategory=""
-          selectCategory={[Function]}
-/>,
+        <Main />,
         <ScrollingText />,
       ],
       "className": "app",
@@ -45,11 +42,8 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "currentCategory": "",
-          "selectCategory": [Function],
-        },
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -76,10 +70,7 @@ ShallowWrapper {
           <Header
             numberOfFavorites={0}
 />,
-          <Main
-            currentCategory=""
-            selectCategory={[Function]}
-/>,
+          <Main />,
           <ScrollingText />,
         ],
         "className": "app",
@@ -100,11 +91,8 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "currentCategory": "",
-            "selectCategory": [Function],
-          },
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],

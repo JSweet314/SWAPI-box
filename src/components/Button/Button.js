@@ -2,11 +2,11 @@ import React from 'react';
 import './Button.css';
 import PropTypes from 'prop-types';
 
-const Button = ({btnText, handleOnClick, isSelected}) => {
+const Button = ({btnText, selectCategory, isSelected}) => {
   return (
     <button 
       name={btnText}
-      onClick={event => handleOnClick(event)}
+      onClick={event => selectCategory(event)}
       className={`button ${isSelected}`}>
       {btnText}
     </button>
@@ -15,7 +15,7 @@ const Button = ({btnText, handleOnClick, isSelected}) => {
 
 Button.propTypes = {
   btnText: PropTypes.string.isRequired,
-  handleOnClick: PropTypes.func.isRequired,
+  selectCategory: PropTypes.func.isRequired,
   isSelected: PropTypes.string.isRequired
 };
 

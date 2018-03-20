@@ -23,18 +23,18 @@ ShallowWrapper {
       "children": Array [
         <Button
           btnText="people"
-          handleOnClick={[Function]}
           isSelected=""
+          selectCategory={[Function]}
 />,
         <Button
           btnText="planets"
-          handleOnClick={[Function]}
           isSelected=""
+          selectCategory={[Function]}
 />,
         <Button
           btnText="vehicles"
-          handleOnClick={[Function]}
           isSelected=""
+          selectCategory={[Function]}
 />,
       ],
       "className": "mainBtnGroup",
@@ -47,8 +47,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "btnText": "people",
-          "handleOnClick": [Function],
           "isSelected": "",
+          "selectCategory": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -60,8 +60,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "btnText": "planets",
-          "handleOnClick": [Function],
           "isSelected": "",
+          "selectCategory": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -73,8 +73,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "btnText": "vehicles",
-          "handleOnClick": [Function],
           "isSelected": "",
+          "selectCategory": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -92,18 +92,18 @@ ShallowWrapper {
         "children": Array [
           <Button
             btnText="people"
-            handleOnClick={[Function]}
             isSelected=""
+            selectCategory={[Function]}
 />,
           <Button
             btnText="planets"
-            handleOnClick={[Function]}
             isSelected=""
+            selectCategory={[Function]}
 />,
           <Button
             btnText="vehicles"
-            handleOnClick={[Function]}
             isSelected=""
+            selectCategory={[Function]}
 />,
         ],
         "className": "mainBtnGroup",
@@ -116,8 +116,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "btnText": "people",
-            "handleOnClick": [Function],
             "isSelected": "",
+            "selectCategory": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -129,8 +129,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "btnText": "planets",
-            "handleOnClick": [Function],
             "isSelected": "",
+            "selectCategory": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -142,8 +142,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "btnText": "vehicles",
-            "handleOnClick": [Function],
             "isSelected": "",
+            "selectCategory": [Function],
           },
           "ref": null,
           "rendered": null,

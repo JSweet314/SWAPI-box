@@ -11,7 +11,7 @@ describe('button', () => {
         btnText="people"
         isSelected='' 
         /* eslint-disable no-undef */
-        handleOnClick={jest.fn}
+        selectCategory={jest.fn}
         /* eslint-enable no-undef */
       />
     );

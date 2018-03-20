@@ -25,7 +25,11 @@ ShallowWrapper {
           currentCategory=""
           selectCategory={[Function]}
 />,
-        <CategoryDisplay />,
+        <CategoryDisplay
+          categoryData={Object {}}
+          currentCategory=""
+          loading={false}
+/>,
       ],
       "className": "main",
     },
@@ -47,7 +51,11 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "categoryData": Object {},
+          "currentCategory": "",
+          "loading": false,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -66,7 +74,11 @@ ShallowWrapper {
             currentCategory=""
             selectCategory={[Function]}
 />,
-          <CategoryDisplay />,
+          <CategoryDisplay
+            categoryData={Object {}}
+            currentCategory=""
+            loading={false}
+/>,
         ],
         "className": "main",
       },
@@ -88,7 +100,11 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "categoryData": Object {},
+            "currentCategory": "",
+            "loading": false,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

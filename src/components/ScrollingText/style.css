@@ -4,3 +4,8 @@
   color: #fff;
   font-size: 1.5rem;
 }
+
+.scrolling-text pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
