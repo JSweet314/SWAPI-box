@@ -22,7 +22,7 @@ const CategoryDisplay = ({ categoryData, currentCategory, loading }) => {
   } 
   
   const response = categoryData.response.map(card => {
-    return <InfoCard key={card.name} {...card} />;
+    return <InfoCard key={card.name} card={card} />;
   });
 
   return (

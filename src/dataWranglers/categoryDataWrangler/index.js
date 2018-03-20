@@ -3,14 +3,11 @@ const categoryDataWrangler = (categoryData, category) => {
   case 'people':    
     return {
       category: category,
-      response: categoryData.results.map(person => {
-        return {
-          name: person.name,
-          homeworld: person.homeworld, // url
-          species: person.species[0], // url
-          population: person.homeworld
-        };
-      })
+      response: categoryData.results.map(person => ({ 
+        name: person.name,
+        species: person.species[0],
+        homeworld: person.homeworld
+      }))
     };
   case 'planets':
     return {

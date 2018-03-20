@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
+import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 
-const InfoCard = ({ name, homeworld, species, population }) => {
-  return (
-    <article className="info-card">
-      <h3>{name}</h3>
-      <p>{homeworld}</p>
-      <p>{species}</p>
-      <p>{population}</p>
-    </article>
-  );
-};
+class InfoCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      card: props.card,
+      loading: true
+    };
+    this.planetURL = props.card.homeworld;
+    this.speciesURL = props.card.species;
+  }
+
+  componentDidMount = () => {
+    fetchPlanetData(this.planetURL)
+      .then(planetData => this.setState({
+        card: Object.assign(
+          {},
+          this.state.card,
+          planetData
+        ),
+        loading: false
+      }));
+  }
+  render() {
+    const { loading, card } = this.state;
+    return (
+      <article className="info-card">
+        {
+          !loading && 
+            <div>
+              <h3>{card.name}</h3>
+              <p>{card.homeworld}</p>
+              <p>{card.species}</p>
+              <p>{card.population}</p>
+            </div>
+        }
+      </article>
+    );
+  }
+}
 
 InfoCard.propTypes = {
   name: PropTypes.string.isRequired,
