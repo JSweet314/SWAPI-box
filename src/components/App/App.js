@@ -17,16 +17,15 @@ class App extends Component {
   }
 
   selectFavorite = (favObj) => {
-    this.setState({favorites: [...this.state.favorites, favObj]});
+    const favorites = [...this.state.favorites, favObj];
+    const numberOfFavorites = this.state.numberOfFavorites + 1;
+    this.setState({favorites, numberOfFavorites});
   }
 
   removeFavorite = (name) => {
     const favorites = this.state.favorites.filter(fav => fav.name !== name);
-    this.setState({favorites});
-  }
-
-  changeFavCount = (num) => {
-    this.setState({numberOfFavorites: this.state.numberOfFavorites + num});
+    const numberOfFavorites = this.state.numberOfFavorites - 1;
+    this.setState({favorites, numberOfFavorites});
   }
 
   render() {
@@ -37,11 +36,20 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={ScrollingText} />
           <Route path="/people" 
-            render={() => <PeopleDisplay favorites={favorites} />} />
+            render={() => <PeopleDisplay
+              removeFavorite={this.removeFavorite}
+              selectFavorite={this.selectFavorite}
+              favorites={favorites} />} />
           <Route path="/planets" 
-            render={() => <PlanetsDisplay favorites={favorites} />} />
+            render={() => <PlanetsDisplay
+              removeFavorite={this.removeFavorite}
+              selectFavorite={this.selectFavorite}
+              favorites={favorites} />} />
           <Route path="/vehicles" 
-            render={() => <VehiclesDisplay favorites={favorites} />} />
+            render={() => <VehiclesDisplay
+              removeFavorite={this.removeFavorite}
+              selectFavorite={this.selectFavorite}
+              favorites={favorites} />} />
         </Switch>
       </div>
     );

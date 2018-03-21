@@ -13,7 +13,6 @@ export default class PlanetsDisplay extends Component {
       pageNumber: 1,
       loading: true
     };
-    this.favorites = props.favorites;
   }
 
   componentDidMount = () => {
@@ -44,7 +43,9 @@ export default class PlanetsDisplay extends Component {
   render() {
     const cards = this.state.planetsArray.map(card => {
       return <PlanetCard
-        favorites={this.favorites}
+        removeFavorite={this.props.removeFavorite}
+        selectFavorite={this.props.selectFavorite}
+        favorites={this.props.favorites}
         category="Planets"
         key={card.name}
         card={card} />;
@@ -62,5 +63,7 @@ export default class PlanetsDisplay extends Component {
 }
 
 PlanetsDisplay.propTypes = {
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.array.isRequired,
+  selectFavorite: PropTypes.func.isRequired,
+  removeFavorite: PropTypes.func.isRequired
 };

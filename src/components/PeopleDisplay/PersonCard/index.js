@@ -2,7 +2,9 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const PersonCard = ({card, favorites}) => {
+const PersonCard = (
+  {card, favorites, changeFavCount, removeFavorite, selectFavorite}
+) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
@@ -10,12 +12,27 @@ const PersonCard = ({card, favorites}) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
+  const handleOnClick = () => {
+    const alreadyFavored = favorites.some(favorite => 
+      favorite.name === card.name
+    );
+
+    if (alreadyFavored) {
+      removeFavorite(card.name);
+    } else {
+      selectFavorite({...card, category: 'people'});
+    }
+  };
+
   return (
     <article className="info-card">
       <div>
         <div className="info-card__top-line">
           <h3>{card.name}</h3>
-          <button className={selected}></button>
+          <button 
+            className={selected}
+            onClick={handleOnClick}>
+          </button>
         </div>
         <p>Homeworld: {card.homeworld}</p>
         <p>Species: {card.species}</p>
