@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InfoCard should match a snapshot 1`] = `
+exports[`PersonCard should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -15,6 +15,7 @@ ShallowWrapper {
     }
     changeFavCount={[Function]}
     currentCategory=""
+    favorites={Array []}
     removeFavorite={[Function]}
     selectFavorite={[Function]}
 />,
@@ -39,7 +40,6 @@ ShallowWrapper {
                 </h3>
                 <button
                         className=""
-                        onClick={[Function]}
                 />
         </div>
         <p>
@@ -51,8 +51,8 @@ ShallowWrapper {
                 human
         </p>
         <p>
-                Homeworld Pop.: 
-                1000
+                Home Population: 
+                1,000
         </p>
 </div>,
       "className": "info-card",
@@ -72,7 +72,6 @@ ShallowWrapper {
             </h3>
             <button
                         className=""
-                        onClick={[Function]}
             />
 </div>,
           <p>
@@ -84,8 +83,8 @@ ShallowWrapper {
             human
 </p>,
           <p>
-            Homeworld Pop.: 
-            1000
+            Home Population: 
+            1,000
 </p>,
         ],
       },
@@ -102,7 +101,6 @@ ShallowWrapper {
 </h3>,
               <button
                 className=""
-                onClick={[Function]}
 />,
             ],
             "className": "info-card__top-line",
@@ -126,7 +124,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "className": "",
-                "onClick": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -175,14 +172,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Homeworld Pop.: ",
-              "1000",
+              "Home Population: ",
+              "1,000",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Homeworld Pop.: ",
-            "1000",
+            "Home Population: ",
+            "1,000",
           ],
           "type": "p",
         },
@@ -206,7 +203,6 @@ ShallowWrapper {
                     </h3>
                     <button
                               className=""
-                              onClick={[Function]}
                     />
           </div>
           <p>
@@ -218,8 +214,8 @@ ShallowWrapper {
                     human
           </p>
           <p>
-                    Homeworld Pop.: 
-                    1000
+                    Home Population: 
+                    1,000
           </p>
 </div>,
         "className": "info-card",
@@ -239,7 +235,6 @@ ShallowWrapper {
               </h3>
               <button
                             className=""
-                            onClick={[Function]}
               />
 </div>,
             <p>
@@ -251,8 +246,8 @@ ShallowWrapper {
               human
 </p>,
             <p>
-              Homeworld Pop.: 
-              1000
+              Home Population: 
+              1,000
 </p>,
           ],
         },
@@ -269,7 +264,6 @@ ShallowWrapper {
 </h3>,
                 <button
                   className=""
-                  onClick={[Function]}
 />,
               ],
               "className": "info-card__top-line",
@@ -293,7 +287,6 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "className": "",
-                  "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": null,
@@ -342,14 +335,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Homeworld Pop.: ",
-                "1000",
+                "Home Population: ",
+                "1,000",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Homeworld Pop.: ",
-              "1000",
+              "Home Population: ",
+              "1,000",
             ],
             "type": "p",
           },

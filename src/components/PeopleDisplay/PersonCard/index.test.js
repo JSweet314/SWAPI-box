@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import InfoCard from './index';
+import PersonCard from './index';
 
-describe('InfoCard', () => {
+describe('PersonCard', () => {
   const card = {
     homeworld: 'tatooine',
     species: 'human',
@@ -12,7 +12,8 @@ describe('InfoCard', () => {
 
   it('should match a snapshot', () => {
     const wrapper = shallow(
-      <InfoCard 
+      <PersonCard 
+        favorites={[]}
         currentCategory={''}
         /* eslint-disable no-undef */
         changeFavCount={jest.fn()}

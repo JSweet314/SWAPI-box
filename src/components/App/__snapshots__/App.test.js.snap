@@ -28,12 +28,12 @@ ShallowWrapper {
                     path="/"
           />
           <Route
-                    component={[Function]}
                     path="/people"
+                    render={[Function]}
           />
           <Route
-                    component={[Function]}
                     path="/planets"
+                    render={[Function]}
           />
 </Switch>,
       ],
@@ -64,12 +64,12 @@ ShallowWrapper {
               path="/"
 />,
             <Route
-              component={[Function]}
               path="/people"
+              render={[Function]}
 />,
             <Route
-              component={[Function]}
               path="/planets"
+              render={[Function]}
 />,
           ],
         },
@@ -93,8 +93,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "path": "/people",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -105,8 +105,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "path": "/planets",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -135,12 +135,12 @@ ShallowWrapper {
                         path="/"
             />
             <Route
-                        component={[Function]}
                         path="/people"
+                        render={[Function]}
             />
             <Route
-                        component={[Function]}
                         path="/planets"
+                        render={[Function]}
             />
 </Switch>,
         ],
@@ -171,12 +171,12 @@ ShallowWrapper {
                 path="/"
 />,
               <Route
-                component={[Function]}
                 path="/people"
+                render={[Function]}
 />,
               <Route
-                component={[Function]}
                 path="/planets"
+                render={[Function]}
 />,
             ],
           },
@@ -200,8 +200,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "path": "/people",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -212,8 +212,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "path": "/planets",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,

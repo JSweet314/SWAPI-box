@@ -4,6 +4,7 @@ import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
 import PersonCard from './PersonCard/index';
 import loadingGIF from '../../images/Loading_icon.gif';
+import PropTypes from 'prop-types';
 
 export default class PeopleDisplay extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class PeopleDisplay extends Component {
       pageNumber: 1,
       loading: true
     };
-    this.favorites = props.favorites
+    this.favorites = props.favorites;
   }
 
   componentDidMount = () => {
@@ -61,3 +62,7 @@ export default class PeopleDisplay extends Component {
       </div>);
   }
 }
+
+PeopleDisplay.propTypes = {
+  favorites: PropTypes.array.isRequired
+};
