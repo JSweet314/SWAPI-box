@@ -1,21 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import PersonCard from './index';
+import VehicleCard from './index';
 
-describe('PersonCard', () => {
+describe('VehicleCard', () => {
   /* eslint-disable no-undef */
   const mockHandleOnClick = jest.fn();
   /* eslint-enable no-undef */
+
   const card = {
-    homeworld: 'tatooine',
-    species: 'human',
-    name: 'Obi-Wan',
-    population: '1000'
+    name: 'Sand Crawler',
+    model: 'Digger Crawler',
+    vehicleClass: "wheeled",
+    numberOfPassengers: '50'
   };
 
   it('should match a snapshot', () => {
     const wrapper = shallow(
-      <PersonCard
+      <VehicleCard
         handleOnClick={mockHandleOnClick}
         favorites={[]}
         card={card} />,
@@ -27,9 +28,9 @@ describe('PersonCard', () => {
 
   it('should show as favorited if name matches obj in favorites array', () => {
     const wrapper = shallow(
-      <PersonCard 
+      <VehicleCard
         handleOnClick={mockHandleOnClick}
-        favorites={[{name: 'Obi-Wan'}]}
+        favorites={[{ name: 'Sand Crawler' }]}
         card={card} />,
       { disableLifecycleMethods: true }
     );

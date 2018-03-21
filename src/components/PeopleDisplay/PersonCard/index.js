@@ -2,26 +2,12 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const PersonCard = (
-  {card, favorites, changeFavCount, removeFavorite, selectFavorite}
-) => {
+const PersonCard = ({card, favorites, handleOnClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
   const addCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
-  const handleOnClick = () => {
-    const alreadyFavored = favorites.some(favorite => 
-      favorite.name === card.name
-    );
-
-    if (alreadyFavored) {
-      removeFavorite(card.name);
-    } else {
-      selectFavorite({...card, category: 'people'});
-    }
   };
 
   return (
@@ -31,7 +17,7 @@ const PersonCard = (
           <h3>{card.name}</h3>
           <button 
             className={selected}
-            onClick={handleOnClick}>
+            onClick={() => handleOnClick(card, 'people')}>
           </button>
         </div>
         <p>Homeworld: {card.homeworld}</p>
@@ -49,7 +35,8 @@ PersonCard.propTypes = {
     homeworld: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired
   }).isRequired,
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.array.isRequired,
+  handleOnClick: PropTypes.func.isRequired
 };
 
 export default PersonCard;

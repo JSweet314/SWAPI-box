@@ -2,21 +2,9 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const VehicleCard = ({card, favorites, selectFavorite, removeFavorite}) => {
+const VehicleCard = ({card, favorites, handleOnClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
-
-  const handleOnClick = () => {
-    const alreadyFavored = favorites.some(favorite =>
-      favorite.name === card.name
-    );
-
-    if (alreadyFavored) {
-      removeFavorite(card.name);
-    } else {
-      selectFavorite({ ...card, category: 'planets' });
-    }
-  };
 
   const {name, model, vehicleClass, numberOfPassengers} = card;
 
@@ -26,7 +14,7 @@ const VehicleCard = ({card, favorites, selectFavorite, removeFavorite}) => {
         <div className="info-card__top-line">
           <h3>{name}</h3>
           <button 
-            onClick={handleOnClick}
+            onClick={() => handleOnClick(card, 'vehicles')}
             className={selected}></button>
         </div>
         <p>Model: {model}</p>
@@ -45,8 +33,7 @@ VehicleCard.propTypes = {
     numberOfPassengers: PropTypes.string.isRequired
   }).isRequired,
   favorites: PropTypes.array.isRequired,
-  selectFavorite: PropTypes.func.isRequired,
-  removeFavorite: PropTypes.func.isRequired
+  handleOnClick: PropTypes.func.isRequired
 };
 
 export default VehicleCard;
