@@ -40,11 +40,22 @@ export default class PlanetsDisplay extends Component {
       .catch(error => alert(error.message));
   }
 
+  handleOnClick = (card, category) => {
+    const alreadyFavored = this.props.favorites.some(favorite =>
+      favorite.name === card.name
+    );
+
+    if (alreadyFavored) {
+      this.props.removeFavorite(card.name);
+    } else {
+      this.props.selectFavorite({ ...card, category });
+    }
+  }
+
   render() {
     const cards = this.state.planetsArray.map(card => {
       return <PlanetCard
-        removeFavorite={this.props.removeFavorite}
-        selectFavorite={this.props.selectFavorite}
+        handleOnClick={this.handleOnClick}
         favorites={this.props.favorites}
         category="Planets"
         key={card.name}

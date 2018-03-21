@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PersonCard should match a snapshot 1`] = `
+exports[`VehicleCard should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PersonCard
+  Symbol(enzyme.__unrendered__): <VehicleCard
     card={
         Object {
-            "homeworld": "tatooine",
-            "name": "Obi-Wan",
-            "population": "1000",
-            "species": "human",
+            "model": "Digger Crawler",
+            "name": "Sand Crawler",
+            "numberOfPassengers": "50",
+            "vehicleClass": "wheeled",
           }
     }
     favorites={Array []}
@@ -33,7 +33,7 @@ ShallowWrapper {
                 className="info-card__top-line"
         >
                 <h3>
-                        Obi-Wan
+                        Sand Crawler
                 </h3>
                 <button
                         className=""
@@ -41,16 +41,16 @@ ShallowWrapper {
                 />
         </div>
         <p>
-                Homeworld: 
-                tatooine
+                Model: 
+                Digger Crawler
         </p>
         <p>
-                Species: 
-                human
+                Class: 
+                wheeled
         </p>
         <p>
-                Home Population: 
-                1,000
+                Passengers: 
+                50
         </p>
 </div>,
       "className": "info-card",
@@ -66,7 +66,7 @@ ShallowWrapper {
             className="info-card__top-line"
 >
             <h3>
-                        Obi-Wan
+                        Sand Crawler
             </h3>
             <button
                         className=""
@@ -74,16 +74,16 @@ ShallowWrapper {
             />
 </div>,
           <p>
-            Homeworld: 
-            tatooine
+            Model: 
+            Digger Crawler
 </p>,
           <p>
-            Species: 
-            human
+            Class: 
+            wheeled
 </p>,
           <p>
-            Home Population: 
-            1,000
+            Passengers: 
+            50
 </p>,
         ],
       },
@@ -96,7 +96,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h3>
-                Obi-Wan
+                Sand Crawler
 </h3>,
               <button
                 className=""
@@ -112,10 +112,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Obi-Wan",
+                "children": "Sand Crawler",
               },
               "ref": null,
-              "rendered": "Obi-Wan",
+              "rendered": "Sand Crawler",
               "type": "h3",
             },
             Object {
@@ -139,14 +139,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Homeworld: ",
-              "tatooine",
+              "Model: ",
+              "Digger Crawler",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Homeworld: ",
-            "tatooine",
+            "Model: ",
+            "Digger Crawler",
           ],
           "type": "p",
         },
@@ -156,14 +156,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Species: ",
-              "human",
+              "Class: ",
+              "wheeled",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Species: ",
-            "human",
+            "Class: ",
+            "wheeled",
           ],
           "type": "p",
         },
@@ -173,14 +173,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Home Population: ",
-              "1,000",
+              "Passengers: ",
+              "50",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Home Population: ",
-            "1,000",
+            "Passengers: ",
+            "50",
           ],
           "type": "p",
         },
@@ -200,7 +200,7 @@ ShallowWrapper {
                     className="info-card__top-line"
           >
                     <h3>
-                              Obi-Wan
+                              Sand Crawler
                     </h3>
                     <button
                               className=""
@@ -208,16 +208,16 @@ ShallowWrapper {
                     />
           </div>
           <p>
-                    Homeworld: 
-                    tatooine
+                    Model: 
+                    Digger Crawler
           </p>
           <p>
-                    Species: 
-                    human
+                    Class: 
+                    wheeled
           </p>
           <p>
-                    Home Population: 
-                    1,000
+                    Passengers: 
+                    50
           </p>
 </div>,
         "className": "info-card",
@@ -233,7 +233,7 @@ ShallowWrapper {
               className="info-card__top-line"
 >
               <h3>
-                            Obi-Wan
+                            Sand Crawler
               </h3>
               <button
                             className=""
@@ -241,16 +241,16 @@ ShallowWrapper {
               />
 </div>,
             <p>
-              Homeworld: 
-              tatooine
+              Model: 
+              Digger Crawler
 </p>,
             <p>
-              Species: 
-              human
+              Class: 
+              wheeled
 </p>,
             <p>
-              Home Population: 
-              1,000
+              Passengers: 
+              50
 </p>,
           ],
         },
@@ -263,7 +263,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <h3>
-                  Obi-Wan
+                  Sand Crawler
 </h3>,
                 <button
                   className=""
@@ -279,10 +279,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Obi-Wan",
+                  "children": "Sand Crawler",
                 },
                 "ref": null,
-                "rendered": "Obi-Wan",
+                "rendered": "Sand Crawler",
                 "type": "h3",
               },
               Object {
@@ -306,14 +306,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Homeworld: ",
-                "tatooine",
+                "Model: ",
+                "Digger Crawler",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Homeworld: ",
-              "tatooine",
+              "Model: ",
+              "Digger Crawler",
             ],
             "type": "p",
           },
@@ -323,14 +323,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Species: ",
-                "human",
+                "Class: ",
+                "wheeled",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Species: ",
-              "human",
+              "Class: ",
+              "wheeled",
             ],
             "type": "p",
           },
@@ -340,14 +340,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Home Population: ",
-                "1,000",
+                "Passengers: ",
+                "50",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Home Population: ",
-              "1,000",
+              "Passengers: ",
+              "50",
             ],
             "type": "p",
           },

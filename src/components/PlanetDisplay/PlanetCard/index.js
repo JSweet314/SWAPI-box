@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const PlanetCard = ({card, favorites, selectFavorite, removeFavorite}) => {
+const PlanetCard = ({card, favorites, handleOnClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
@@ -16,18 +16,6 @@ const PlanetCard = ({card, favorites, selectFavorite, removeFavorite}) => {
   const addCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-
-  const handleOnClick = () => {
-    const alreadyFavored = favorites.some(favorite =>
-      favorite.name === card.name
-    );
-
-    if (alreadyFavored) {
-      removeFavorite(card.name);
-    } else {
-      selectFavorite({ ...card, category: 'planets' });
-    }
-  };
   
   const {name, population, terrain, climate} = card;
  
@@ -39,7 +27,7 @@ const PlanetCard = ({card, favorites, selectFavorite, removeFavorite}) => {
         <div className="info-card__top-line">
           <h3>{name}</h3>
           <button 
-            onClick={handleOnClick}
+            onClick={() => handleOnClick(card, 'planets')}
             className={selected}></button>
         </div>
         <p>Population: {addCommas(population)}</p>
@@ -60,8 +48,7 @@ PlanetCard.propTypes = {
     residents: PropTypes.array.isRequired
   }).isRequired,
   favorites: PropTypes.array.isRequired,
-  selectFavorite: PropTypes.func.isRequired,
-  removeFavorite: PropTypes.func.isRequired
+  handleOnClick: PropTypes.func.isRequired
 };
 
 export default PlanetCard;
