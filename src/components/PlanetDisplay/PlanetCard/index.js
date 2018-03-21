@@ -12,11 +12,15 @@ const PlanetCard = ({card, favorites}) => {
     }
     return card.residents.join(', ');
   };
+
+  const addCommas = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   
   const {name, population, terrain, climate} = card;
+ 
   const residents = confirmResidents();
-
-    
+   
   return (
     <article className="info-card">
       <div>
@@ -24,7 +28,7 @@ const PlanetCard = ({card, favorites}) => {
           <h3>{name}</h3>
           <button className={selected}></button>
         </div>
-        <p>Population: {population}</p>
+        <p>Population: {addCommas(population)}</p>
         <p>Terrain: {terrain}</p>
         <p>Climate: {climate}</p>
         <p>Residents: {residents}</p>
@@ -40,7 +44,8 @@ PlanetCard.propTypes = {
     terrain: PropTypes.string.isRequired,
     climate: PropTypes.string.isRequired,
     residents: PropTypes.array.isRequired
-  }).isRequired
+  }).isRequired,
+  favorites: PropTypes.array.isRequired
 };
 
 export default PlanetCard;

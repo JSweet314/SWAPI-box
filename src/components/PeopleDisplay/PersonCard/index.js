@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
@@ -6,9 +6,9 @@ const PersonCard = ({card, favorites}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
-  const commasAdded = (number) => {
+  const addCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  };
 
   return (
     <article className="info-card">
@@ -19,7 +19,7 @@ const PersonCard = ({card, favorites}) => {
         </div>
         <p>Homeworld: {card.homeworld}</p>
         <p>Species: {card.species}</p>
-        <p>Home Population: {commasAdded(card.population)}</p>
+        <p>Home Population: {addCommas(card.population)}</p>
       </div>
     </article>
   );
@@ -32,10 +32,7 @@ PersonCard.propTypes = {
     homeworld: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired
   }).isRequired,
-  removeFavorite: PropTypes.func.isRequired,
-  selectFavorite: PropTypes.func.isRequired,
-  changeFavCount: PropTypes.func.isRequired,
-  currentCategory: PropTypes.string.isRequired
+  favorites: PropTypes.array.isRequired
 };
 
 export default PersonCard;
