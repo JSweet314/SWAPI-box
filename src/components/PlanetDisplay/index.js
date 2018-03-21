@@ -3,6 +3,7 @@ import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchResidentsData from '../../apiCalls/fetchResidentsData';
 import PlanetCard from './PlanetCard/index';
 import loadingGIF from '../../images/Loading_icon.gif';
+import PropTypes from 'prop-types';
 
 export default class PlanetsDisplay extends Component {
   constructor(props) {
@@ -59,3 +60,7 @@ export default class PlanetsDisplay extends Component {
       </div>);
   }
 }
+
+PlanetsDisplay.propTypes = {
+  favorites: PropTypes.array.isRequired
+};

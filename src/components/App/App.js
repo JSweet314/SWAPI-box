@@ -5,6 +5,7 @@ import ScrollingText from '../ScrollingText/index';
 import { Switch, Route } from 'react-router-dom';
 import PeopleDisplay from '../PeopleDisplay/index';
 import PlanetsDisplay from '../PlanetDisplay/index';
+import VehiclesDisplay from '../VehiclesDisplay/index';
 
 class App extends Component {
   constructor() {
@@ -39,8 +40,8 @@ class App extends Component {
             render={() => <PeopleDisplay favorites={favorites} />} />
           <Route path="/planets" 
             render={() => <PlanetsDisplay favorites={favorites} />} />
-          {/* <Route path="/vehicles" 
-            component={VehiclesDisplay} favorites={favorites} /> */}
+          <Route path="/vehicles" 
+            render={() => <VehiclesDisplay favorites={favorites} />} />
         </Switch>
         
       </div>
