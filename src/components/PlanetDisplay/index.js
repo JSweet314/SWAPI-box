@@ -53,14 +53,14 @@ export default class PlanetsDisplay extends Component {
   }
 
   render() {
-    const cards = this.state.planetsArray.map(card => {
-      return <PlanetCard
+    const cards = this.state.planetsArray.map(card => 
+      <PlanetCard
         handleOnClick={this.handleOnClick}
         favorites={this.props.favorites}
         category="Planets"
         key={card.name}
-        card={card} />;
-    });
+        card={card} />
+    );
 
     return !this.state.loading ?
       (<div className="category-display">

@@ -14,6 +14,7 @@
   top: -1000px;
   transform-origin: 50% 100%;
   animation: crawl 90s linear;
+  visibility: hidden;
 }
 
 .instructions {
@@ -26,16 +27,14 @@
 
 @keyframes crawl {
   0% {
-    /* The element starts below the screen */
     top: 650px;
-    /* Rotate the text 20 degrees but keep it close to the viewer */
     transform: rotateX(20deg) translateZ(0);
+    visibility: visible;
   }
   100% {
-    /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
     top: -6000px;
-    /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
     transform: rotateX(25deg) translateZ(-2000px);
+    visibility: hidden;
   }
 }
 
