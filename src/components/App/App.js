@@ -15,20 +15,32 @@ class App extends Component {
     };
   }
 
+  selectFavorite = (favObj) => {
+    this.setState({ favorites: [...this.state.favorites, favObj] });
+  }
+
+  removeFavorite = (name) => {
+    const favorites = this.state.favorites.filter(fav => fav.name !== name);
+    this.setState({ favorites });
+  }
+
   changeFavCount = (num) => {
     this.setState({numberOfFavorites: this.state.numberOfFavorites + num});
   }
 
   render() {
-    const { numberOfFavorites } = this.state;
+    const { numberOfFavorites, favorites } = this.state;
     return (
       <div className="app">
         <Header numberOfFavorites={numberOfFavorites} />
         <Switch>
-          <Route exact path="/" component={ScrollingText}/>
-          <Route path="/people" component={PeopleDisplay}/>
-          <Route path="/planets" component={PlanetsDisplay} />
-          {/* <Route path="/vehicles" component={VehiclesDisplay} /> */}
+          <Route exact path="/" component={ScrollingText} />
+          <Route path="/people" 
+            render={() => <PeopleDisplay favorites={favorites} />} />
+          <Route path="/planets" 
+            render={() => <PlanetsDisplay favorites={favorites} />} />
+          {/* <Route path="/vehicles" 
+            component={VehiclesDisplay} favorites={favorites} /> */}
         </Switch>
         
       </div>

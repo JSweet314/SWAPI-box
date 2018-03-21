@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
-import PersonCard from '../PersonCard/index';
+import PersonCard from './PersonCard/index';
 import loadingGIF from '../../images/Loading_icon.gif';
 
 export default class PeopleDisplay extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       peopleArray: [],
       pageNumber: 1,
       loading: true
     };
+    this.favorites = props.favorites
   }
 
   componentDidMount = () => {
@@ -44,6 +45,7 @@ export default class PeopleDisplay extends Component {
   render = () => {
     const cards = this.state.peopleArray.map(card => {
       return <PersonCard
+        favorites={this.favorites}
         category="people"
         key={card.name}
         card={card} />;

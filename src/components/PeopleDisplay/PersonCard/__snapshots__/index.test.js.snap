@@ -4,7 +4,7 @@ exports[`InfoCard should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <InfoCard
+  Symbol(enzyme.__unrendered__): <PersonCard
     card={
         Object {
             "homeworld": "tatooine",

@@ -33,6 +33,7 @@ ShallowWrapper {
                     className="header__favCount"
           />
 </button>,
+        <NavLinks />,
       ],
       "className": "header",
     },
@@ -81,6 +82,15 @@ ShallowWrapper {
         ],
         "type": "button",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "header",
   },
@@ -104,6 +114,7 @@ ShallowWrapper {
                         className="header__favCount"
             />
 </button>,
+          <NavLinks />,
         ],
         "className": "header",
       },
@@ -151,6 +162,15 @@ ShallowWrapper {
             },
           ],
           "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "header",

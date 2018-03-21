@@ -22,7 +22,7 @@
   height: 4rem;
   width: 4rem;
   background-color: gray;
-  background-image: url('../../images/star.svg');
+  background-image: url('../../../images/star.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 2rem 2rem;
@@ -30,5 +30,5 @@
 }
 
 .info-card .selected {
-  background-image: url('../../images/star-active.svg');
+  background-image: url('../../../images/star-active.svg');
 }

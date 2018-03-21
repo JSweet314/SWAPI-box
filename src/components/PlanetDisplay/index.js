@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
-import fetchResidentsData from '../../apiCalls/fetchResidentsData'
-import PlanetCard from '../PlanetCard/index';
+import fetchResidentsData from '../../apiCalls/fetchResidentsData';
+import PlanetCard from './PlanetCard/index';
 import loadingGIF from '../../images/Loading_icon.gif';
 
 export default class PlanetsDisplay extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       planetsArray: [],
       pageNumber: 1,
       loading: true
     };
+    this.favorites = props.favorites;
   }
 
   componentDidMount = () => {
@@ -42,6 +43,7 @@ export default class PlanetsDisplay extends Component {
   render() {
     const cards = this.state.planetsArray.map(card => {
       return <PlanetCard
+        favorites={this.favorites}
         category="Planets"
         key={card.name}
         card={card} />;
