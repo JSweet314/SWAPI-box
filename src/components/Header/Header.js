@@ -1,9 +1,9 @@
 import React from 'react';
-import NavLinks from '../NavLinks/index';
+import NavLinks from './NavLinks/index';
 import './Header.css';
 import PropTypes from 'prop-types';
 
-const Header = ({ numberOfFavorites }) => {
+const Header = ({numberOfFavorites}) => {
   return (
     <header className="header">
       <h1 className="header__h1">SWAPI-Box</h1>

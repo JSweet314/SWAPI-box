@@ -5,8 +5,8 @@ const fetchResidentsData = planetsArray =>
         .then(response => response.json())
         .then(residentData => residentData.name)
     ))
-      .then(residentsData => 
-        ({ ...planet, residents: residentsData })
+      .then(residents => 
+        ({...planet, residents})
       )
   ));
 

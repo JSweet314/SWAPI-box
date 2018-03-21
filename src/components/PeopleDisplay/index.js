@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';

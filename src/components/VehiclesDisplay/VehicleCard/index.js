@@ -2,11 +2,11 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-const VehicleCard = ({ card, favorites }) => {
+const VehicleCard = ({card, favorites}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
-  const { name, model, vehicleClass, numberOfPassengers } = card;
+  const {name, model, vehicleClass, numberOfPassengers} = card;
 
   return (
     <article className="info-card">

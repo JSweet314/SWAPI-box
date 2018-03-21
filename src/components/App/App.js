@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import ScrollingText from '../ScrollingText/index';
-import { Switch, Route } from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import PeopleDisplay from '../PeopleDisplay/index';
 import PlanetsDisplay from '../PlanetDisplay/index';
 import VehiclesDisplay from '../VehiclesDisplay/index';
@@ -17,12 +17,12 @@ class App extends Component {
   }
 
   selectFavorite = (favObj) => {
-    this.setState({ favorites: [...this.state.favorites, favObj] });
+    this.setState({favorites: [...this.state.favorites, favObj]});
   }
 
   removeFavorite = (name) => {
     const favorites = this.state.favorites.filter(fav => fav.name !== name);
-    this.setState({ favorites });
+    this.setState({favorites});
   }
 
   changeFavCount = (num) => {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const { numberOfFavorites, favorites } = this.state;
+    const {numberOfFavorites, favorites} = this.state;
     return (
       <div className="app">
         <Header numberOfFavorites={numberOfFavorites} />
@@ -43,7 +43,6 @@ class App extends Component {
           <Route path="/vehicles" 
             render={() => <VehiclesDisplay favorites={favorites} />} />
         </Switch>
-        
       </div>
     );
   }

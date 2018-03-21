@@ -35,6 +35,10 @@ ShallowWrapper {
                     path="/planets"
                     render={[Function]}
           />
+          <Route
+                    path="/vehicles"
+                    render={[Function]}
+          />
 </Switch>,
       ],
       "className": "app",
@@ -69,6 +73,10 @@ ShallowWrapper {
 />,
             <Route
               path="/planets"
+              render={[Function]}
+/>,
+            <Route
+              path="/vehicles"
               render={[Function]}
 />,
           ],
@@ -112,6 +120,18 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "path": "/vehicles",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": [Function],
       },
@@ -140,6 +160,10 @@ ShallowWrapper {
             />
             <Route
                         path="/planets"
+                        render={[Function]}
+            />
+            <Route
+                        path="/vehicles"
                         render={[Function]}
             />
 </Switch>,
@@ -178,6 +202,10 @@ ShallowWrapper {
                 path="/planets"
                 render={[Function]}
 />,
+              <Route
+                path="/vehicles"
+                render={[Function]}
+/>,
             ],
           },
           "ref": null,
@@ -213,6 +241,18 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "path": "/planets",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "path": "/vehicles",
                 "render": [Function],
               },
               "ref": null,

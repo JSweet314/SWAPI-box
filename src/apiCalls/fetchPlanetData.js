@@ -1,10 +1,10 @@
-import planetDataWrangler from '../dataWranglers/planetDataWrangler/index';
-
 const fetchPlanetData = (peopleData) => {
   const promises = peopleData.map(person => fetch(person.homeworld)
     .then(response => response.json())
-    .then(planetDataWrangler)
-    .then(wrangledData => ({...person, ...wrangledData}))
+    .then(planetData => 
+      ({homeworld: planetData.name, population: planetData.population})
+    )  
+    .then(planetData => ({...person, ...planetData}))
   );
   return Promise.all(promises);
 };

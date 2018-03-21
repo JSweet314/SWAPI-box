@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import loadingGIF from '../../images/Loading_icon.gif';
 import VehicleCard from './VehicleCard/index';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
@@ -19,23 +19,23 @@ export default class VehiclesDisplay extends Component {
     const priorData = localStorage.getItem('SWAPI-Vehicles');
     if (priorData) {
       const vehiclesArray = JSON.parse(priorData);
-      this.setState({ vehiclesArray, loading: false });
+      this.setState({vehiclesArray, loading: false});
     } else {
       this.getVehiclesData();
     }
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    const { vehiclesArray } = this.state;
+    const {vehiclesArray} = this.state;
     if (prevState.vehiclesArray !== vehiclesArray) {
       localStorage.setItem('SWAPI-Vehicles', JSON.stringify(vehiclesArray));
     }
   }
 
   getVehiclesData = () => {
-    const { pageNumber } = this.state;
+    const {pageNumber} = this.state;
     fetchCategoryData('vehicles', pageNumber)
-      .then(vehiclesArray => this.setState({ vehiclesArray, loading: false }))
+      .then(vehiclesArray => this.setState({vehiclesArray, loading: false}))
       .catch(error => alert(error.message));
   }
 
