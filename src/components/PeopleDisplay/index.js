@@ -14,7 +14,6 @@ export default class PeopleDisplay extends Component {
       pageNumber: 1,
       loading: true
     };
-    this.favorites = props.favorites;
   }
 
   componentDidMount = () => {
@@ -46,7 +45,9 @@ export default class PeopleDisplay extends Component {
   render = () => {
     const cards = this.state.peopleArray.map(card => {
       return <PersonCard
-        favorites={this.favorites}
+        removeFavorite={this.props.removeFavorite}
+        selectFavorite={this.props.selectFavorite}
+        favorites={this.props.favorites}
         category="people"
         key={card.name}
         card={card} />;
@@ -64,5 +65,7 @@ export default class PeopleDisplay extends Component {
 }
 
 PeopleDisplay.propTypes = {
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.array.isRequired,
+  removeFavorite: PropTypes.func.isRequired,
+  selectFavorite: PropTypes.func.isRequired
 };

@@ -42,7 +42,9 @@ export default class VehiclesDisplay extends Component {
   render() {
     const cards = this.state.vehiclesArray.map(card => {
       return <VehicleCard
-        favorites={this.favorites}
+        removeFavorite={this.props.removeFavorite}
+        selectFavorite={this.props.selectFavorite}
+        favorites={this.props.favorites}
         category="vehicles"
         key={card.name}
         card={card} />;
@@ -60,5 +62,7 @@ export default class VehiclesDisplay extends Component {
 }
 
 VehiclesDisplay.propTypes = {
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.array.isRequired,
+  removeFavorite: PropTypes.func.isRequired,
+  selectFavorite: PropTypes.func.isRequired
 };
