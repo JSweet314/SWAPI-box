@@ -52,13 +52,13 @@ export default class VehiclesDisplay extends Component {
   }
 
   render() {
-    const cards = this.state.vehiclesArray.map(card => {
-      return <VehicleCard
+    const cards = this.state.vehiclesArray.map(card =>
+      <VehicleCard
         handleOnClick={this.handleOnClick}
         favorites={this.props.favorites}
         key={card.name}
-        card={card} />;
-    });
+        card={card} />
+    );
 
     return !this.state.loading ?
       (<div className="category-display">

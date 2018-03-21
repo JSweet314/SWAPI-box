@@ -55,14 +55,14 @@ export default class PeopleDisplay extends Component {
   }
 
   render = () => {
-    const cards = this.state.peopleArray.map(card => {
-      return <PersonCard
+    const cards = this.state.peopleArray.map(card => 
+      <PersonCard
         handleOnClick={this.handleOnClick}
         favorites={this.props.favorites}
         category="people"
         key={card.name}
-        card={card} />;
-    });
+        card={card} />
+    );
 
     return !this.state.loading ? 
       (<div className="category-display">
