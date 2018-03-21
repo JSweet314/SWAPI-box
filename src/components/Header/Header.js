@@ -1,4 +1,5 @@
 import React from 'react';
+import NavLinks from '../NavLinks/index';
 import './Header.css';
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,7 @@ const Header = ({ numberOfFavorites }) => {
         View Favorites 
         <span className="header__favCount">{numberOfFavorites}</span>
       </button>
+      <NavLinks />
     </header>
   );
 };

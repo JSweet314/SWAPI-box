@@ -10,9 +10,9 @@ const categoryDataWrangler = (categoryData, category) => {
     return categoryData.results.map(planet => ({
       name: planet.name,
       terrain: planet.terrain,
-      populateion: planet.population,
+      population: planet.population,
       climate: planet.climate,
-      residents: planet.residents // array of urls
+      residents: planet.residents
     }));
   case 'vehicles':
     return categoryData.results.map(vehicle => ({

@@ -1,20 +1,29 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CategoryDisplay from './CategoryDisplay';
+import PersonCard from './index';
 
-describe('CategoryDisplay', () => {
-  it('should match a snapshot of the default text', () => {
+describe('PersonCard', () => {
+  const card = {
+    homeworld: 'tatooine',
+    species: 'human',
+    name: 'Obi-Wan',
+    population: '1000'
+  };
+
+  it('should match a snapshot', () => {
     const wrapper = shallow(
-      <CategoryDisplay 
-        categoryData={[]}
+      <PersonCard 
+        favorites={[]}
         currentCategory={''}
         /* eslint-disable no-undef */
         changeFavCount={jest.fn()}
         selectFavorite={jest.fn()}
         removeFavorite={jest.fn()}
         /* eslint-enable no-undef */
-        loading={true}/>
+        card={card}/>,
+      {disableLifecycleMethods: true}
     );
+
     expect(wrapper).toMatchSnapshot();
   });
 });
