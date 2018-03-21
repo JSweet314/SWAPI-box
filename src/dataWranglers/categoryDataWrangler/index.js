@@ -18,7 +18,7 @@ const categoryDataWrangler = (categoryData, category) => {
     return categoryData.results.map(vehicle => ({
       name: vehicle.name,
       model: vehicle.model,
-      class: vehicle.vehicle_class,
+      vehicleClass: vehicle.vehicle_class,
       numberOfPassengers: vehicle.passengers
     }));
   default:
