@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import ScrollingText from '../ScrollingText/index';
 import { Switch, Route } from 'react-router-dom';
 import PeopleDisplay from '../PeopleDisplay/index';
+import PlanetsDisplay from '../PlanetDisplay/index';
 
 class App extends Component {
   constructor() {
@@ -26,8 +27,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={ScrollingText}/>
           <Route path="/people" component={PeopleDisplay}/>
-          {/* <Route path="/planets" component={PlanetsDisplay} />
-          <Route path="/vehicles" component={VehiclesDisplay} /> */}
+          <Route path="/planets" component={PlanetsDisplay} />
+          {/* <Route path="/vehicles" component={VehiclesDisplay} /> */}
         </Switch>
         
       </div>

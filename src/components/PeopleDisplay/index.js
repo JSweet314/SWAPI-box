@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
 import fetchPlanetData from '../../apiCalls/fetchPlanetData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
-import InfoCard from '../InfoCard/index';
+import PersonCard from '../PersonCard/index';
 import loadingGIF from '../../images/Loading_icon.gif';
 
 export default class PeopleDisplay extends Component {
@@ -41,9 +41,10 @@ export default class PeopleDisplay extends Component {
       .catch(error => alert(error.message));
   }
 
-  render() {
+  render = () => {
     const cards = this.state.peopleArray.map(card => {
-      return <InfoCard
+      return <PersonCard
+        category="people"
         key={card.name}
         card={card} />;
     });

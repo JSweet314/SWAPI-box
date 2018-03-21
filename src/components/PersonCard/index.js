@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 
-class InfoCard extends Component {
+class PersonCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +42,7 @@ class InfoCard extends Component {
   }
 }
 
-InfoCard.propTypes = {
+PersonCard.propTypes = {
   card: PropTypes.shape({
     name: PropTypes.string.isRequired,
     species: PropTypes.string.isRequired,
@@ -55,4 +55,4 @@ InfoCard.propTypes = {
   currentCategory: PropTypes.string.isRequired
 };
 
-export default InfoCard;
+export default PersonCard;
