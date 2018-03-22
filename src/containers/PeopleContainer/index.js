@@ -60,7 +60,6 @@ export default class PeopleContainer extends Component {
       <PersonCard
         handleOnClick={this.handleOnClick}
         favorites={this.props.favorites}
-        category="people"
         key={card.name}
         card={card} />
     );

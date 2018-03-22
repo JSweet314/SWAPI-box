@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
+import Favorites from '../FavoritesContainer/index';
 import Header from '../../components/Header/index';
 import PeopleContainer from '../PeopleContainer/index';
 import PlanetsContainer from '../PlanetsContainer/index';
@@ -12,12 +13,20 @@ class App extends Component {
     super(props);
     this.state = {
       favorites: [],
-      loading: true,
-      numberOfFavorites: 0,
-      pageNumber: 1,
-      starWarsData: [],
-      category: 'home'
+      numberOfFavorites: 0
     };
+  }
+
+  handleOnClick = (card, category) => {
+    const alreadyFavored = this.state.favorites.some(favorite =>
+      favorite.name === card.name
+    );
+
+    if (alreadyFavored) {
+      this.removeFavorite(card.name);
+    } else {
+      this.selectFavorite({...card, category});
+    }
   }
 
   selectFavorite = (favObj) => {
@@ -53,6 +62,10 @@ class App extends Component {
             render={() => <VehiclesContainer
               removeFavorite={this.removeFavorite}
               selectFavorite={this.selectFavorite}
+              favorites={favorites} />} />
+          <Route exact path="/favorites"
+            render={() => <Favorites 
+              handleOnClick={this.handleOnClick}
               favorites={favorites} />} />
         </Switch>
       </div>
