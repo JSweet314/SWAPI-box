@@ -17,6 +17,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount = () => {
+    this.retrieveFavorites();
+  }
+
   handleOnClick = (card, category) => {
     const alreadyFavored = this.state.favorites.some(favorite =>
       favorite.name === card.name
@@ -32,13 +36,29 @@ class App extends Component {
   selectFavorite = (favObj) => {
     const favorites = [...this.state.favorites, favObj];
     const numberOfFavorites = this.state.numberOfFavorites + 1;
-    this.setState({favorites, numberOfFavorites});
+    this.setState({favorites, numberOfFavorites}, this.storeFavorites);
+  }
+
+  storeFavorites = () => {
+    const {favorites, numberOfFavorites} = this.state;
+    localStorage.setItem('SWAPI-Favorites', JSON.stringify({
+      favorites,
+      numberOfFavorites
+    }));
+  }
+
+  retrieveFavorites = () => {
+    const priorFavorites = localStorage.getItem('SWAPI-Favorites');
+    if (priorFavorites) {
+      const {favorites, numberOfFavorites} = JSON.parse(priorFavorites);
+      this.setState({favorites, numberOfFavorites});
+    }
   }
 
   removeFavorite = (name) => {
     const favorites = this.state.favorites.filter(fav => fav.name !== name);
     const numberOfFavorites = this.state.numberOfFavorites - 1;
-    this.setState({favorites, numberOfFavorites});
+    this.setState({favorites, numberOfFavorites}, this.storeFavorites);
   }
 
   render() {
