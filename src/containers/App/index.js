@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
+import CardsContainer from '../CardsContainer/index';
 import CrawlContainer from '../CrawlContainer/index';
 import Favorites from '../../components/Favorites/index';
 import Header from '../../components/Header/index';
-import PeopleContainer from '../PeopleContainer/index';
-import PlanetsContainer from '../PlanetsContainer/index';
-import VehiclesContainer from '../VehiclesContainer/index';
 import './style.css';
 
 class App extends Component {
@@ -68,17 +66,10 @@ class App extends Component {
         <Header numberOfFavorites={numberOfFavorites} />
         <Switch>
           <Route exact path="/" component={CrawlContainer} />
-          <Route exact path="/people" 
-            render={() => <PeopleContainer
+          <Route exact path="/category/:id" 
+            render={({match}) => <CardsContainer
               handleOnClick={this.handleOnClick}
-              favorites={favorites} />} />
-          <Route exact path="/planets" 
-            render={() => <PlanetsContainer
-              handleOnClick={this.handleOnClick}
-              favorites={favorites} />} />
-          <Route exact path="/vehicles" 
-            render={() => <VehiclesContainer
-              handleOnClick={this.handleOnClick}
+              match={match}
               favorites={favorites} />} />
           <Route exact path="/favorites"
             render={() => <Favorites 

@@ -9,13 +9,13 @@ const NavLinks = () => {
         <NavLink exact to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink exact to="/people">People</NavLink>
+        <NavLink to="/category/people">People</NavLink>
       </li>
       <li>
-        <NavLink exact to="/planets">Planets</NavLink>
+        <NavLink to="/category/planets">Planets</NavLink>
       </li>
       <li>
-        <NavLink exact to="/vehicles">Vehicles</NavLink>
+        <NavLink to="/category/vehicles">Vehicles</NavLink>
       </li>
     </ul>
   );
