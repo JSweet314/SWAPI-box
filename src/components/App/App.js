@@ -6,14 +6,52 @@ import {Switch, Route} from 'react-router-dom';
 import PeopleDisplay from '../PeopleDisplay/index';
 import PlanetsDisplay from '../PlanetDisplay/index';
 import VehiclesDisplay from '../VehiclesDisplay/index';
+import fetchCategoryData from '../../apiCalls/fetchCategoryData';
+import fetchPlanetData from '../../apiCalls/fetchPlanetData';
+import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      favorites: [],
+      loading: true,
       numberOfFavorites: 0,
-      favorites: []
+      pageNumber: 1,
+      starWarsData: []
     };
+  }
+
+  componentDidMount = () => {
+    console.log(this.props.param)
+  }
+
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   const { peopleArray } = this.state;
+  //   if (prevState.peopleArray !== peopleArray) {
+  //     localStorage.setItem('SWAPI-People', JSON.stringify(peopleArray));
+  //   }
+  // }
+
+  getPeopleData = () => {
+    const { pageNumber } = this.state;
+    fetchCategoryData('people', pageNumber)
+      .then(fetchPlanetData)
+      .then(fetchSpeciesData)
+      .then(peopleArray => this.setState({ peopleArray, loading: false }))
+      .catch(error => alert(error.message));
+  }
+
+  toggleFavoriteCard = (card, category) => {
+    const alreadyFavored = this.state.favorites.some(favorite =>
+      favorite.name === card.name
+    );
+
+    if (alreadyFavored) {
+      this.removeFavorite(card.name);
+    } else {
+      this.selectFavorite({ ...card, category });
+    }
   }
 
   selectFavorite = (favObj) => {

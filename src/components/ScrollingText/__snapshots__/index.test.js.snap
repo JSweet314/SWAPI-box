@@ -18,9 +18,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <pre />,
-        <p />,
-        <p />,
+        <div
+          className="crawl"
+>
+          <pre />
+          <p />
+          <p />
+</div>,
+        <h3
+          className="instructions"
+>
+          Select a Category
+</h3>,
       ],
       "className": "scrolling-text",
     },
@@ -31,33 +40,62 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "",
+          "children": Array [
+            <pre />,
+            <p />,
+            <p />,
+          ],
+          "className": "crawl",
         },
         "ref": null,
-        "rendered": "",
-        "type": "pre",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "pre",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "p",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "",
+          "children": "Select a Category",
+          "className": "instructions",
         },
         "ref": null,
-        "rendered": "",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "",
-        },
-        "ref": null,
-        "rendered": "",
-        "type": "p",
+        "rendered": "Select a Category",
+        "type": "h3",
       },
     ],
     "type": "aside",
@@ -69,9 +107,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <pre />,
-          <p />,
-          <p />,
+          <div
+            className="crawl"
+>
+            <pre />
+            <p />
+            <p />
+</div>,
+          <h3
+            className="instructions"
+>
+            Select a Category
+</h3>,
         ],
         "className": "scrolling-text",
       },
@@ -82,33 +129,62 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "",
+            "children": Array [
+              <pre />,
+              <p />,
+              <p />,
+            ],
+            "className": "crawl",
           },
           "ref": null,
-          "rendered": "",
-          "type": "pre",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "pre",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "",
+            "children": "Select a Category",
+            "className": "instructions",
           },
           "ref": null,
-          "rendered": "",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "",
-          },
-          "ref": null,
-          "rendered": "",
-          "type": "p",
+          "rendered": "Select a Category",
+          "type": "h3",
         },
       ],
       "type": "aside",
