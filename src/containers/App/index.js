@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import CrawlContainer from '../CrawlContainer/index';
-import Favorites from '../FavoritesContainer/index';
+import Favorites from '../../components/Favorites/index';
 import Header from '../../components/Header/index';
 import PeopleContainer from '../PeopleContainer/index';
 import PlanetsContainer from '../PlanetsContainer/index';

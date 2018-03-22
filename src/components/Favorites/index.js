@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PersonCard from '../../components/PersonCard/index';
-import VehicleCard from '../../components/VehicleCard/index';
-import PlanetCard from '../../components/PlanetCard/index';
+import PersonCard from '../PersonCard/index';
+import VehicleCard from '../VehicleCard/index';
+import PlanetCard from '../PlanetCard/index';
 import './style.css';
 
 const Favorites = ({favorites, handleOnClick}) => {
