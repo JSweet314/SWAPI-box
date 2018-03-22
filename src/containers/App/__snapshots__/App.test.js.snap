@@ -28,14 +28,17 @@ ShallowWrapper {
                     path="/"
           />
           <Route
+                    exact={true}
                     path="/people"
                     render={[Function]}
           />
           <Route
+                    exact={true}
                     path="/planets"
                     render={[Function]}
           />
           <Route
+                    exact={true}
                     path="/vehicles"
                     render={[Function]}
           />
@@ -68,14 +71,17 @@ ShallowWrapper {
               path="/"
 />,
             <Route
+              exact={true}
               path="/people"
               render={[Function]}
 />,
             <Route
+              exact={true}
               path="/planets"
               render={[Function]}
 />,
             <Route
+              exact={true}
               path="/vehicles"
               render={[Function]}
 />,
@@ -101,6 +107,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "exact": true,
               "path": "/people",
               "render": [Function],
             },
@@ -113,6 +120,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "exact": true,
               "path": "/planets",
               "render": [Function],
             },
@@ -125,6 +133,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "exact": true,
               "path": "/vehicles",
               "render": [Function],
             },
@@ -155,14 +164,17 @@ ShallowWrapper {
                         path="/"
             />
             <Route
+                        exact={true}
                         path="/people"
                         render={[Function]}
             />
             <Route
+                        exact={true}
                         path="/planets"
                         render={[Function]}
             />
             <Route
+                        exact={true}
                         path="/vehicles"
                         render={[Function]}
             />
@@ -195,14 +207,17 @@ ShallowWrapper {
                 path="/"
 />,
               <Route
+                exact={true}
                 path="/people"
                 render={[Function]}
 />,
               <Route
+                exact={true}
                 path="/planets"
                 render={[Function]}
 />,
               <Route
+                exact={true}
                 path="/vehicles"
                 render={[Function]}
 />,
@@ -228,6 +243,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "exact": true,
                 "path": "/people",
                 "render": [Function],
               },
@@ -240,6 +256,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "exact": true,
                 "path": "/planets",
                 "render": [Function],
               },
@@ -252,6 +269,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "exact": true,
                 "path": "/vehicles",
                 "render": [Function],
               },
