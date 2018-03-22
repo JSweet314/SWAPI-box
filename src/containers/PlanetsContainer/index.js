@@ -41,22 +41,10 @@ export default class PlanetsContainer extends Component {
       .catch(error => alert(error.message));
   }
 
-  handleOnClick = (card, category) => {
-    const alreadyFavored = this.props.favorites.some(favorite =>
-      favorite.name === card.name
-    );
-
-    if (alreadyFavored) {
-      this.props.removeFavorite(card.name);
-    } else {
-      this.props.selectFavorite({ ...card, category });
-    }
-  }
-
   render() {
     const cards = this.state.planetsArray.map(card => 
       <PlanetCard
-        handleOnClick={this.handleOnClick}
+        handleOnClick={this.props.handleOnClick}
         favorites={this.props.favorites}
         category="Planets"
         key={card.name}
@@ -75,6 +63,5 @@ export default class PlanetsContainer extends Component {
 
 PlanetsContainer.propTypes = {
   favorites: PropTypes.array.isRequired,
-  selectFavorite: PropTypes.func.isRequired,
-  removeFavorite: PropTypes.func.isRequired
+  handleOnClick: PropTypes.func.isRequired
 };

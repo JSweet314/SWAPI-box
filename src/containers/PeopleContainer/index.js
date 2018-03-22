@@ -43,22 +43,10 @@ export default class PeopleContainer extends Component {
       .catch(error => alert(error.message));
   }
 
-  handleOnClick = (card, category) => {
-    const alreadyFavored = this.props.favorites.some(favorite =>
-      favorite.name === card.name
-    );
-
-    if (alreadyFavored) {
-      this.props.removeFavorite(card.name);
-    } else {
-      this.props.selectFavorite({ ...card, category });
-    }
-  }
-
   render = () => {
     const cards = this.state.peopleArray.map(card => 
       <PersonCard
-        handleOnClick={this.handleOnClick}
+        handleOnClick={this.props.handleOnClick}
         favorites={this.props.favorites}
         key={card.name}
         card={card} />
@@ -76,6 +64,5 @@ export default class PeopleContainer extends Component {
 
 PeopleContainer.propTypes = {
   favorites: PropTypes.array.isRequired,
-  removeFavorite: PropTypes.func.isRequired,
-  selectFavorite: PropTypes.func.isRequired
+  handleOnClick: PropTypes.func.isRequired
 };

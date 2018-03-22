@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
+import CrawlContainer from '../CrawlContainer/index';
 import Favorites from '../FavoritesContainer/index';
 import Header from '../../components/Header/index';
 import PeopleContainer from '../PeopleContainer/index';
 import PlanetsContainer from '../PlanetsContainer/index';
-import CrawlContainer from '../CrawlContainer/index';
 import VehiclesContainer from '../VehiclesContainer/index';
-import './App.css';
+import './style.css';
 
 class App extends Component {
   constructor(props) {
@@ -50,18 +50,15 @@ class App extends Component {
           <Route exact path="/" component={CrawlContainer} />
           <Route exact path="/people" 
             render={() => <PeopleContainer
-              removeFavorite={this.removeFavorite}
-              selectFavorite={this.selectFavorite}
+              handleOnClick={this.handleOnClick}
               favorites={favorites} />} />
           <Route exact path="/planets" 
             render={() => <PlanetsContainer
-              removeFavorite={this.removeFavorite}
-              selectFavorite={this.selectFavorite}
+              handleOnClick={this.handleOnClick}
               favorites={favorites} />} />
           <Route exact path="/vehicles" 
             render={() => <VehiclesContainer
-              removeFavorite={this.removeFavorite}
-              selectFavorite={this.selectFavorite}
+              handleOnClick={this.handleOnClick}
               favorites={favorites} />} />
           <Route exact path="/favorites"
             render={() => <Favorites 
