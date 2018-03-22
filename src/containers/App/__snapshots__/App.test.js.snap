@@ -42,6 +42,11 @@ ShallowWrapper {
                     path="/vehicles"
                     render={[Function]}
           />
+          <Route
+                    exact={true}
+                    path="/favorites"
+                    render={[Function]}
+          />
 </Switch>,
       ],
       "className": "app",
@@ -83,6 +88,11 @@ ShallowWrapper {
             <Route
               exact={true}
               path="/vehicles"
+              render={[Function]}
+/>,
+            <Route
+              exact={true}
+              path="/favorites"
               render={[Function]}
 />,
           ],
@@ -141,6 +151,19 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": [Function],
       },
@@ -176,6 +199,11 @@ ShallowWrapper {
             <Route
                         exact={true}
                         path="/vehicles"
+                        render={[Function]}
+            />
+            <Route
+                        exact={true}
+                        path="/favorites"
                         render={[Function]}
             />
 </Switch>,
@@ -219,6 +247,11 @@ ShallowWrapper {
               <Route
                 exact={true}
                 path="/vehicles"
+                render={[Function]}
+/>,
+              <Route
+                exact={true}
+                path="/favorites"
                 render={[Function]}
 />,
             ],
@@ -271,6 +304,19 @@ ShallowWrapper {
               "props": Object {
                 "exact": true,
                 "path": "/vehicles",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/favorites",
                 "render": [Function],
               },
               "ref": null,
