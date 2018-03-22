@@ -1,0 +1,51 @@
+.scrolling-text {
+  display: flex;
+  justify-content: center;
+  color: orange;
+  font-size: 10rem;
+  height: 80%;
+  overflow: hidden;
+  perspective: 300px;
+  width: 100vw;
+}
+
+.scrolling-text p {
+  text-align: center;
+}
+
+.crawl {
+  position: relative;
+  top: -1000px;
+  transform-origin: 50% 100%;
+  animation: crawl 90s linear;
+  visibility: hidden;
+}
+
+.instructions {
+  position: absolute;
+  z-index: 100;
+  animation: instructions 54s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes crawl {
+  0% {
+    top: 650px;
+    transform: rotateX(20deg) translateZ(0);
+    visibility: visible;
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2000px);
+  }
+}
+
+@keyframes instructions {
+  98% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
