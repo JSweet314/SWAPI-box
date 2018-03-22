@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  margin: auto;
+  border-bottom: 1px solid #AAAAAB;
+  background-color: #4B545F;
+  position: relative;
+  padding: 
+}
+
+.header__h1 {
+  font-size: 5rem;
+  color: orange;
+  text-align: center;
+  margin: 0;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.header__favBtn {
+  background-color: gray;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid black;
+}
+
+.header__favBtn.active {
+  background:#18212A;
+  color: white;  
+}
+
+.header__favCount {
+  margin: 0 0 0 1rem;
+  padding: 0.5rem;
+  background-color: #4B545F;
+  color: #fff;
+  font-size: 1.5rem;
+}
