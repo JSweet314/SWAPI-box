@@ -12,37 +12,40 @@ export default class CrawlContainer extends Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState !== this.state) {
-      localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state));
-    }
-  }
-
-  componentDidMount() {
+  componentDidMount = () => {
     this.findClosestData();
   }
 
   findClosestData = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');
     if (priorCrawl) {
-      const prevState = JSON.parse(priorCrawl);
-      this.setState({ ...prevState });
+      const openingCrawl = JSON.parse(priorCrawl);
+      this.setState({ ...openingCrawl });
       return;
     }
-    this.getCrawl();
+    this.fetchOpeningCrawl();
   }
 
-  getCrawl = () => {
+  fetchOpeningCrawl = () => {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
     fetchScrollingText(randomFilmNumber)
-      .then(filmData => {
-        this.setState({
-          openingCrawl: filmData.openingCrawl,
-          title: filmData.title,
-          releaseDate: filmData.releaseDate
-        });
-      })
+      .then(this.deployNewCrawl)
       .catch(error => alert(error));
+  }
+
+  deployNewCrawl = filmData => {
+    this.setState(
+      {
+        openingCrawl: filmData.openingCrawl,
+        title: filmData.title,
+        releaseDate: filmData.releaseDate
+      },
+      this.storeOpeningCrawl
+    );
+  };
+
+  storeOpeningCrawl = () => {
+    localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state));
   }
 
   render() {

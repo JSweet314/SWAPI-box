@@ -15,12 +15,12 @@ describe('fetchCategoryData', () => {
 
   it('calls fetch with the correct params', () => {
     const expected = 'https://swapi.co/api/planets/?format=json&page=1';
-    fetchCategoryData('planets', 1);
+    fetchCategoryData('planets');
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
   it('should call categoryDataWrangler with correct params', () => {
-    fetchCategoryData('planets', 1);
+    fetchCategoryData('planets');
     expect(categoryDataWrangler).toHaveBeenCalledWith(
       mockCategoryFetchResponse, 'planets'
     );

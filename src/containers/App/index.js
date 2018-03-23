@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import CardsContainer from '../CardsContainer/index';
+import MainContainer from '../MainContainer/index';
 import CrawlContainer from '../CrawlContainer/index';
-import Favorites from '../../components/Favorites/index';
 import Header from '../../components/Header/index';
 import './style.css';
 
@@ -21,9 +20,7 @@ class App extends Component {
 
   handleOnClick = (card, category) => {
     const alreadyFavored = this.state.favorites.some(favorite =>
-      favorite.name === card.name
-    );
-
+      favorite.name === card.name);
     if (alreadyFavored) {
       this.removeFavorite(card.name);
     } else {
@@ -67,14 +64,11 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={CrawlContainer} />
           <Route exact path="/category/:id" 
-            render={({match}) => <CardsContainer
-              handleOnClick={this.handleOnClick}
-              match={match}
-              favorites={favorites} />} />
-          <Route exact path="/favorites"
-            render={() => <Favorites 
-              handleOnClick={this.handleOnClick}
-              favorites={favorites} />} />
+            render={({match}) => 
+              <MainContainer
+                handleOnClick={this.handleOnClick}
+                match={match}
+                favorites={favorites} />} />
         </Switch>
       </div>
     );
