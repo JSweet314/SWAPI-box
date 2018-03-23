@@ -1,9 +1,9 @@
-import fetchHomeworldData from './fetchHomeworldData';
+import {fetchAllHomeworldData} from './fetchAllHomeworldData';
 import {mockPeopleData} from '../__mocks__/mockPeopleData';
 import mockPlanetFetchResponse from '../__mocks__/mockPlanetFetchResponse';
 import categoryDataWrangler from '../dataWranglers/categoryDataWrangler/index';
 
-describe('fetchHomeworldData', () => {
+describe('fetchAllHomeworldData', () => {
   const mockData = categoryDataWrangler(mockPeopleData, 'people');
   /* eslint-disable no-undef */
   window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
@@ -16,7 +16,7 @@ describe('fetchHomeworldData', () => {
 
   it('calls fetch with the correct params', () => {
     const expected = ["https://swapi.co/api/planets/1/"];
-    fetchHomeworldData(mockData);
+    fetchAllHomeworldData(mockData);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 
@@ -28,7 +28,7 @@ describe('fetchHomeworldData', () => {
       population: '2000000000'
     }];
 
-    Promise.resolve(fetchHomeworldData(mockData))
+    Promise.resolve(fetchAllHomeworldData(mockData))
       .then(result => expect(result).toEqual(expected));
   });
 });

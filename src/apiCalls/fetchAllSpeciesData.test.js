@@ -1,8 +1,8 @@
-import fetchSpeciesData from './fetchSpeciesData';
+import {fetchAllSpeciesData} from './fetchAllSpeciesData';
 import {mockPeopleData} from '../__mocks__/mockPeopleData';
 import categoryDataWrangler from '../dataWranglers/categoryDataWrangler';
 
-describe('fetchSpeciesData', () => {
+describe('fetchAllSpeciesData', () => {
   const mockData = categoryDataWrangler(mockPeopleData, 'people');
   /* eslint-disable no-undef */
   window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
@@ -15,7 +15,7 @@ describe('fetchSpeciesData', () => {
 
   it('calls fetch with the correct params', () => {
     const expected = "https://swapi.co/api/species/1/";
-    fetchSpeciesData(mockData);
+    fetchAllSpeciesData(mockData);
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
@@ -26,6 +26,6 @@ describe('fetchSpeciesData', () => {
   //     species: 'human'
   //   }];
     
-  //   expect(fetchSpeciesData(mockData)).resolves.toEqual(expected);
+  //   expect(fetchAllSpeciesData(mockData)).resolves.toEqual(expected);
   // });
 });

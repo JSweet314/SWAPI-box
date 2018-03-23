@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import fetchScrollingText from '../../apiCalls/fetchScrollingText';
+import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 import './style.css';
 
 export default class CrawlContainer extends Component {
@@ -28,7 +28,7 @@ export default class CrawlContainer extends Component {
 
   fetchOpeningCrawl = () => {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
-    fetchScrollingText(randomFilmNumber)
+    fetchOpeningCrawl(randomFilmNumber)
       .then(this.deployNewCrawl)
       .catch(error => alert(error));
   }
