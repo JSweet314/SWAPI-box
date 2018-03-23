@@ -14,7 +14,6 @@ describe('fetchSpeciesData', () => {
   ));
 
   it('calls fetch with the correct params', () => {
-    console.log(mockData);
     const expected = "https://swapi.co/api/species/1/";
     fetchSpeciesData(mockData);
     expect(window.fetch).toHaveBeenCalledWith(expected);
