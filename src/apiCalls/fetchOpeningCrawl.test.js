@@ -1,9 +1,10 @@
 import {fetchOpeningCrawl} from './fetchOpeningCrawl';
 import mockFilmFetchResponse from '../mockData/mockFilmFetchResponse';
-import scrollingTextWrangler from '../dataWranglers/scrollingTextWrangler';
+import {wrangleOpeningCrawlData} from 
+  '../dataWranglers/wrangleOpeningCrawlData';
 
 /* eslint-disable no-undef */
-jest.mock('../dataWranglers/scrollingTextWrangler/index');
+jest.mock('../dataWranglers/wrangleOpeningCrawlData');
 describe('fetchOpeningCrawl', () => {
   window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
     /* eslint-enable no-undef */
@@ -19,8 +20,8 @@ describe('fetchOpeningCrawl', () => {
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
-  it('should call scrollingTextWrangler with correct params', () => {
+  it('should call wrangleOpeningCrawlData with correct params', () => {
     fetchOpeningCrawl(1);
-    expect(scrollingTextWrangler).toHaveBeenCalledWith(mockFilmFetchResponse);
+    expect(wrangleOpeningCrawlData).toHaveBeenCalledWith(mockFilmFetchResponse);
   });
 });

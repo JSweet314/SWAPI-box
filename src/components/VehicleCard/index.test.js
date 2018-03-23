@@ -4,7 +4,7 @@ import VehicleCard from './index';
 
 describe('VehicleCard', () => {
   /* eslint-disable no-undef */
-  const mockHandleOnClick = jest.fn();
+  const mockHandleFavoriteClick = jest.fn();
   /* eslint-enable no-undef */
 
   const card = {
@@ -17,7 +17,7 @@ describe('VehicleCard', () => {
   it('should match a snapshot', () => {
     const wrapper = shallow(
       <VehicleCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[]}
         card={card} />,
       { disableLifecycleMethods: true }
@@ -29,7 +29,7 @@ describe('VehicleCard', () => {
   it('should show as favorited if name matches obj in favorites array', () => {
     const wrapper = shallow(
       <VehicleCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{ name: 'Sand Crawler' }]}
         card={card} />,
       { disableLifecycleMethods: true }
