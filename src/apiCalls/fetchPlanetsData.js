@@ -1,9 +1,11 @@
-export const fetchPlanetsData = () => 
-  fetch("https://swapi.co/api/planets/?format=json&page=1")
+export const fetchPlanetsData = (url) => {
+  const address = url || "https://swapi.co/api/planets/?format=json&page=1";
+  return fetch(address)
     .then(response => response.json())
-    .then(wranglePlanetData);
+    .then(wranglePlanetsData);
+};
 
-export const wranglePlanetData = planetsData => {
+export const wranglePlanetsData = planetsData => {
   const planetsArray = planetsData.results.map(planet => ({
     name: planet.name,
     terrain: planet.terrain,

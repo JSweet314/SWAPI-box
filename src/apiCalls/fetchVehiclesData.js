@@ -1,7 +1,9 @@
-export const fetchVehiclesData = () => 
-  fetch("https://swapi.co/api/vehicles/?format=json&page=1")
+export const fetchVehiclesData = (url) => {
+  const address = url || "https://swapi.co/api/vehicles/?format=json&page=1";
+  return fetch(address)
     .then(response => response.json())
     .then(wrangleVehiclesData);
+};
 
 export const wrangleVehiclesData = vehicleData => {
   const vehiclesArray = vehicleData.results.map(vehicle => ({

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
+import { fetchOpeningCrawl } from '../../apiCalls/fetchOpeningCrawl';
 import MainContainer from '../MainContainer/index';
 import CrawlContainer from '../CrawlContainer/index';
 import Header from '../../components/Header/index';
@@ -10,17 +11,18 @@ class App extends Component {
     super(props);
     this.state = {
       favorites: [],
-      numberOfFavorites: 0
+      numberOfFavorites: 0,
+      openingCrawl: '',
+      title: '',
+      releaseDate: ''
     };
   }
 
-  componentDidMount = () => {
-    this.retrieveFavorites();
-  }
+  componentDidMount = () => this.retrieveFavorites();
 
-  handleOnClick = (card, category) => {
-    const alreadyFavored = this.state.favorites.some(favorite =>
-      favorite.name === card.name);
+  handleFavoriteClick = (card, category) => {
+    const {name} = card; 
+    const alreadyFavored = this.state.favorites.some(fav => fav.name === name);
     if (alreadyFavored) {
       this.removeFavorite(card.name);
     } else {
@@ -66,7 +68,7 @@ class App extends Component {
           <Route exact path="/category/:id" 
             render={({match}) => 
               <MainContainer
-                handleOnClick={this.handleOnClick}
+                handleFavoriteClick={this.handleFavoriteClick}
                 match={match}
                 favorites={favorites} />} />
         </Switch>

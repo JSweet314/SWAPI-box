@@ -5,25 +5,21 @@ import './style.css';
 export default class CrawlContainer extends Component {
   constructor() {
     super();
-    this.state = {
-      openingCrawl: '',
-      title: '',
-      releaseDate: ''
-    };
+    this.state = {openingCrawl: '', title: '', releaseDate: ''};
   }
 
   componentDidMount = () => {
-    this.findClosestData();
+    this.findClosestOpeningCrawl();
   }
 
-  findClosestData = () => {
+  findClosestOpeningCrawl = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');
     if (priorCrawl) {
-      const openingCrawl = JSON.parse(priorCrawl);
-      this.setState({ ...openingCrawl });
-      return;
+      const previousState = JSON.parse(priorCrawl);
+      this.setState({...previousState});
+    } else {
+      this.fetchOpeningCrawl();
     }
-    this.fetchOpeningCrawl();
   }
 
   fetchOpeningCrawl = () => {
@@ -34,14 +30,8 @@ export default class CrawlContainer extends Component {
   }
 
   deployNewCrawl = filmData => {
-    this.setState(
-      {
-        openingCrawl: filmData.openingCrawl,
-        title: filmData.title,
-        releaseDate: filmData.releaseDate
-      },
-      this.storeOpeningCrawl
-    );
+    const {openingCrawl, title, releaseDate} = filmData;
+    this.setState({openingCrawl, title, releaseDate}, this.storeOpeningCrawl);
   };
 
   storeOpeningCrawl = () => {

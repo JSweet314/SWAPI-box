@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-const PersonCard = ({card, favorites, handleOnClick}) => {
+const PersonCard = ({card, favorites, handleFavoriteClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
@@ -17,7 +17,7 @@ const PersonCard = ({card, favorites, handleOnClick}) => {
           <h3>{card.name}</h3>
           <button 
             className={selected}
-            onClick={() => handleOnClick(card, 'people')}>
+            onClick={() => handleFavoriteClick(card, 'people')}>
           </button>
         </div>
         <p>Homeworld: {card.homeworld}</p>
@@ -36,7 +36,7 @@ PersonCard.propTypes = {
     population: PropTypes.string.isRequired
   }).isRequired,
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired
+  handleFavoriteClick: PropTypes.func.isRequired
 };
 
 export default PersonCard;

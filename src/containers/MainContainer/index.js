@@ -23,14 +23,11 @@ export default class MainContainer extends Component {
       vehiclesArray: [],
       next: null,
       previous: null,
-      pageNumber: 1,
       loading: true
     };
   }
 
-  componentDidMount = () => {
-    this.findClosestData();
-  }
+  componentDidMount = () => this.findClosestData();
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -39,36 +36,37 @@ export default class MainContainer extends Component {
   }
 
   findClosestData = () => {
-    const priorData = localStorage.getItem(
-      `SWAPI-${this.props.match.params.id}`
-    );
+    const {id} = this.props.match.params;
+    const priorData = localStorage.getItem(`SWAPI-${id}`);
     if (priorData) {
-      const dataArray = `${this.props.match.params.id}Array`;
-      const value = JSON.parse(priorData);
-      this.setState({[dataArray]: value, loading: false});
+      const { dataArray, next, previous } = JSON.parse(priorData);
+      const key = `${id}Array`;
+      this.setState({[key]: dataArray, next, previous, loading: false});
     } else {
-      this.setState({pageNumber: 1, loading: true}, this.getCategoryById);
+      this.setState({loading: true}, this.getCategoryById);
     }
   }
 
   getCategoryById = () => {
-    switch (this.props.match.params.id) {
+    const {id} = this.props.match.params;
+    switch (id) {
     case 'people':
       this.getPeopleData();
-      return;
+      break;
     case 'planets':
       this.getPlanetsData();
-      return;
+      break;
     case 'vehicles':
       this.getVehiclesData();
-      return;
+      break;
     default:
       break;
     }
   }
 
   buildCards = () => {
-    switch (this.props.match.params.id) {
+    const {id} = this.props.match.params;
+    switch (id) {
     case 'people':
       return this.personCards();
     case 'planets':
@@ -80,8 +78,8 @@ export default class MainContainer extends Component {
     }
   }
 
-  getPeopleData = () => 
-    fetchPeopleData()
+  getPeopleData = (url) => 
+    fetchPeopleData(url)
       .then(fetchAllHomeworldData)
       .then(fetchAllSpeciesData)
       .then(this.deployPeopleData)
@@ -96,18 +94,18 @@ export default class MainContainer extends Component {
     }, this.storeCategoryData)
 
   personCards = () => {
-    const {handleOnClick, favorites} = this.props;
+    const {handleFavoriteClick, favorites} = this.props;
     return this.state.peopleArray.map(card =>
       <PersonCard
-        handleOnClick={handleOnClick}
+        card={card}
         favorites={favorites}
-        key={card.name}
-        card={card} />
+        handleFavoriteClick={handleFavoriteClick}
+        key={card.name} />
     );
   }
 
-  getPlanetsData = () => 
-    fetchPlanetsData()
+  getPlanetsData = (url) => 
+    fetchPlanetsData(url)
       .then(fetchAllResidentsData)
       .then(this.deployPlanetsData)
       .catch(error => alert(error.message));
@@ -121,19 +119,18 @@ export default class MainContainer extends Component {
     }, this.storeCategoryData)
 
   planetCards = () => {
-    const {handleOnClick, favorites} = this.props;
+    const {handleFavoriteClick, favorites} = this.props;
     return this.state.planetsArray.map(card =>
       <PlanetCard
-        handleOnClick={handleOnClick}
+        card={card}
         favorites={favorites}
-        category="Planets"
-        key={card.name}
-        card={card} />
+        handleFavoriteClick={handleFavoriteClick}
+        key={card.name} />
     );
   }
 
-  getVehiclesData = () => 
-    fetchVehiclesData()
+  getVehiclesData = (url) => 
+    fetchVehiclesData(url)
       .then(this.deployVehiclesData)
       .catch(error => alert(error.message));
 
@@ -146,35 +143,91 @@ export default class MainContainer extends Component {
     }, this.storeCategoryData)
 
   vehicleCards = () => {
-    const {handleOnClick, favorites} = this.props;
+    const {handleFavoriteClick, favorites} = this.props;
     return this.state.vehiclesArray.map(card =>
       <VehicleCard
-        handleOnClick={handleOnClick}
+        card={card} 
         favorites={favorites}
-        key={card.name}
-        card={card} />
+        handleFavoriteClick={handleFavoriteClick}
+        key={card.name} />
     );
   }
 
-  storeCategoryData = () =>
-    localStorage.setItem(
-      `SWAPI-${this.props.match.params.id}`, 
-      JSON.stringify(this.state[`${this.props.match.params.id}Array`])
-    );
+  getNextPage = () => {
+    const {id} = this.props.match.params;
+    const {next} = this.state;
+    switch (id) {
+    case 'people':
+      this.getPeopleData(next);
+      break;
+    case 'planets':
+      this.getPlanetsData(next);
+      break;
+    case 'vehicles':
+      this.getVehiclesData(next);
+      break;
+    default:
+      break;
+    }
+  }
+
+  getPreviousPage = () => {
+    const {id} = this.props.match.params;
+    const {previous} = this.state;
+    switch (id) {
+    case 'people':
+      this.getPeopleData(previous);
+      break;
+    case 'planets':
+      this.getPlanetsData(previous);
+      break;
+    case 'vehicles':
+      this.getVehiclesData(previous);
+      break;
+    default:
+      break;
+    }
+  }
+
+  handlePageButtonClick = (event) => {
+    const name = event.target.name;
+    if (name === 'previous') {
+      this.setState({loading: true}, this.getPreviousPage);
+    } else {
+      this.setState({ loading: true }, this.getNextPage);
+    }
+  }
+
+  storeCategoryData = () => {
+    const {next, previous} = this.state;
+    const {id} = this.props.match.params;
+    localStorage.setItem(`SWAPI-${id}`, JSON.stringify({
+      next: next,
+      previous: previous,
+      dataArray: this.state[`${id}Array`]
+    }));
+  }
    
   render = () => {
-    const {handleOnClick, favorites} = this.props;
+    const {handleFavoriteClick, favorites} = this.props;
+    const {next, previous} = this.state;
     const cards = this.buildCards();
-    const {pageNumber} = this.state;
     if (this.props.match.params.id === 'favorites') {
-      return <Favorites handleOnClick={handleOnClick} favorites={favorites} />;
+      return (
+        <Favorites 
+          handleFavoriteClick={handleFavoriteClick} 
+          favorites={favorites} />
+      );
     }
 
     return !this.state.loading ? 
       (
         <div className="people-display">
           {cards}
-          <PageButtons pageNumber={pageNumber}/>
+          <PageButtons 
+            handlePageButtonClick={this.handlePageButtonClick}
+            next={next}
+            previous={previous} />
         </div>
       ) : (
         <div className="category-display">
@@ -186,7 +239,7 @@ export default class MainContainer extends Component {
 
 MainContainer.propTypes = {
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired,
+  handleFavoriteClick: PropTypes.func.isRequired,
   match: PropTypes.shape({
     isExact: PropTypes.bool.isRequired,
     params: PropTypes.object.isRequired,
