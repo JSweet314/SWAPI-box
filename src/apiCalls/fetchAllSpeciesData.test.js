@@ -1,5 +1,5 @@
 import {fetchAllSpeciesData} from './fetchAllSpeciesData';
-import {mockPeopleData} from '../__mocks__/mockPeopleData';
+import {mockPeopleData} from '../mockData/mockPeopleData';
 import categoryDataWrangler from '../dataWranglers/categoryDataWrangler';
 
 describe('fetchAllSpeciesData', () => {

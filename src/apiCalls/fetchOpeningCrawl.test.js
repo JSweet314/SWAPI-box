@@ -1,5 +1,5 @@
 import {fetchOpeningCrawl} from './fetchOpeningCrawl';
-import mockFilmFetchResponse from '../__mocks__/mockFilmFetchResponse';
+import mockFilmFetchResponse from '../mockData/mockFilmFetchResponse';
 import scrollingTextWrangler from '../dataWranglers/scrollingTextWrangler';
 
 /* eslint-disable no-undef */

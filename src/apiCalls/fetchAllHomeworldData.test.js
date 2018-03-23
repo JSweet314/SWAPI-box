@@ -1,6 +1,6 @@
 import {fetchAllHomeworldData} from './fetchAllHomeworldData';
-import {mockPeopleData} from '../__mocks__/mockPeopleData';
-import mockPlanetFetchResponse from '../__mocks__/mockPlanetFetchResponse';
+import {mockPeopleData} from '../mockData/mockPeopleData';
+import mockPlanetFetchResponse from '../mockData/mockPlanetFetchResponse';
 import categoryDataWrangler from '../dataWranglers/categoryDataWrangler/index';
 
 describe('fetchAllHomeworldData', () => {

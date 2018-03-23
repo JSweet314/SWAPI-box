@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 import './style.css';
 

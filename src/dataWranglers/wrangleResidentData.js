@@ -1,0 +1,1 @@
+export const wrangleResidentData = residentData => residentData.name;

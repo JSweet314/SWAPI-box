@@ -1,0 +1,1 @@
+export const wrangleSpeciesData = speciesData => ({species: speciesData.name});
