@@ -15,8 +15,7 @@ export default class CrawlContainer extends Component {
   findClosestOpeningCrawl = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');
     if (priorCrawl) {
-      const previousState = JSON.parse(priorCrawl);
-      this.setState({...previousState});
+      this.setState({...JSON.parse(priorCrawl)});
     } else {
       this.getOpeningCrawl();
     }
@@ -34,9 +33,8 @@ export default class CrawlContainer extends Component {
     this.setState({openingCrawl, title, releaseDate}, this.storeOpeningCrawl);
   };
 
-  storeOpeningCrawl = () => {
-    localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state));
-  }
+  storeOpeningCrawl = () => 
+    localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state))
 
   render() {
     const {openingCrawl, title, releaseDate} = this.state;
