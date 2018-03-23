@@ -29,17 +29,7 @@ ShallowWrapper {
           />
           <Route
                     exact={true}
-                    path="/people"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/planets"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/vehicles"
+                    path="/category/:id"
                     render={[Function]}
           />
           <Route
@@ -77,17 +67,7 @@ ShallowWrapper {
 />,
             <Route
               exact={true}
-              path="/people"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/planets"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/vehicles"
+              path="/category/:id"
               render={[Function]}
 />,
             <Route
@@ -118,33 +98,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "exact": true,
-              "path": "/people",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/planets",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/vehicles",
+              "path": "/category/:id",
               "render": [Function],
             },
             "ref": null,
@@ -188,17 +142,7 @@ ShallowWrapper {
             />
             <Route
                         exact={true}
-                        path="/people"
-                        render={[Function]}
-            />
-            <Route
-                        exact={true}
-                        path="/planets"
-                        render={[Function]}
-            />
-            <Route
-                        exact={true}
-                        path="/vehicles"
+                        path="/category/:id"
                         render={[Function]}
             />
             <Route
@@ -236,17 +180,7 @@ ShallowWrapper {
 />,
               <Route
                 exact={true}
-                path="/people"
-                render={[Function]}
-/>,
-              <Route
-                exact={true}
-                path="/planets"
-                render={[Function]}
-/>,
-              <Route
-                exact={true}
-                path="/vehicles"
+                path="/category/:id"
                 render={[Function]}
 />,
               <Route
@@ -277,33 +211,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "exact": true,
-                "path": "/people",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/planets",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/vehicles",
+                "path": "/category/:id",
                 "render": [Function],
               },
               "ref": null,

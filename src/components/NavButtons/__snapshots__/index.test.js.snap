@@ -32,8 +32,7 @@ ShallowWrapper {
           <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    exact={true}
-                    to="/people"
+                    to="/category/people"
           >
                     People
           </NavLink>
@@ -42,8 +41,7 @@ ShallowWrapper {
           <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    exact={true}
-                    to="/planets"
+                    to="/category/planets"
           >
                     Planets
           </NavLink>
@@ -52,8 +50,7 @@ ShallowWrapper {
           <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    exact={true}
-                    to="/vehicles"
+                    to="/category/vehicles"
           >
                     Vehicles
           </NavLink>
@@ -103,8 +100,7 @@ ShallowWrapper {
           "children": <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            exact={true}
-            to="/people"
+            to="/category/people"
 >
             People
 </NavLink>,
@@ -118,8 +114,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": "People",
-            "exact": true,
-            "to": "/people",
+            "to": "/category/people",
           },
           "ref": null,
           "rendered": "People",
@@ -135,8 +130,7 @@ ShallowWrapper {
           "children": <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            exact={true}
-            to="/planets"
+            to="/category/planets"
 >
             Planets
 </NavLink>,
@@ -150,8 +144,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": "Planets",
-            "exact": true,
-            "to": "/planets",
+            "to": "/category/planets",
           },
           "ref": null,
           "rendered": "Planets",
@@ -167,8 +160,7 @@ ShallowWrapper {
           "children": <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            exact={true}
-            to="/vehicles"
+            to="/category/vehicles"
 >
             Vehicles
 </NavLink>,
@@ -182,8 +174,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": "Vehicles",
-            "exact": true,
-            "to": "/vehicles",
+            "to": "/category/vehicles",
           },
           "ref": null,
           "rendered": "Vehicles",
@@ -215,8 +206,7 @@ ShallowWrapper {
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
-                        exact={true}
-                        to="/people"
+                        to="/category/people"
             >
                         People
             </NavLink>
@@ -225,8 +215,7 @@ ShallowWrapper {
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
-                        exact={true}
-                        to="/planets"
+                        to="/category/planets"
             >
                         Planets
             </NavLink>
@@ -235,8 +224,7 @@ ShallowWrapper {
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
-                        exact={true}
-                        to="/vehicles"
+                        to="/category/vehicles"
             >
                         Vehicles
             </NavLink>
@@ -286,8 +274,7 @@ ShallowWrapper {
             "children": <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              exact={true}
-              to="/people"
+              to="/category/people"
 >
               People
 </NavLink>,
@@ -301,8 +288,7 @@ ShallowWrapper {
               "activeClassName": "active",
               "ariaCurrent": "true",
               "children": "People",
-              "exact": true,
-              "to": "/people",
+              "to": "/category/people",
             },
             "ref": null,
             "rendered": "People",
@@ -318,8 +304,7 @@ ShallowWrapper {
             "children": <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              exact={true}
-              to="/planets"
+              to="/category/planets"
 >
               Planets
 </NavLink>,
@@ -333,8 +318,7 @@ ShallowWrapper {
               "activeClassName": "active",
               "ariaCurrent": "true",
               "children": "Planets",
-              "exact": true,
-              "to": "/planets",
+              "to": "/category/planets",
             },
             "ref": null,
             "rendered": "Planets",
@@ -350,8 +334,7 @@ ShallowWrapper {
             "children": <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              exact={true}
-              to="/vehicles"
+              to="/category/vehicles"
 >
               Vehicles
 </NavLink>,
@@ -365,8 +348,7 @@ ShallowWrapper {
               "activeClassName": "active",
               "ariaCurrent": "true",
               "children": "Vehicles",
-              "exact": true,
-              "to": "/vehicles",
+              "to": "/category/vehicles",
             },
             "ref": null,
             "rendered": "Vehicles",

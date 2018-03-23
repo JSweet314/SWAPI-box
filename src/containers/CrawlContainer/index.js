@@ -19,13 +19,22 @@ export default class CrawlContainer extends Component {
   }
 
   componentDidMount() {
+    this.findClosestData();
+  }
+
+  findClosestData = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');
     if (priorCrawl) {
       const prevState = JSON.parse(priorCrawl);
-      this.setState({...prevState});
+      this.setState({ ...prevState });
       return;
     }
-    fetchScrollingText()
+    this.getCrawl();
+  }
+
+  getCrawl = () => {
+    const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
+    fetchScrollingText(randomFilmNumber)
       .then(filmData => {
         this.setState({
           openingCrawl: filmData.openingCrawl,

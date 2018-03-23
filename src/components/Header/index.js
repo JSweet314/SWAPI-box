@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import NavLinks from '../NavLinks/index';
+import NavLinks from '../NavButtons/index';
 import PropTypes from 'prop-types';
 import './style.css';
 

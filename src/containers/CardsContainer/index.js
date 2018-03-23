@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import fetchCategoryData from '../../apiCalls/fetchCategoryData';
-import fetchPlanetData from '../../apiCalls/fetchPlanetData';
+import fetchHomeworldData from '../../apiCalls/fetchHomeworldData';
 import fetchResidentsData from '../../apiCalls/fetchResidentsData';
 import fetchSpeciesData from '../../apiCalls/fetchSpeciesData';
 import loadingGIF from '../../images/Loading_icon.gif';
@@ -23,40 +23,22 @@ export default class CardsContainer extends Component {
   }
 
   componentDidMount = () => {
-    const priorData = localStorage.getItem(
-      `SWAPI-${this.props.match.params.id}`
-    );
-    if (priorData) {
-      const dataArray = `${this.props.match.params.id}Array`;
-      const value = JSON.parse(priorData);
-      this.setState({[dataArray]: value, loading: false});
-    } else {
-      this.findCategoryById();
-    }
+    this.findClosestData();
   }
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      const priorData = localStorage.getItem(
-        `SWAPI-${this.props.match.params.id}`
-      );
-      if (priorData) {
-        const dataArray = `${this.props.match.params.id}Array`;
-        const value = JSON.parse(priorData);
-        this.setState({ [dataArray]: value, loading: false });
-      } else {
-        this.setState({pageNumber: 1, loading: true}, this.findCategoryById());
-      }
+      this.findClosestData();
     }
   }
 
-  findCategoryById = () => {
+  getCategoryById = () => {
     switch (this.props.match.params.id) {
-    case 'planets':
-      this.getPlanetsData();
-      return;
     case 'people':
       this.getPeopleData();
+      return;
+    case 'planets':
+      this.getPlanetsData();
       return;
     case 'vehicles':
       this.getVehiclesData();
@@ -69,20 +51,20 @@ export default class CardsContainer extends Component {
   buildCards = () => {
     switch (this.props.match.params.id) {
     case 'people':
-      return this.getPersonCards();
+      return this.personCards();
     case 'planets':
-      return this.getPlanetCards();
+      return this.planetCards();
     case 'vehicles':
-      return this.getVehicleCards();
+      return this.vehicleCards();
     default:
       return null;
     }
   }
 
   getPeopleData = () => {
-    const { pageNumber } = this.state;
+    const {pageNumber} = this.state;
     fetchCategoryData('people', pageNumber)
-      .then(fetchPlanetData)
+      .then(fetchHomeworldData)
       .then(fetchSpeciesData)
       .then(peopleArray => this.setState(
         { peopleArray, loading: false },
@@ -91,18 +73,19 @@ export default class CardsContainer extends Component {
       .catch(error => alert(error.message));
   }
 
-  getPersonCards = () => {
+  personCards = () => {
+    const {handleOnClick, favorites} = this.props;
     return this.state.peopleArray.map(card =>
       <PersonCard
-        handleOnClick={this.props.handleOnClick}
-        favorites={this.props.favorites}
+        handleOnClick={handleOnClick}
+        favorites={favorites}
         key={card.name}
         card={card} />
     );
   }
 
   getPlanetsData = () => {
-    const { pageNumber } = this.state;
+    const {pageNumber} = this.state;
     fetchCategoryData('planets', pageNumber)
       .then(fetchResidentsData)
       .then(planetsArray => this.setState(
@@ -112,11 +95,12 @@ export default class CardsContainer extends Component {
       .catch(error => alert(error.message));
   }
 
-  getPlanetCards = () => {
+  planetCards = () => {
+    const {handleOnClick, favorites} = this.props;
     return this.state.planetsArray.map(card =>
       <PlanetCard
-        handleOnClick={this.props.handleOnClick}
-        favorites={this.props.favorites}
+        handleOnClick={handleOnClick}
+        favorites={favorites}
         category="Planets"
         key={card.name}
         card={card} />
@@ -124,7 +108,7 @@ export default class CardsContainer extends Component {
   }
 
   getVehiclesData = () => {
-    const { pageNumber } = this.state;
+    const {pageNumber} = this.state;
     fetchCategoryData('vehicles', pageNumber)
       .then(vehiclesArray => this.setState(
         { vehiclesArray, loading: false },
@@ -133,11 +117,12 @@ export default class CardsContainer extends Component {
       .catch(error => alert(error.message));
   }
 
-  getVehicleCards = () => {
+  vehicleCards = () => {
+    const {handleOnClick, favorites} = this.props;
     return this.state.vehiclesArray.map(card =>
       <VehicleCard
-        handleOnClick={this.props.handleOnClick}
-        favorites={this.props.favorites}
+        handleOnClick={handleOnClick}
+        favorites={favorites}
         key={card.name}
         card={card} />
     );
@@ -150,21 +135,43 @@ export default class CardsContainer extends Component {
       ])
     );
   }
+
+  findClosestData = () => {
+    const priorData = localStorage.getItem(
+      `SWAPI-${this.props.match.params.id}`
+    );
+    if (priorData) {
+      const dataArray = `${this.props.match.params.id}Array`;
+      const value = JSON.parse(priorData);
+      this.setState({ [dataArray]: value, loading: false });
+    } else {
+      this.setState({ pageNumber: 1, loading: true }, this.getCategoryById());
+    }
+  }
    
   render = () => {
     const cards = this.buildCards();
 
     return !this.state.loading ? 
-      (<div className="people-display">
-        {cards}
-      </div>)
-      : (<div className="category-display">
-        <img src={loadingGIF} alt="loading" />
-      </div>);
+      (
+        <div className="people-display">
+          {cards}
+        </div>
+      ) : (
+        <div className="category-display">
+          <img src={loadingGIF} alt="loading" />
+        </div>
+      );
   }
 }
 
 CardsContainer.propTypes = {
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired
+  handleOnClick: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    isExact: PropTypes.bool.isRequired,
+    params: PropTypes.object.isRequired,
+    path: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
+  })
 };

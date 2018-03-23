@@ -1,16 +1,17 @@
 import fetchCategoryData from './fetchCategoryData';
-import mockPlanetFetchReponse from '../__mocks__/mockPlanetFetchResponse';
+import mockCategoryFetchResponse from '../__mocks__/mockCategoryFetchResponse';
 import categoryDataWrangler from '../dataWranglers/categoryDataWrangler/index';
 
+/* eslint-disable no-undef */
+jest.mock('../dataWranglers/categoryDataWrangler/index');
 describe('fetchCategoryData', () => {
-  let mockCategoryResponse;
-  beforeEach(() => {
-    mockCategoryResponse = JSON.parse(mockPlanetFetchReponse);
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+  window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
+    /* eslint-enable no-undef */
+    {
       ok: true,
-      json: () => Promise.resolve(mockCategoryResponse)
-    }).then(categoryData => categoryDataWrangler(categoryData, 'planets')));
-  });
+      json: () => Promise.resolve(mockCategoryFetchResponse)
+    }
+  ));
 
   it('calls fetch with the correct params', () => {
     const expected = 'https://swapi.co/api/planets/?format=json&page=1';
@@ -18,12 +19,10 @@ describe('fetchCategoryData', () => {
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
-  it('returns an array of category data if response is ok', () => {
-    const expected = categoryDataWrangler(mockCategoryResponse, 'planets');
-    Promise.resolve(expect(fetchCategoryData('planets', 1)).toEqual(expected));
-  });
-
-  it('calls the categoryDataWrangler with correct params', () => {
-
+  it('should call categoryDataWrangler with correct params', () => {
+    fetchCategoryData('planets', 1);
+    expect(categoryDataWrangler).toHaveBeenCalledWith(
+      mockCategoryFetchResponse, 'planets'
+    );
   });
 });

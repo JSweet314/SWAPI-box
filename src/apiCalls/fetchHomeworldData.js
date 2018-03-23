@@ -1,4 +1,4 @@
-const fetchPlanetData = (peopleData) => {
+const fetchHomeworldData = (peopleData) => {
   const promises = peopleData.map(person => fetch(person.homeworld)
     .then(response => response.json())
     .then(planetData => 
@@ -9,4 +9,4 @@ const fetchPlanetData = (peopleData) => {
   return Promise.all(promises);
 };
 
-export default fetchPlanetData;
+export default fetchHomeworldData;
