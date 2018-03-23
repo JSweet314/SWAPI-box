@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-const VehicleCard = ({card, favorites, handleOnClick}) => {
+const VehicleCard = ({card, favorites, handleFavoriteClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
@@ -14,7 +14,7 @@ const VehicleCard = ({card, favorites, handleOnClick}) => {
         <div className="info-card__top-line">
           <h3>{name}</h3>
           <button 
-            onClick={() => handleOnClick(card, 'vehicles')}
+            onClick={() => handleFavoriteClick(card, 'vehicles')}
             className={selected}></button>
         </div>
         <p>Model: {model}</p>
@@ -33,7 +33,7 @@ VehicleCard.propTypes = {
     numberOfPassengers: PropTypes.string.isRequired
   }).isRequired,
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired
+  handleFavoriteClick: PropTypes.func.isRequired
 };
 
 export default VehicleCard;

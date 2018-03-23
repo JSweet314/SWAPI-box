@@ -1,40 +1,40 @@
-import React, { Component } from 'react';
-import fetchScrollingText from '../../apiCalls/fetchScrollingText';
+import React, {Component} from 'react';
+import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 import './style.css';
 
 export default class CrawlContainer extends Component {
   constructor() {
     super();
-    this.state = {
-      openingCrawl: '',
-      title: '',
-      releaseDate: ''
-    };
+    this.state = {openingCrawl: '', title: '', releaseDate: ''};
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState !== this.state) {
-      localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state));
-    }
+  componentDidMount = () => {
+    this.findClosestOpeningCrawl();
   }
 
-  componentDidMount() {
+  findClosestOpeningCrawl = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');
     if (priorCrawl) {
-      const prevState = JSON.parse(priorCrawl);
-      this.setState({...prevState});
-      return;
+      this.setState({...JSON.parse(priorCrawl)});
+    } else {
+      this.getOpeningCrawl();
     }
-    fetchScrollingText()
-      .then(filmData => {
-        this.setState({
-          openingCrawl: filmData.openingCrawl,
-          title: filmData.title,
-          releaseDate: filmData.releaseDate
-        });
-      })
+  }
+
+  getOpeningCrawl = () => {
+    const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
+    fetchOpeningCrawl(randomFilmNumber)
+      .then(this.deployNewCrawl)
       .catch(error => alert(error));
   }
+
+  deployNewCrawl = filmData => {
+    const {openingCrawl, title, releaseDate} = filmData;
+    this.setState({openingCrawl, title, releaseDate}, this.storeOpeningCrawl);
+  };
+
+  storeOpeningCrawl = () => 
+    localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state))
 
   render() {
     const {openingCrawl, title, releaseDate} = this.state;

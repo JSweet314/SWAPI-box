@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-const PlanetCard = ({card, favorites, handleOnClick}) => {
+const PlanetCard = ({card, favorites, handleFavoriteClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
 
@@ -27,7 +27,7 @@ const PlanetCard = ({card, favorites, handleOnClick}) => {
         <div className="info-card__top-line">
           <h3>{name}</h3>
           <button 
-            onClick={() => handleOnClick(card, 'planets')}
+            onClick={() => handleFavoriteClick(card, 'planets')}
             className={selected}></button>
         </div>
         <p>Population: {addCommas(population)}</p>
@@ -48,7 +48,7 @@ PlanetCard.propTypes = {
     residents: PropTypes.array.isRequired
   }).isRequired,
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired
+  handleFavoriteClick: PropTypes.func.isRequired
 };
 
 export default PlanetCard;

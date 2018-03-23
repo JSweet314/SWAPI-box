@@ -25,19 +25,59 @@ ShallowWrapper {
 >
           SWAPI-Box
 </h1>,
+        <ul
+          className="nav"
+>
+          <li>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              exact={true}
+                              to="/"
+                    >
+                              Home
+                    </NavLink>
+          </li>
+          <li>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/category/people"
+                    >
+                              People
+                    </NavLink>
+          </li>
+          <li>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/category/planets"
+                    >
+                              Planets
+                    </NavLink>
+          </li>
+          <li>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/category/vehicles"
+                    >
+                              Vehicles
+                    </NavLink>
+          </li>
+</ul>,
         <NavLink
           activeClassName="active"
           ariaCurrent="true"
           className="header__favBtn"
           exact={true}
-          to="/favorites"
+          to="/category/favorites"
 >
           View Favorites
           <span
                     className="header__favCount"
           />
 </NavLink>,
-        <NavLinks />,
       ],
       "className": "header",
     },
@@ -58,6 +98,179 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            exact={true}
+                            to="/"
+              >
+                            Home
+              </NavLink>
+</li>,
+            <li>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/category/people"
+              >
+                            People
+              </NavLink>
+</li>,
+            <li>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/category/planets"
+              >
+                            Planets
+              </NavLink>
+</li>,
+            <li>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/category/vehicles"
+              >
+                            Vehicles
+              </NavLink>
+</li>,
+          ],
+          "className": "nav",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                exact={true}
+                to="/"
+>
+                Home
+</NavLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Home",
+                "exact": true,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Home",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                to="/category/people"
+>
+                People
+</NavLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "People",
+                "to": "/category/people",
+              },
+              "ref": null,
+              "rendered": "People",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                to="/category/planets"
+>
+                Planets
+</NavLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Planets",
+                "to": "/category/planets",
+              },
+              "ref": null,
+              "rendered": "Planets",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                to="/category/vehicles"
+>
+                Vehicles
+</NavLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Vehicles",
+                "to": "/category/vehicles",
+              },
+              "ref": null,
+              "rendered": "Vehicles",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
@@ -70,7 +283,7 @@ ShallowWrapper {
           ],
           "className": "header__favBtn",
           "exact": true,
-          "to": "/favorites",
+          "to": "/category/favorites",
         },
         "ref": null,
         "rendered": Array [
@@ -90,15 +303,6 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
     ],
     "type": "header",
   },
@@ -114,19 +318,59 @@ ShallowWrapper {
 >
             SWAPI-Box
 </h1>,
+          <ul
+            className="nav"
+>
+            <li>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    exact={true}
+                                    to="/"
+                        >
+                                    Home
+                        </NavLink>
+            </li>
+            <li>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/category/people"
+                        >
+                                    People
+                        </NavLink>
+            </li>
+            <li>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/category/planets"
+                        >
+                                    Planets
+                        </NavLink>
+            </li>
+            <li>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/category/vehicles"
+                        >
+                                    Vehicles
+                        </NavLink>
+            </li>
+</ul>,
           <NavLink
             activeClassName="active"
             ariaCurrent="true"
             className="header__favBtn"
             exact={true}
-            to="/favorites"
+            to="/category/favorites"
 >
             View Favorites
             <span
                         className="header__favCount"
             />
 </NavLink>,
-          <NavLinks />,
         ],
         "className": "header",
       },
@@ -147,6 +391,179 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                exact={true}
+                                to="/"
+                >
+                                Home
+                </NavLink>
+</li>,
+              <li>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/category/people"
+                >
+                                People
+                </NavLink>
+</li>,
+              <li>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/category/planets"
+                >
+                                Planets
+                </NavLink>
+</li>,
+              <li>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/category/vehicles"
+                >
+                                Vehicles
+                </NavLink>
+</li>,
+            ],
+            "className": "nav",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  exact={true}
+                  to="/"
+>
+                  Home
+</NavLink>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Home",
+                  "exact": true,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Home",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/category/people"
+>
+                  People
+</NavLink>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "People",
+                  "to": "/category/people",
+                },
+                "ref": null,
+                "rendered": "People",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/category/planets"
+>
+                  Planets
+</NavLink>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Planets",
+                  "to": "/category/planets",
+                },
+                "ref": null,
+                "rendered": "Planets",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/category/vehicles"
+>
+                  Vehicles
+</NavLink>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Vehicles",
+                  "to": "/category/vehicles",
+                },
+                "ref": null,
+                "rendered": "Vehicles",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
@@ -159,7 +576,7 @@ ShallowWrapper {
             ],
             "className": "header__favBtn",
             "exact": true,
-            "to": "/favorites",
+            "to": "/category/favorites",
           },
           "ref": null,
           "rendered": Array [
@@ -177,15 +594,6 @@ ShallowWrapper {
               "type": "span",
             },
           ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
           "type": [Function],
         },
       ],
