@@ -18,11 +18,11 @@ export default class CrawlContainer extends Component {
       const previousState = JSON.parse(priorCrawl);
       this.setState({...previousState});
     } else {
-      this.fetchOpeningCrawl();
+      this.getOpeningCrawl();
     }
   }
 
-  fetchOpeningCrawl = () => {
+  getOpeningCrawl = () => {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
     fetchOpeningCrawl(randomFilmNumber)
       .then(this.deployNewCrawl)
