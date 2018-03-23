@@ -4,7 +4,7 @@ import PlanetCard from './index';
 
 describe('PlanetCard', () => {
   /* eslint-disable no-undef */
-  const mockHandleOnClick = jest.fn();
+  const mockHandleFavoriteClick = jest.fn();
   /* eslint-enable no-undef */
   let card;
 
@@ -21,7 +21,7 @@ describe('PlanetCard', () => {
   it('should match a snapshot', () => {
     const wrapper = shallow(
       <PlanetCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[]}
         card={card} />,
       { disableLifecycleMethods: true }
@@ -33,7 +33,7 @@ describe('PlanetCard', () => {
   it('should show as favorited if name matches obj in favorites array', () => {
     const wrapper = shallow(
       <PlanetCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{ name: 'tatooine' }]}
         card={card} />,
       { disableLifecycleMethods: true }
@@ -46,7 +46,7 @@ describe('PlanetCard', () => {
     card.residents = [];
     const wrapper = shallow(
       <PlanetCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{ name: 'tatooine' }]}
         card={card} />,
       { disableLifecycleMethods: true }

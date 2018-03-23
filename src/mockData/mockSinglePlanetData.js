@@ -1,4 +1,4 @@
-const mockPlanetFetchResponse = {
+export const mockSinglePlanetData = {
   "name": "Alderaan",
   "rotation_period": "24",
   "orbital_period": "364",
@@ -21,5 +21,3 @@ const mockPlanetFetchResponse = {
   "edited": "2014-12-20T20:58:18.420000Z",
   "url": "https://swapi.co/api/planets/2/"
 };
-
-export default mockPlanetFetchResponse;

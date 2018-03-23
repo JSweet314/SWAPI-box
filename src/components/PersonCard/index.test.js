@@ -4,7 +4,7 @@ import PersonCard from './index';
 
 describe('PersonCard', () => {
   /* eslint-disable no-undef */
-  const mockHandleOnClick = jest.fn();
+  const mockHandleFavoriteClick = jest.fn();
   /* eslint-enable no-undef */
   const card = {
     homeworld: 'tatooine',
@@ -16,7 +16,7 @@ describe('PersonCard', () => {
   it('should match a snapshot', () => {
     const wrapper = shallow(
       <PersonCard
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[]}
         card={card} />,
       { disableLifecycleMethods: true }
@@ -28,7 +28,7 @@ describe('PersonCard', () => {
   it('should show as favorited if name matches obj in favorites array', () => {
     const wrapper = shallow(
       <PersonCard 
-        handleOnClick={mockHandleOnClick}
+        handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{name: 'Obi-Wan'}]}
         card={card} />,
       { disableLifecycleMethods: true }

@@ -19,7 +19,7 @@ ShallowWrapper {
           }
     }
     favorites={Array []}
-    handleOnClick={[Function]}
+    handleFavoriteClick={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -444,7 +444,7 @@ ShallowWrapper {
             },
           ]
     }
-    handleOnClick={[Function]}
+    handleFavoriteClick={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
