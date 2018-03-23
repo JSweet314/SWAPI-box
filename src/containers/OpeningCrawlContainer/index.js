@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 import './style.css';
 
-export default class CrawlContainer extends Component {
+export default class OpeningCrawlContainer extends Component {
   constructor() {
     super();
     this.state = {openingCrawl: '', title: '', releaseDate: ''};

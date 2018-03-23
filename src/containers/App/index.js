@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import { fetchOpeningCrawl } from '../../apiCalls/fetchOpeningCrawl';
 import MainContainer from '../MainContainer/index';
-import CrawlContainer from '../CrawlContainer/index';
+import OpeningCrawlContainer from '../OpeningCrawlContainer/index';
 import Header from '../../components/Header/index';
 import './style.css';
 
@@ -64,7 +63,7 @@ class App extends Component {
       <div className="app">
         <Header numberOfFavorites={numberOfFavorites} />
         <Switch>
-          <Route exact path="/" component={CrawlContainer} />
+          <Route exact path="/" component={OpeningCrawlContainer} />
           <Route exact path="/category/:id" 
             render={({match}) => 
               <MainContainer
