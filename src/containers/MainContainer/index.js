@@ -18,9 +18,9 @@ export default class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peopleArray: [],
-      planetsArray: [],
-      vehiclesArray: [],
+      people: [],
+      planets: [],
+      vehicles: [],
       next: null,
       previous: null,
       loading: true
@@ -89,13 +89,13 @@ export default class MainContainer extends Component {
     this.setState({
       next: peopleData.next,
       previous: peopleData.previous,
-      peopleArray: peopleData.peopleArray,
+      people: peopleData.peopleArray,
       loading: false
     }, this.storeCategoryData)
 
   personCards = () => {
     const {handleFavoriteClick, favorites} = this.props;
-    return this.state.peopleArray.map(card =>
+    return this.state.people.map(card =>
       <PersonCard
         card={card}
         favorites={favorites}
@@ -114,13 +114,13 @@ export default class MainContainer extends Component {
     this.setState({
       next: planetsData.next,
       previous: planetsData.previous,
-      planetsArray: planetsData.planetsArray,
+      planets: planetsData.planetsArray,
       loading: false
     }, this.storeCategoryData)
 
   planetCards = () => {
     const {handleFavoriteClick, favorites} = this.props;
-    return this.state.planetsArray.map(card =>
+    return this.state.planets.map(card =>
       <PlanetCard
         card={card}
         favorites={favorites}
@@ -138,13 +138,13 @@ export default class MainContainer extends Component {
     this.setState({
       next: vehiclesData.next,
       previous: vehiclesData.previous,
-      vehiclesArray: vehiclesData.vehiclesArray,
+      vehicles: vehiclesData.vehiclesArray,
       loading: false
     }, this.storeCategoryData)
 
   vehicleCards = () => {
     const {handleFavoriteClick, favorites} = this.props;
-    return this.state.vehiclesArray.map(card =>
+    return this.state.vehicles.map(card =>
       <VehicleCard
         card={card} 
         favorites={favorites}
@@ -247,3 +247,4 @@ MainContainer.propTypes = {
     url: PropTypes.string.isRequired
   })
 };
+

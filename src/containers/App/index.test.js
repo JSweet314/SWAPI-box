@@ -42,13 +42,6 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have a default state', () => {
-    expect(wrapper.state()).toEqual({
-      favorites: [],
-      numberOfFavorites: 0
-    });
-  });
-
   it('should be able add favorited cards to its favorites in state', () => {
     expect(wrapper.state('favorites')).toEqual([]);
     wrapper.instance().addFavorite(mockFavorite);
