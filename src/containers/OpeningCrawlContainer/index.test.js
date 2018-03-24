@@ -11,8 +11,6 @@ describe('ScrollingText', () => {
   let wrapper, mockData;
   const mockStoreOpeningCrawl = jest.fn();
   const mockGetOpeningCrawl = jest.fn();
-  const mockDeployNewCrawl = jest.fn().mockImplementation(() => 
-    Promise.resolve({}));
   /*eslint-enable no-undef*/
   beforeEach(() => {
     localStorage.clear();
