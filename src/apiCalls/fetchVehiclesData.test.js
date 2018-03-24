@@ -25,7 +25,7 @@ describe('fetchVehiclesData', () => {
 
   it('calls wrangleVehiclesData after fetching', () => {
     fetchVehiclesData();
-    expect(wrangleVehiclesData).toHaveBeenCalled();
+    expect(wrangleVehiclesData).toHaveBeenCalledWith(mockVehiclesData);
   });
 
   it('returns an object of clean vehicles data', () => {

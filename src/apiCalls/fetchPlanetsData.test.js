@@ -25,7 +25,7 @@ describe('fetchPlanetsData', () => {
 
   it('calls wranglePlanetsData after fetching', () => {
     fetchPlanetsData();
-    expect(wranglePlanetsData).toHaveBeenCalled();
+    expect(wranglePlanetsData).toHaveBeenCalledWith(mockPlanetsData);
   });
 
   it('returns an object of clean planets data', () => {

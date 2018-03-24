@@ -1,4 +1,4 @@
-import {wrangleResidentData} from '../dataWranglers/wrangleResidentData';
+import {fetchName} from './fetchName';
 
 export const fetchAllResidentsData = planetsData => 
   Promise.all(planetsData.planetsArray.map(assignResidentsToPlanets))
@@ -8,7 +8,4 @@ export const assignResidentsToPlanets = planet =>
   Promise.all(planet.residents.map(fetchName))
     .then(residents => ({...planet, residents}));
 
-export const fetchName = resident => 
-  fetch(resident)
-    .then(response => response.json())
-    .then(wrangleResidentData);
+

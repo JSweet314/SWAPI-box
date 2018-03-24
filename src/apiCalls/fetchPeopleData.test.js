@@ -25,7 +25,7 @@ describe('fetchPeopleData', () => {
 
   it('calls wranglePeopleData after fetching', () => {
     fetchPeopleData();
-    expect(wranglePeopleData).toHaveBeenCalled();
+    expect(wranglePeopleData).toHaveBeenCalledWith(mockPeopleData);
   });
 
   it('returns an object of clean people data', () => {

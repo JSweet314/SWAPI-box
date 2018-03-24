@@ -27,7 +27,7 @@ describe('fetchSpecies', () => {
 
   it('calls wrangleSpeciesData after fetching', () => {
     fetchSpecies(mockWrangledSinglePersonData);
-    expect(wrangleSpeciesData).toHaveBeenCalled();
+    expect(wrangleSpeciesData).toHaveBeenCalledWith(mockSpeciesData);
   });
 
   it('assigns new species data to the person data', () => {
