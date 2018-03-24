@@ -1,11 +1,9 @@
-import {fetchName} from './fetchName';
+import { assignResidentsToPlanets } from './assignResidentsToPlanets';
 
 export const fetchAllResidentsData = planetsData => 
   Promise.all(planetsData.planetsArray.map(assignResidentsToPlanets))
     .then(planetsArray => ({...planetsData, planetsArray}));
-       
-export const assignResidentsToPlanets = planet => 
-  Promise.all(planet.residents.map(fetchName))
-    .then(residents => ({...planet, residents}));
+
+
 
 
