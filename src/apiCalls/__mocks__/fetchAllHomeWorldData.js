@@ -1,3 +1,4 @@
+import { mockPeopleData } from '../../mockData/mockMainContainerData';
 /* eslint-disable no-undef */
-export const fetchAllHomeWorldData = jest.fn();
-/* eslint-enable no-undef */
+export const fetchAllHomeworldData = jest.fn().mockImplementation(() =>
+  Promise.resolve(mockPeopleData));
