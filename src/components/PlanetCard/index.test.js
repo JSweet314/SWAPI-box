@@ -23,8 +23,7 @@ describe('PlanetCard', () => {
       <PlanetCard
         handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[]}
-        card={card} />,
-      { disableLifecycleMethods: true }
+        card={card} />
     );
 
     expect(wrapper).toMatchSnapshot();
@@ -35,8 +34,7 @@ describe('PlanetCard', () => {
       <PlanetCard
         handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{ name: 'tatooine' }]}
-        card={card} />,
-      { disableLifecycleMethods: true }
+        card={card} />
     );
 
     expect(wrapper.find('.selected').length).toEqual(1);

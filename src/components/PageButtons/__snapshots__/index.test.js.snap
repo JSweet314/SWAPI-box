@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageButtons should match a snapshot with both prev. and next urls passed 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PageButtons
+    handlePageButtonClick={[Function]}
+    next="www.whosthebestpuppy.com"
+    previous="www.spacejam.com"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          name="previous"
+          onClick={[Function]}
+>
+          Back
+</button>,
+        <button
+          name="next"
+          onClick={[Function]}
+>
+          Next
+</button>,
+      ],
+      "className": "page-buttons",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Back",
+          "name": "previous",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Back",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Next",
+          "name": "next",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Next",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            name="previous"
+            onClick={[Function]}
+>
+            Back
+</button>,
+          <button
+            name="next"
+            onClick={[Function]}
+>
+            Next
+</button>,
+        ],
+        "className": "page-buttons",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Back",
+            "name": "previous",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Back",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Next",
+            "name": "next",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Next",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`PageButtons should match a snapshot with no next url passed 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PageButtons
+    handlePageButtonClick={[Function]}
+    next={null}
+    previous="www.spacejam.com"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <button
+        name="previous"
+        onClick={[Function]}
+>
+        Back
+</button>,
+      "className": "page-buttons page-buttons--beginning",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Back",
+        "name": "previous",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": "Back",
+      "type": "button",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <button
+          name="previous"
+          onClick={[Function]}
+>
+          Back
+</button>,
+        "className": "page-buttons page-buttons--beginning",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Back",
+          "name": "previous",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Back",
+        "type": "button",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`PageButtons should match a snapshot with no previous url passed 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PageButtons
+    handlePageButtonClick={[Function]}
+    next="www.whosthebestpuppy.com"
+    previous={null}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <button
+        name="next"
+        onClick={[Function]}
+>
+        Next
+</button>,
+      "className": "page-buttons page-buttons--beginning",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Next",
+        "name": "next",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": "Next",
+      "type": "button",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <button
+          name="next"
+          onClick={[Function]}
+>
+          Next
+</button>,
+        "className": "page-buttons page-buttons--beginning",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Next",
+          "name": "next",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Next",
+        "type": "button",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

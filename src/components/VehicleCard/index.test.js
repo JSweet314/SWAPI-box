@@ -19,8 +19,7 @@ describe('VehicleCard', () => {
       <VehicleCard
         handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[]}
-        card={card} />,
-      { disableLifecycleMethods: true }
+        card={card} />
     );
 
     expect(wrapper).toMatchSnapshot();
@@ -31,8 +30,7 @@ describe('VehicleCard', () => {
       <VehicleCard
         handleFavoriteClick={mockHandleFavoriteClick}
         favorites={[{ name: 'Sand Crawler' }]}
-        card={card} />,
-      { disableLifecycleMethods: true }
+        card={card} />
     );
 
     expect(wrapper.find('.selected').length).toEqual(1);
