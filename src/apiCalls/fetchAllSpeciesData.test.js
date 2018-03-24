@@ -1,10 +1,12 @@
 import {fetchAllSpeciesData} from './fetchAllSpeciesData';
 import {mockPeopleData} from '../mockData/mockPeopleData';
-import categoryDataWrangler from '../dataWranglers/categoryDataWrangler';
-
+import {wranglePeopleData} from '../dataWranglers/wranglePeopleData';
+import { wrangleSpeciesData } from '../dataWranglers/wrangleSpeciesData';
+/* eslint-disable no-undef */
+jest.mock('../dataWranglers/wrangleSpeciesData');
 describe('fetchAllSpeciesData', () => {
-  const mockData = categoryDataWrangler(mockPeopleData, 'people');
-  /* eslint-disable no-undef */
+  const mockData = wranglePeopleData(mockPeopleData, 'people');
+  // mockData.peopleArray[0].species = "human";
   window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
   /* eslint-enable no-undef */
     {
@@ -19,13 +21,21 @@ describe('fetchAllSpeciesData', () => {
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
-  // it('should return person data with the species added', () => {
-  //   const expected = [{
-  //     name: 'Luke Skywalker',
-  //     homeworld: "https://swapi.co/api/planets/1/",
-  //     species: 'human'
-  //   }];
-    
-  //   expect(fetchAllSpeciesData(mockData)).resolves.toEqual(expected);
-  // });
+  it('should wrangle species data', () => {
+    fetchAllSpeciesData(mockData);
+    expect(wrangleSpeciesData).toHaveBeenCalled();
+  });
+
+  it('should return person data with the species added', () => {
+    // const expected = { 
+    //   "next": "https://swapi.co/api/people/?page=2&format=json",
+    //   "previous": null,
+    //   "peopleArray": [{ 
+    //     "homeworld": "https://swapi.co/api/planets/1/", 
+    //     "name": "Luke Skywalker",
+    //     "species": "human" 
+    //   }]
+    // };
+    // expect(fetchAllSpeciesData(mockData)).resolves.toEqual(expected);
+  });
 });
