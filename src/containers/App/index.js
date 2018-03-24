@@ -10,50 +10,47 @@ class App extends Component {
     super(props);
     this.state = {
       favorites: [],
-      numberOfFavorites: 0,
-      openingCrawl: '',
-      title: '',
-      releaseDate: ''
+      numberOfFavorites: 0
     };
   }
 
   componentDidMount = () => this.retrieveFavorites();
 
-  handleFavoriteClick = (card, category) => {
-    const {name} = card; 
-    const alreadyFavored = this.state.favorites.some(fav => fav.name === name);
-    if (alreadyFavored) {
-      this.removeFavorite(card.name);
-    } else {
-      this.selectFavorite({...card, category});
-    }
-  }
-
-  selectFavorite = (favObj) => {
+  addFavorite = (favObj) => {
     const favorites = [...this.state.favorites, favObj];
     const numberOfFavorites = this.state.numberOfFavorites + 1;
-    this.setState({favorites, numberOfFavorites}, this.storeFavorites);
+    this.setState({ favorites, numberOfFavorites }, this.storeFavorites);
   }
 
-  removeFavorite = (name) => {
-    const favorites = this.state.favorites.filter(fav => fav.name !== name);
-    const numberOfFavorites = this.state.numberOfFavorites - 1;
-    this.setState({favorites, numberOfFavorites}, this.storeFavorites);
-  }
-  
   storeFavorites = () => {
     const { favorites, numberOfFavorites } = this.state;
-    localStorage.setItem('SWAPI-Favorites', JSON.stringify({
+    localStorage.setItem('SWAPI-favorites', JSON.stringify({
       favorites,
       numberOfFavorites
     }));
   }
+  
+  removeFavorite = (name) => {
+    const favorites = this.state.favorites.filter(fav => fav.name !== name);
+    const numberOfFavorites = this.state.numberOfFavorites - 1;
+    this.setState({ favorites, numberOfFavorites }, this.storeFavorites);
+  }
 
   retrieveFavorites = () => {
-    const priorFavorites = localStorage.getItem('SWAPI-Favorites');
+    const priorFavorites = localStorage.getItem('SWAPI-favorites');
     if (priorFavorites) {
       const { favorites, numberOfFavorites } = JSON.parse(priorFavorites);
       this.setState({ favorites, numberOfFavorites });
+    }
+  }
+ 
+  handleFavoriteClick = (card, category) => {
+    const { name } = card;
+    const alreadyFavored = this.state.favorites.some(fav => fav.name === name);
+    if (alreadyFavored) {
+      this.removeFavorite(card.name);
+    } else {
+      this.addFavorite({ ...card, category });
     }
   }
 

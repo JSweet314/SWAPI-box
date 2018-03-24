@@ -1,6 +1,6 @@
 import React from 'react';
 import OpeningCrawlContainer from './index';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 import LocalStorage from '../../__mocks__/localStorageMock';
 
 window.localStorage = new LocalStorage;

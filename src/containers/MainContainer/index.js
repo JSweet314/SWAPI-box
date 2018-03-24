@@ -230,7 +230,7 @@ export default class MainContainer extends Component {
             previous={previous} />
         </div>
       ) : (
-        <div className="category-display">
+        <div className="loading-display">
           <img src={loadingGIF} alt="loading" />
         </div>
       );
