@@ -8,11 +8,15 @@ import {fetchAllSpeciesData} from '../../apiCalls/fetchAllSpeciesData';
 import {fetchPeopleData} from '../../apiCalls/fetchPeopleData';
 import {fetchPlanetsData} from '../../apiCalls/fetchPlanetsData';
 import {fetchVehiclesData} from '../../apiCalls/fetchVehiclesData';
-
+/*eslint-disable no-undef*/
 window.localStorage = new LocalStorage();
-
+jest.mock('../../apiCalls/fetchAllHomeworldData');
+jest.mock('../../apiCalls/fetchAllResidentsData');
+jest.mock('../../apiCalls/fetchAllSpeciesData');
+jest.mock('../../apiCalls/fetchPeopleData');
+jest.mock('../../apiCalls/fetchPlanetsData');
+jest.mock('../../apiCalls/fetchVehiclesData');
 describe('MainContainer', () => {
-  /*eslint-disable no-undef*/
   let wrapper;
   const mockGetDataByRouteId = jest.fn();
   const mockGetPeopleData = jest.fn();
@@ -59,7 +63,7 @@ describe('MainContainer', () => {
     previous: null,
     dataArray: [mockPersonCard]
   };
-  /*eslint-enable no-undef*/
+  
   beforeEach(() => {
     localStorage.clear();
     wrapper = shallow(
@@ -67,7 +71,7 @@ describe('MainContainer', () => {
       {disableLifecycleMethods: true}
     );
   });
-
+  /*eslint-enable no-undef*/
   it('should match a snapshot with no data present', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -135,11 +139,20 @@ describe('MainContainer', () => {
   });
 
   describe('getPeopleData', () => {});
-  describe('deployPeopleData', () => {});
+
+  test('deployPeopleData should set the state with fresh data', () => {
+    
+  });
   describe('getPlanetsData', () => {});
   describe('deployPlanetsData', () => {});
   describe('getVehiclesData', () => {});
   describe('deployVehiclesData', () => {});
-
-
+  // storeCategoryData
+  // handlePageButtonClick
+  // getNextPage
+  // getPrevPage
+  // buildCards
+  // personCards
+  // planetCards
+  // vehicleCards
 });
