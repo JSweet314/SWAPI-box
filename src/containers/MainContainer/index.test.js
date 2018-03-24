@@ -44,9 +44,6 @@ describe('MainContainer', () => {
   const mockPlanetCards = jest.fn();
   const mockVehicleCards = jest.fn();
   const mockBuildCards = jest.fn();
-  // const mockDeployPeopleData = jest.fn();
-  // const mockDeployPlanetsData = jest.fn();
-  // const mockDeployVehiclesData = jest.fn();
   /*eslint-enable no-undef*/
 
   beforeEach(() => {
@@ -145,13 +142,6 @@ describe('MainContainer', () => {
       wrapper.update().update();
       expect(fetchAllSpeciesData).toHaveBeenCalled();
     });
-
-    // it('should call deployPeopleData after fetching species data', () => {
-    //   wrapper.instance().deployPeopleData = mockDeployPeopleData;
-    //   wrapper.instance().getPeopleData();
-    //   wrapper.update().update().update();
-    //   expect(mockDeployPeopleData).toHaveBeenCalled();
-    // })
   });
 
   test('deployPeopleData should set the state with fresh people data', () => {
@@ -186,13 +176,6 @@ describe('MainContainer', () => {
         expect(fetchAllResidentsData).toHaveBeenCalled();
       }
     );
-
-    // it('should call deployPlanetsData after fetching species data', () => {
-    //   wrapper.instance().deployPlanetsData = mockDeployPlanetsData;
-    //   wrapper.instance().getPlanetsData();
-    //   wrapper.update().update().update();
-    //   expect(mockDeployPlanetsData).toHaveBeenCalled();
-    // });
   });
 
   test('deployPlanetsData should set the state with fresh planets data', () => {
@@ -219,28 +202,23 @@ describe('MainContainer', () => {
       wrapper.instance().getVehiclesData('www.google.com');
       expect(fetchVehiclesData).toHaveBeenCalledWith('www.google.com');
     });
-
-    // it('should call deployVehiclesData after fetching species data', () => {
-    //   wrapper.instance().deployVehiclesData = mockDeployVehiclesData;
-    //   wrapper.instance().getVehiclesData();
-    //   wrapper.update().update().update();
-    //   expect(mockDeployVehiclesData).toHaveBeenCalled();
-    // });
   });
 
-  test('deployVehiclesData should set the state with fresh vehicle data', () => {
-    expect(wrapper.state()).toEqual(mockInitialMainState);
-    const expected = {
-      next: "https://swapi.co/api/vehicles/?format=json&page=2",
-      previous: null,
-      people: [],
-      planets: [],
-      vehicles: [mockVehicleCard],
-      loading: false
-    };
-    wrapper.instance().deployVehiclesData(mockVehiclesData);
-    expect(wrapper.state()).toEqual(expected);
-  });
+  test('deployVehiclesData should set the state with fresh vehicle data', 
+    () => {
+      expect(wrapper.state()).toEqual(mockInitialMainState);
+      const expected = {
+        next: "https://swapi.co/api/vehicles/?format=json&page=2",
+        previous: null,
+        people: [],
+        planets: [],
+        vehicles: [mockVehicleCard],
+        loading: false
+      };
+      wrapper.instance().deployVehiclesData(mockVehiclesData);
+      expect(wrapper.state()).toEqual(expected);
+    }
+  );
 
   describe("storeCategoryData", () => {
     it('should store data with a category of people', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import OpeningCrawlContainer from './index';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import LocalStorage from '../../__mocks__/localStorageMock';
 import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 
@@ -75,12 +75,5 @@ describe('ScrollingText', () => {
       wrapper.instance().getOpeningCrawl();
       expect(fetchOpeningCrawl).toHaveBeenCalled();
     });
-
-    // it('should call deployNewCrawl after fetching', () => {
-    //   wrapper.instance().deployNewCrawl = mockDeployNewCrawl;
-    //   wrapper.instance().getOpeningCrawl();
-    //   wrapper.update();
-    //   expect(mockDeployNewCrawl).toHaveBeenCalled();
-    // });
   });
 });
