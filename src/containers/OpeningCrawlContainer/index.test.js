@@ -1,17 +1,19 @@
 import React from 'react';
 import OpeningCrawlContainer from './index';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import LocalStorage from '../../__mocks__/localStorageMock';
+import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 
 window.localStorage = new LocalStorage;
-
+/*eslint-disable no-undef*/
+jest.mock('../../apiCalls/fetchOpeningCrawl');
 describe('ScrollingText', () => {
   let wrapper, mockData;
-  /*eslint-disable no-undef*/
   const mockStoreOpeningCrawl = jest.fn();
   const mockGetOpeningCrawl = jest.fn();
+  const mockDeployNewCrawl = jest.fn().mockImplementation(() => 
+    Promise.resolve({}));
   /*eslint-enable no-undef*/
-
   beforeEach(() => {
     localStorage.clear();
     mockData = {
@@ -66,5 +68,19 @@ describe('ScrollingText', () => {
     wrapper.setState(mockData);
     wrapper.instance().storeOpeningCrawl();
     expect(localStorage.getItem('SWAPI-crawl')).toEqual(expected);
+  });
+
+  describe('getOpeningCrawl', () => {
+    it('should call fetchOpeningCrawl', () => {
+      wrapper.instance().getOpeningCrawl();
+      expect(fetchOpeningCrawl).toHaveBeenCalled();
+    });
+
+    // it('should call deployNewCrawl after fetching', () => {
+    //   wrapper.instance().deployNewCrawl = mockDeployNewCrawl;
+    //   wrapper.instance().getOpeningCrawl();
+    //   wrapper.update();
+    //   expect(mockDeployNewCrawl).toHaveBeenCalled();
+    // });
   });
 });

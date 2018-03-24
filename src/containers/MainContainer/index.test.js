@@ -48,7 +48,7 @@ describe('MainContainer', () => {
   // const mockDeployPlanetsData = jest.fn();
   // const mockDeployVehiclesData = jest.fn();
   /*eslint-enable no-undef*/
-  
+
   beforeEach(() => {
     localStorage.clear();
     wrapper = shallow(
@@ -195,7 +195,7 @@ describe('MainContainer', () => {
     // });
   });
 
-  it('deployPlanetsData should set the state with fresh planets data', () => {
+  test('deployPlanetsData should set the state with fresh planets data', () => {
     expect(wrapper.state()).toEqual(mockInitialMainState);
     const expected = {
       next: "https://swapi.co/api/planets/?format=json&page=2",
@@ -228,7 +228,7 @@ describe('MainContainer', () => {
     // });
   });
 
-  it('deployVehiclesData should set the state with fresh vehicle data', () => {
+  test('deployVehiclesData should set the state with fresh vehicle data', () => {
     expect(wrapper.state()).toEqual(mockInitialMainState);
     const expected = {
       next: "https://swapi.co/api/vehicles/?format=json&page=2",
@@ -431,12 +431,12 @@ describe('MainContainer', () => {
     });
   });
 
-  it('personCards should return an array of PersonCards to render', () => {
+  test('personCards should return an array of PersonCards to render', () => {
     wrapper.setState({people: [mockPersonCard]});
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('planetCards should return an array of PlanetCards to render', () => {
+  test('planetCards should return an array of PlanetCards to render', () => {
     wrapper = shallow(
       <MainContainer {...mockMainPropsPlanetsRoute} />,
       { disableLifecycleMethods: true }
@@ -445,7 +445,7 @@ describe('MainContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('vehicleCards should return an array of VehicleCards to render', () => {
+  test('vehicleCards should return an array of VehicleCards to render', () => {
     wrapper = shallow(
       <MainContainer {...mockMainPropsVehiclesRoute} />,
       { disableLifecycleMethods: true }
