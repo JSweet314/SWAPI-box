@@ -11,6 +11,7 @@ describe('App', () => {
   const mockAddFavorite = jest.fn();
   const mockRemoveFavorite = jest.fn();
   const mockStoreFavorites = jest.fn();
+  const mockRetrieveFavorites = jest.fn();
   /*eslint-enable no-undef*/
   const mockFavorite = {
     category: "people",
@@ -103,6 +104,12 @@ describe('App', () => {
       expect(wrapper.state('favorites')).toEqual([mockFavorite]);
       expect(wrapper.state('numberOfFavorites')).toEqual(1);
     });
+
+  it('should call retrieveFavorites when App mounts', () => {
+    wrapper.instance().retrieveFavorites = mockRetrieveFavorites;
+    wrapper.instance().componentDidMount();
+    expect(mockRetrieveFavorites).toHaveBeenCalled();
+  });
 
   test('handleFavoriteClick should call addFavorite',
     () => {
