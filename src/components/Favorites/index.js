@@ -5,29 +5,29 @@ import VehicleCard from '../VehicleCard/index';
 import PlanetCard from '../PlanetCard/index';
 import './style.css';
 
-const Favorites = ({favorites, handleOnClick}) => {
+const Favorites = ({favorites, handleFavoriteClick}) => {
   const favoriteCards = favorites.map(favorite => {
     switch (favorite.category) {
     case 'people': 
       return <PersonCard
-        handleOnClick={handleOnClick}
+        handleFavoriteClick={handleFavoriteClick}
         favorites={favorites}
         key={favorite.name}
         card={favorite} />;
     case 'vehicles':
       return <VehicleCard
-        handleOnClick={handleOnClick}
+        handleFavoriteClick={handleFavoriteClick}
         favorites={favorites}
         key={favorite.name}
         card={favorite} />;
     case 'planets':
       return <PlanetCard
-        handleOnClick={handleOnClick}
+        handleFavoriteClick={handleFavoriteClick}
         favorites={favorites}
         key={favorite.name}
         card={favorite} />;
     default:
-      return <h3>You Have No Favorites</h3>;
+      break;
     }
   });
 
@@ -48,7 +48,7 @@ const Favorites = ({favorites, handleOnClick}) => {
 
 Favorites.propTypes = {
   favorites: PropTypes.array.isRequired,
-  handleOnClick: PropTypes.func.isRequired
+  handleFavoriteClick: PropTypes.func.isRequired
 };
 
 export default Favorites;
