@@ -23,7 +23,7 @@ export default class MainContainer extends Component {
       vehicles: [],
       next: null,
       previous: null,
-      loading: true
+      loading: false
     };
   }
 
@@ -40,14 +40,13 @@ export default class MainContainer extends Component {
     const priorData = localStorage.getItem(`SWAPI-${id}`);
     if (priorData) {
       const { dataArray, next, previous } = JSON.parse(priorData);
-      const key = `${id}Array`;
-      this.setState({[key]: dataArray, next, previous, loading: false});
+      this.setState({[id]: dataArray, next, previous, loading: false});
     } else {
-      this.setState({loading: true}, this.getCategoryById);
+      this.setState({loading: true}, this.getDataByRouteId);
     }
   }
 
-  getCategoryById = () => {
+  getDataByRouteId = () => {
     const {id} = this.props.match.params;
     switch (id) {
     case 'people':
@@ -204,7 +203,7 @@ export default class MainContainer extends Component {
     localStorage.setItem(`SWAPI-${id}`, JSON.stringify({
       next: next,
       previous: previous,
-      dataArray: this.state[`${id}Array`]
+      dataArray: this.state[id]
     }));
   }
    

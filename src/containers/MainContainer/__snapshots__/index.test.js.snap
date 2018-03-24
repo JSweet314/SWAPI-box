@@ -13,8 +13,8 @@ ShallowWrapper {
             "params": Object {
               "id": "people",
             },
-            "path": "string.isRequired",
-            "url": "string.isRequired",
+            "path": "/category/:id",
+            "url": "/category/people",
           }
     }
 />,
@@ -179,8 +179,8 @@ ShallowWrapper {
             "params": Object {
               "id": "people",
             },
-            "path": "string.isRequired",
-            "url": "string.isRequired",
+            "path": "/category/:id",
+            "url": "/category/people",
           }
     }
 />,
@@ -196,25 +196,32 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <img
-        alt="loading"
-        src="Loading_icon.gif"
+      "children": Array [
+        Array [],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
 />,
-      "className": "loading-display",
+      ],
+      "className": "people-display",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "alt": "loading",
-        "src": "Loading_icon.gif",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": null,
-      "type": "img",
-    },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -223,25 +230,32 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <img
-          alt="loading"
-          src="Loading_icon.gif"
+        "children": Array [
+          Array [],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
 />,
-        "className": "loading-display",
+        ],
+        "className": "people-display",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "loading",
-          "src": "Loading_icon.gif",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
+      ],
       "type": "div",
     },
   ],
