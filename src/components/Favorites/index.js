@@ -27,7 +27,7 @@ const Favorites = ({favorites, handleFavoriteClick}) => {
         key={favorite.name}
         card={favorite} />;
     default:
-      break;
+      return null;
     }
   });
 

@@ -8,9 +8,7 @@ export default class OpeningCrawlContainer extends Component {
     this.state = {openingCrawl: '', title: '', releaseDate: ''};
   }
 
-  componentDidMount = () => {
-    this.findClosestOpeningCrawl();
-  }
+  componentDidMount = () => this.findClosestOpeningCrawl();
 
   findClosestOpeningCrawl = () => {
     const priorCrawl = localStorage.getItem('SWAPI-crawl');

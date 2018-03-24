@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Favorites from '../../components/Favorites/index';
-import {fetchAllHomeworldData} from '../../apiCalls/fetchAllHomeworldData';
-import {fetchAllResidentsData} from '../../apiCalls/fetchAllResidentsData';
-import {fetchAllSpeciesData} from '../../apiCalls/fetchAllSpeciesData';
-import {fetchPeopleData} from '../../apiCalls/fetchPeopleData';
-import {fetchPlanetsData} from '../../apiCalls/fetchPlanetsData';
-import {fetchVehiclesData} from '../../apiCalls/fetchVehiclesData';
+import { fetchAllHomeworldData } from '../../apiCalls/fetchAllHomeworldData';
+import { fetchAllResidentsData } from '../../apiCalls/fetchAllResidentsData';
+import { fetchAllSpeciesData } from '../../apiCalls/fetchAllSpeciesData';
+import { fetchPeopleData } from '../../apiCalls/fetchPeopleData';
+import { fetchPlanetsData } from '../../apiCalls/fetchPlanetsData';
+import { fetchVehiclesData } from '../../apiCalls/fetchVehiclesData';
 import loadingGIF from '../../images/Loading_icon.gif';
 import PageButtons from '../../components/PageButtons/index.js';
 import PersonCard from '../../components/PersonCard/index';
@@ -18,12 +18,12 @@ export default class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peopleArray: [],
-      planetsArray: [],
-      vehiclesArray: [],
+      people: [],
+      planets: [],
+      vehicles: [],
       next: null,
       previous: null,
-      loading: true
+      loading: false
     };
   }
 
@@ -36,19 +36,18 @@ export default class MainContainer extends Component {
   }
 
   findClosestData = () => {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     const priorData = localStorage.getItem(`SWAPI-${id}`);
     if (priorData) {
       const { dataArray, next, previous } = JSON.parse(priorData);
-      const key = `${id}Array`;
-      this.setState({[key]: dataArray, next, previous, loading: false});
+      this.setState({ [id]: dataArray, next, previous, loading: false });
     } else {
-      this.setState({loading: true}, this.getCategoryById);
+      this.setState({ loading: true }, this.getDataByRouteId);
     }
   }
 
-  getCategoryById = () => {
-    const {id} = this.props.match.params;
+  getDataByRouteId = () => {
+    const { id } = this.props.match.params;
     switch (id) {
     case 'people':
       this.getPeopleData();
@@ -65,7 +64,7 @@ export default class MainContainer extends Component {
   }
 
   buildCards = () => {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     switch (id) {
     case 'people':
       return this.personCards();
@@ -78,7 +77,7 @@ export default class MainContainer extends Component {
     }
   }
 
-  getPeopleData = (url) => 
+  getPeopleData = (url) =>
     fetchPeopleData(url)
       .then(fetchAllHomeworldData)
       .then(fetchAllSpeciesData)
@@ -89,13 +88,13 @@ export default class MainContainer extends Component {
     this.setState({
       next: peopleData.next,
       previous: peopleData.previous,
-      peopleArray: peopleData.peopleArray,
+      people: peopleData.peopleArray,
       loading: false
     }, this.storeCategoryData)
 
   personCards = () => {
-    const {handleFavoriteClick, favorites} = this.props;
-    return this.state.peopleArray.map(card =>
+    const { handleFavoriteClick, favorites } = this.props;
+    return this.state.people.map(card =>
       <PersonCard
         card={card}
         favorites={favorites}
@@ -104,23 +103,23 @@ export default class MainContainer extends Component {
     );
   }
 
-  getPlanetsData = (url) => 
+  getPlanetsData = (url) =>
     fetchPlanetsData(url)
       .then(fetchAllResidentsData)
       .then(this.deployPlanetsData)
       .catch(error => alert(error.message));
 
-  deployPlanetsData = planetsData => 
+  deployPlanetsData = planetsData =>
     this.setState({
       next: planetsData.next,
       previous: planetsData.previous,
-      planetsArray: planetsData.planetsArray,
+      planets: planetsData.planetsArray,
       loading: false
     }, this.storeCategoryData)
 
   planetCards = () => {
-    const {handleFavoriteClick, favorites} = this.props;
-    return this.state.planetsArray.map(card =>
+    const { handleFavoriteClick, favorites } = this.props;
+    return this.state.planets.map(card =>
       <PlanetCard
         card={card}
         favorites={favorites}
@@ -129,24 +128,24 @@ export default class MainContainer extends Component {
     );
   }
 
-  getVehiclesData = (url) => 
+  getVehiclesData = (url) =>
     fetchVehiclesData(url)
       .then(this.deployVehiclesData)
       .catch(error => alert(error.message));
 
-  deployVehiclesData = vehiclesData => 
+  deployVehiclesData = vehiclesData =>
     this.setState({
       next: vehiclesData.next,
       previous: vehiclesData.previous,
-      vehiclesArray: vehiclesData.vehiclesArray,
+      vehicles: vehiclesData.vehiclesArray,
       loading: false
     }, this.storeCategoryData)
 
   vehicleCards = () => {
-    const {handleFavoriteClick, favorites} = this.props;
-    return this.state.vehiclesArray.map(card =>
+    const { handleFavoriteClick, favorites } = this.props;
+    return this.state.vehicles.map(card =>
       <VehicleCard
-        card={card} 
+        card={card}
         favorites={favorites}
         handleFavoriteClick={handleFavoriteClick}
         key={card.name} />
@@ -154,8 +153,8 @@ export default class MainContainer extends Component {
   }
 
   getNextPage = () => {
-    const {id} = this.props.match.params;
-    const {next} = this.state;
+    const { id } = this.props.match.params;
+    const { next } = this.state;
     switch (id) {
     case 'people':
       this.getPeopleData(next);
@@ -172,8 +171,8 @@ export default class MainContainer extends Component {
   }
 
   getPreviousPage = () => {
-    const {id} = this.props.match.params;
-    const {previous} = this.state;
+    const { id } = this.props.match.params;
+    const { previous } = this.state;
     switch (id) {
     case 'people':
       this.getPeopleData(previous);
@@ -192,45 +191,45 @@ export default class MainContainer extends Component {
   handlePageButtonClick = (event) => {
     const name = event.target.name;
     if (name === 'previous') {
-      this.setState({loading: true}, this.getPreviousPage);
+      this.setState({ loading: true }, this.getPreviousPage);
     } else {
       this.setState({ loading: true }, this.getNextPage);
     }
   }
 
   storeCategoryData = () => {
-    const {next, previous} = this.state;
-    const {id} = this.props.match.params;
+    const { next, previous } = this.state;
+    const { id } = this.props.match.params;
     localStorage.setItem(`SWAPI-${id}`, JSON.stringify({
       next: next,
       previous: previous,
-      dataArray: this.state[`${id}Array`]
+      dataArray: this.state[id]
     }));
   }
-   
+
   render = () => {
-    const {handleFavoriteClick, favorites} = this.props;
-    const {next, previous} = this.state;
+    const { handleFavoriteClick, favorites } = this.props;
+    const { next, previous } = this.state;
     const cards = this.buildCards();
     if (this.props.match.params.id === 'favorites') {
       return (
-        <Favorites 
-          handleFavoriteClick={handleFavoriteClick} 
+        <Favorites
+          handleFavoriteClick={handleFavoriteClick}
           favorites={favorites} />
       );
     }
 
-    return !this.state.loading ? 
+    return !this.state.loading ?
       (
         <div className="people-display">
           {cards}
-          <PageButtons 
+          <PageButtons
             handlePageButtonClick={this.handlePageButtonClick}
             next={next}
             previous={previous} />
         </div>
       ) : (
-        <div className="category-display">
+        <div className="loading-display">
           <img src={loadingGIF} alt="loading" />
         </div>
       );

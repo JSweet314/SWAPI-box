@@ -1,0 +1,789 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContainer personCards should return an array of PersonCards to render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainContainer
+    favorites={Array []}
+    handleFavoriteClick={[Function]}
+    match={
+        Object {
+            "isExact": false,
+            "params": Object {
+              "id": "people",
+            },
+            "path": "/category/:id",
+            "url": "/category/people",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <PersonCard
+            card={
+                        Object {
+                                    "homeworld": "Tatooine",
+                                    "name": "Luke Skywalker",
+                                    "population": "200000",
+                                    "species": "Human",
+                                  }
+            }
+            favorites={Array []}
+            handleFavoriteClick={[Function]}
+/>,
+        ],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
+/>,
+      ],
+      "className": "people-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Luke Skywalker",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "homeworld": "Tatooine",
+            "name": "Luke Skywalker",
+            "population": "200000",
+            "species": "Human",
+          },
+          "favorites": Array [],
+          "handleFavoriteClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <PersonCard
+              card={
+                            Object {
+                                          "homeworld": "Tatooine",
+                                          "name": "Luke Skywalker",
+                                          "population": "200000",
+                                          "species": "Human",
+                                        }
+              }
+              favorites={Array []}
+              handleFavoriteClick={[Function]}
+/>,
+          ],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
+/>,
+        ],
+        "className": "people-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Luke Skywalker",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "homeworld": "Tatooine",
+              "name": "Luke Skywalker",
+              "population": "200000",
+              "species": "Human",
+            },
+            "favorites": Array [],
+            "handleFavoriteClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
+
+exports[`MainContainer planetCards should return an array of PlanetCards to render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainContainer
+    favorites={Array []}
+    handleFavoriteClick={[Function]}
+    match={
+        Object {
+            "isExact": false,
+            "params": Object {
+              "id": "planets",
+            },
+            "path": "/category/:id",
+            "url": "/category/people",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <PlanetCard
+            card={
+                        Object {
+                                    "climate": "temperate",
+                                    "name": "Alderaan",
+                                    "population": "2000000000",
+                                    "residents": Array [
+                                      "Leia Organa",
+                                      "Bail Prestor Organa",
+                                      "Raymus Antilles",
+                                    ],
+                                    "terrain": "grasslands, mountains",
+                                  }
+            }
+            favorites={Array []}
+            handleFavoriteClick={[Function]}
+/>,
+        ],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
+/>,
+      ],
+      "className": "people-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Alderaan",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "climate": "temperate",
+            "name": "Alderaan",
+            "population": "2000000000",
+            "residents": Array [
+              "Leia Organa",
+              "Bail Prestor Organa",
+              "Raymus Antilles",
+            ],
+            "terrain": "grasslands, mountains",
+          },
+          "favorites": Array [],
+          "handleFavoriteClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <PlanetCard
+              card={
+                            Object {
+                                          "climate": "temperate",
+                                          "name": "Alderaan",
+                                          "population": "2000000000",
+                                          "residents": Array [
+                                            "Leia Organa",
+                                            "Bail Prestor Organa",
+                                            "Raymus Antilles",
+                                          ],
+                                          "terrain": "grasslands, mountains",
+                                        }
+              }
+              favorites={Array []}
+              handleFavoriteClick={[Function]}
+/>,
+          ],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
+/>,
+        ],
+        "className": "people-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Alderaan",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "climate": "temperate",
+              "name": "Alderaan",
+              "population": "2000000000",
+              "residents": Array [
+                "Leia Organa",
+                "Bail Prestor Organa",
+                "Raymus Antilles",
+              ],
+              "terrain": "grasslands, mountains",
+            },
+            "favorites": Array [],
+            "handleFavoriteClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
+
+exports[`MainContainer should match a snapshot with data present 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainContainer
+    favorites={Array []}
+    handleFavoriteClick={[Function]}
+    match={
+        Object {
+            "isExact": false,
+            "params": Object {
+              "id": "people",
+            },
+            "path": "/category/:id",
+            "url": "/category/people",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <PersonCard
+            card={
+                        Object {
+                                    "homeworld": "Tatooine",
+                                    "name": "Luke Skywalker",
+                                    "population": "200000",
+                                    "species": "Human",
+                                  }
+            }
+            favorites={Array []}
+            handleFavoriteClick={[Function]}
+/>,
+        ],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
+/>,
+      ],
+      "className": "people-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Luke Skywalker",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "homeworld": "Tatooine",
+            "name": "Luke Skywalker",
+            "population": "200000",
+            "species": "Human",
+          },
+          "favorites": Array [],
+          "handleFavoriteClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <PersonCard
+              card={
+                            Object {
+                                          "homeworld": "Tatooine",
+                                          "name": "Luke Skywalker",
+                                          "population": "200000",
+                                          "species": "Human",
+                                        }
+              }
+              favorites={Array []}
+              handleFavoriteClick={[Function]}
+/>,
+          ],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
+/>,
+        ],
+        "className": "people-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Luke Skywalker",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "homeworld": "Tatooine",
+              "name": "Luke Skywalker",
+              "population": "200000",
+              "species": "Human",
+            },
+            "favorites": Array [],
+            "handleFavoriteClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
+
+exports[`MainContainer should match a snapshot with no data present 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainContainer
+    favorites={Array []}
+    handleFavoriteClick={[Function]}
+    match={
+        Object {
+            "isExact": false,
+            "params": Object {
+              "id": "people",
+            },
+            "path": "/category/:id",
+            "url": "/category/people",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
+/>,
+      ],
+      "className": "people-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
+/>,
+        ],
+        "className": "people-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
+
+exports[`MainContainer vehicleCards should return an array of VehicleCards to render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainContainer
+    favorites={Array []}
+    handleFavoriteClick={[Function]}
+    match={
+        Object {
+            "isExact": false,
+            "params": Object {
+              "id": "vehicles",
+            },
+            "path": "/category/:id",
+            "url": "/category/people",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <VehicleCard
+            card={
+                        Object {
+                                    "model": "Digger Crawler",
+                                    "name": "Sand Crawler",
+                                    "numberOfPassengers": "30",
+                                    "vehicleClass": "wheeled",
+                                  }
+            }
+            favorites={Array []}
+            handleFavoriteClick={[Function]}
+/>,
+        ],
+        <PageButtons
+          handlePageButtonClick={[Function]}
+          next={null}
+          previous={null}
+/>,
+      ],
+      "className": "people-display",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Sand Crawler",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "model": "Digger Crawler",
+            "name": "Sand Crawler",
+            "numberOfPassengers": "30",
+            "vehicleClass": "wheeled",
+          },
+          "favorites": Array [],
+          "handleFavoriteClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handlePageButtonClick": [Function],
+          "next": null,
+          "previous": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <VehicleCard
+              card={
+                            Object {
+                                          "model": "Digger Crawler",
+                                          "name": "Sand Crawler",
+                                          "numberOfPassengers": "30",
+                                          "vehicleClass": "wheeled",
+                                        }
+              }
+              favorites={Array []}
+              handleFavoriteClick={[Function]}
+/>,
+          ],
+          <PageButtons
+            handlePageButtonClick={[Function]}
+            next={null}
+            previous={null}
+/>,
+        ],
+        "className": "people-display",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Sand Crawler",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "model": "Digger Crawler",
+              "name": "Sand Crawler",
+              "numberOfPassengers": "30",
+              "vehicleClass": "wheeled",
+            },
+            "favorites": Array [],
+            "handleFavoriteClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handlePageButtonClick": [Function],
+            "next": null,
+            "previous": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;

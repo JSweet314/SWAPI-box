@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {addCommas} from '../../helpers/helper';
 import './style.css';
 
 const PersonCard = ({card, favorites, handleFavoriteClick}) => {
   const selected = favorites.some(favorite => favorite.name === card.name) ?
     'selected' : '';
-
-  const addCommas = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
 
   return (
     <article className="info-card">
