@@ -51,7 +51,7 @@ ShallowWrapper {
           previous={null}
 />,
       ],
-      "className": "people-display",
+      "className": "main-display",
     },
     "ref": null,
     "rendered": Array [
@@ -116,7 +116,7 @@ ShallowWrapper {
             previous={null}
 />,
         ],
-        "className": "people-display",
+        "className": "main-display",
       },
       "ref": null,
       "rendered": Array [
@@ -222,7 +222,7 @@ ShallowWrapper {
           previous={null}
 />,
       ],
-      "className": "people-display",
+      "className": "main-display",
     },
     "ref": null,
     "rendered": Array [
@@ -297,7 +297,7 @@ ShallowWrapper {
             previous={null}
 />,
         ],
-        "className": "people-display",
+        "className": "main-display",
       },
       "ref": null,
       "rendered": Array [
@@ -403,7 +403,7 @@ ShallowWrapper {
           previous={null}
 />,
       ],
-      "className": "people-display",
+      "className": "main-display",
     },
     "ref": null,
     "rendered": Array [
@@ -468,7 +468,7 @@ ShallowWrapper {
             previous={null}
 />,
         ],
-        "className": "people-display",
+        "className": "main-display",
       },
       "ref": null,
       "rendered": Array [
@@ -556,7 +556,7 @@ ShallowWrapper {
           previous={null}
 />,
       ],
-      "className": "people-display",
+      "className": "main-display",
     },
     "ref": null,
     "rendered": Array [
@@ -590,7 +590,7 @@ ShallowWrapper {
             previous={null}
 />,
         ],
-        "className": "people-display",
+        "className": "main-display",
       },
       "ref": null,
       "rendered": Array [
@@ -673,7 +673,7 @@ ShallowWrapper {
           previous={null}
 />,
       ],
-      "className": "people-display",
+      "className": "main-display",
     },
     "ref": null,
     "rendered": Array [
@@ -738,7 +738,7 @@ ShallowWrapper {
             previous={null}
 />,
         ],
-        "className": "people-display",
+        "className": "main-display",
       },
       "ref": null,
       "rendered": Array [

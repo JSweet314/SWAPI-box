@@ -210,8 +210,18 @@ export default class MainContainer extends Component {
 
   render = () => {
     const { handleFavoriteClick, favorites } = this.props;
-    const { next, previous } = this.state;
+    const { next, previous, errorStatus } = this.state;
     const cards = this.buildCards();
+    if (errorStatus) {
+      return (
+        <section className="main-display">
+          <h3>Something went wrong...</h3>
+          <h3>Please select another category or try again at a latter time.</h3>
+          <p>{errorStatus}</p>
+        </section>
+      );
+    }
+
     if (this.props.match.params.id === 'favorites') {
       return (
         <Favorites
@@ -222,7 +232,7 @@ export default class MainContainer extends Component {
 
     return !this.state.loading ?
       (
-        <div className="people-display">
+        <div className="main-display">
           {cards}
           <PageButtons
             handlePageButtonClick={this.handlePageButtonClick}

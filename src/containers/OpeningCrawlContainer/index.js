@@ -28,16 +28,25 @@ export default class OpeningCrawlContainer extends Component {
   };
 
   render() {
-    const {openingCrawl, title, releaseDate} = this.state;
+    const {openingCrawl, title, releaseDate, errorStatus} = this.state;
+    if (errorStatus) {
+      return (
+        <section className="scrolling-text">
+          <h3>Something went wrong...</h3>
+          <h3>Please select a category or try again at a latter time.</h3>
+          <p>{errorStatus}</p>
+        </section>
+      );
+    }
     return (
-      <aside className="scrolling-text">
+      <section className="scrolling-text">
         <div className="crawl">
           <pre>{openingCrawl}</pre>
           <p>{title}</p>
           <p>{releaseDate}</p>
         </div>
         <h3 className="instructions">Select a Category</h3>
-      </aside>
+      </section>
     );
   }
 }

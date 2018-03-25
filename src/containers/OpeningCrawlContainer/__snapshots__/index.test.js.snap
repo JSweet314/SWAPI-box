@@ -98,7 +98,7 @@ ShallowWrapper {
         "type": "h3",
       },
     ],
-    "type": "aside",
+    "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -187,7 +187,7 @@ ShallowWrapper {
           "type": "h3",
         },
       ],
-      "type": "aside",
+      "type": "section",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -311,7 +311,7 @@ ShallowWrapper {
         "type": "h3",
       },
     ],
-    "type": "aside",
+    "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -412,7 +412,7 @@ ShallowWrapper {
           "type": "h3",
         },
       ],
-      "type": "aside",
+      "type": "section",
     },
   ],
   Symbol(enzyme.__options__): Object {
