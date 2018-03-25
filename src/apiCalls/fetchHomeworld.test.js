@@ -13,11 +13,13 @@ describe('fetchHomeworld', () => {
       }
     );
   });
+  
   const mockArgument = {
     name: "Luke Skywalker",
     homeworld: "https://swapi.co/api/planets/2/",
     species: "https://swapi.co/api/species/?format=json&page=1"
   };
+
   it('should call fetch with correct parameter', () => {
     fetchHomeworld(mockArgument);
     expect(window.fetch)

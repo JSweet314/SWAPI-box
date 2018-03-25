@@ -85,7 +85,7 @@ describe('MainContainer', () => {
       }
     );
 
-    it('sets loading to true in state if a fetch in needed',
+    it('sets loading to true in state if a fetch is needed',
       () => {
         expect(wrapper.state('loading')).toEqual(false);
         wrapper.instance().getDataByRouteId = mockGetDataByRouteId;
@@ -272,7 +272,7 @@ describe('MainContainer', () => {
       expect(localStorage.getItem('SWAPI-planets')).toEqual(expected);
     });
 
-    it('should store data with a category of planets', () => {
+    it('should store data with a category of vehicles', () => {
       wrapper = shallow(
         <MainContainer {...mockMainPropsVehiclesRoute} />,
         { disableLifecycleMethods: true }
@@ -412,7 +412,7 @@ describe('MainContainer', () => {
       expect(mockPersonCards).toHaveBeenCalled();
     });
 
-    it('should call getPlanetsData if the route is planets', () => {
+    it('should call planetCards if the route is planets', () => {
       wrapper = shallow(
         <MainContainer {...mockMainPropsPlanetsRoute} />,
         { disableLifecycleMethods: true }
@@ -422,7 +422,7 @@ describe('MainContainer', () => {
       expect(mockPlanetCards).toHaveBeenCalled();
     });
 
-    it('should call getVehiclesData if the route is vehicles', () => {
+    it('should call vehicleCards if the route is vehicles', () => {
       wrapper = shallow(
         <MainContainer {...mockMainPropsVehiclesRoute} />,
         { disableLifecycleMethods: true }
@@ -433,26 +433,32 @@ describe('MainContainer', () => {
     });
   });
 
-  test('personCards should return an array of PersonCards to render', () => {
-    wrapper.setState({people: [mockPersonCard]});
-    expect(wrapper).toMatchSnapshot();
-  });
+  test('personCards should return an array of PersonCards to render (snapshot)',
+    () => {
+      wrapper.setState({people: [mockPersonCard]});
+      expect(wrapper).toMatchSnapshot();
+    }
+  );
 
-  test('planetCards should return an array of PlanetCards to render', () => {
-    wrapper = shallow(
-      <MainContainer {...mockMainPropsPlanetsRoute} />,
-      { disableLifecycleMethods: true }
-    );
-    wrapper.setState({ planets: [mockPlanetCard] });
-    expect(wrapper).toMatchSnapshot();
-  });
+  test('planetCards should return an array of PlanetCards to render (snapshot)',
+    () => {
+      wrapper = shallow(
+        <MainContainer {...mockMainPropsPlanetsRoute} />,
+        { disableLifecycleMethods: true }
+      );
+      wrapper.setState({ planets: [mockPlanetCard] });
+      expect(wrapper).toMatchSnapshot();
+    }
+  );
 
-  test('vehicleCards should return an array of VehicleCards to render', () => {
-    wrapper = shallow(
-      <MainContainer {...mockMainPropsVehiclesRoute} />,
-      { disableLifecycleMethods: true }
-    );
-    wrapper.setState({ vehicles: [mockVehicleCard] });
-    expect(wrapper).toMatchSnapshot();
-  });
+  test('vehicleCards should return an array of vehicleCards to render(snapshot)'
+    , () => {
+      wrapper = shallow(
+        <MainContainer {...mockMainPropsVehiclesRoute} />,
+        { disableLifecycleMethods: true }
+      );
+      wrapper.setState({ vehicles: [mockVehicleCard] });
+      expect(wrapper).toMatchSnapshot();
+    }
+  );
 });

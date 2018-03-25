@@ -20,8 +20,12 @@ describe('fetchName', () => {
     expect(window.fetch).toHaveBeenCalledWith("https://swapi.co/api/people/1/");
   });
 
-  it('calls wrangleResidentData after fetching', () => {
+  it('calls wrangleResidentData with right params after fetching', () => {
     fetchName("https://swapi.co/api/people/1/");
     expect(wrangleResidentData).toHaveBeenCalledWith(mockSinglePersonData);
+  });
+
+  it('returns a string with the residents name', () => {
+    expect(fetchName("https://swapi.co/api/people/1/")).resolves.toEqual("Luke Skywalker");
   });
 });
