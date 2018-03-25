@@ -8,16 +8,7 @@ export default class OpeningCrawlContainer extends Component {
     this.state = {openingCrawl: '', title: '', releaseDate: ''};
   }
 
-  componentDidMount = () => this.findClosestOpeningCrawl();
-
-  findClosestOpeningCrawl = () => {
-    const priorCrawl = localStorage.getItem('SWAPI-crawl');
-    if (priorCrawl) {
-      this.setState({...JSON.parse(priorCrawl)});
-    } else {
-      this.getOpeningCrawl();
-    }
-  }
+  componentDidMount = () => this.getOpeningCrawl()
 
   getOpeningCrawl = () => {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
@@ -28,11 +19,8 @@ export default class OpeningCrawlContainer extends Component {
 
   deployNewCrawl = filmData => {
     const {openingCrawl, title, releaseDate} = filmData;
-    this.setState({openingCrawl, title, releaseDate}, this.storeOpeningCrawl);
+    this.setState({openingCrawl, title, releaseDate});
   };
-
-  storeOpeningCrawl = () => 
-    localStorage.setItem('SWAPI-crawl', JSON.stringify(this.state))
 
   render() {
     const {openingCrawl, title, releaseDate} = this.state;
