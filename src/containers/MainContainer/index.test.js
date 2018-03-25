@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import MainContainer from './index';
 import LocalStorage from '../../__mocks__/localStorageMock';
 import {fetchAllHomeworldData} from '../../apiCalls/fetchAllHomeworldData';
@@ -9,42 +9,45 @@ import {fetchPeopleData} from '../../apiCalls/fetchPeopleData';
 import {fetchPlanetsData} from '../../apiCalls/fetchPlanetsData';
 import {fetchVehiclesData} from '../../apiCalls/fetchVehiclesData';
 import {
+  mockBuildCards,
+  mockDeployPeopleData,
+  mockDeployPlanetsData,
+  mockDeployVehiclesData,
+  mockGetDataByRouteId,
+  mockGetPeopleData,
+  mockGetPlanetsData,
+  mockGetVehiclesData,
+  mockGetPreviousPage,
+  mockGetNextPage,
   mockInitialMainState,
   mockMainProps,
   mockMainPropsPlanetsRoute,
   mockMainPropsVehiclesRoute,
-  mockPersonCard,
-  mockPlanetCard,
-  mockVehicleCard,
   mockPeopleData,
+  mockPersonCard,
+  mockPersonCards,
+  mockPlanetCard,
+  mockPlanetCards,
   mockPlanetsData,
-  mockVehiclesData,
   mockStoragePeople,
   mockStoragePlanets,
-  mockStorageVehicles
+  mockStorageVehicles,
+  mockVehicleCard,
+  mockVehicleCards,
+  mockVehiclesData
 } from '../../mockData/mockMainContainerData';
-/*eslint-disable no-undef*/
 window.localStorage = new LocalStorage();
+/*eslint-disable no-undef*/
 jest.mock('../../apiCalls/fetchAllHomeworldData');
 jest.mock('../../apiCalls/fetchAllResidentsData');
 jest.mock('../../apiCalls/fetchAllSpeciesData');
 jest.mock('../../apiCalls/fetchPeopleData');
 jest.mock('../../apiCalls/fetchPlanetsData');
 jest.mock('../../apiCalls/fetchVehiclesData');
+/*eslint-enable no-undef*/
 
 describe('MainContainer', () => {
   let wrapper;
-  const mockGetDataByRouteId = jest.fn();
-  const mockGetPeopleData = jest.fn();
-  const mockGetPlanetsData = jest.fn();
-  const mockGetVehiclesData = jest.fn();
-  const mockGetPreviousPage = jest.fn();
-  const mockGetNextPage = jest.fn();
-  const mockPersonCards = jest.fn();
-  const mockPlanetCards = jest.fn();
-  const mockVehicleCards = jest.fn();
-  const mockBuildCards = jest.fn();
-  /*eslint-enable no-undef*/
 
   beforeEach(() => {
     localStorage.clear();
@@ -133,14 +136,20 @@ describe('MainContainer', () => {
 
     it('should call fetchAllHomeworldData after fetching people data', () => {
       wrapper.instance().getPeopleData();
-      wrapper.update();
       expect(fetchAllHomeworldData).toHaveBeenCalled();
     });
 
     it('should call fetchAllSpeciesData after fetching homeworld data', () => {
       wrapper.instance().getPeopleData();
-      wrapper.update().update();
       expect(fetchAllSpeciesData).toHaveBeenCalled();
+    });
+
+    it('should call deployPeopleData after fetching', () => {
+      wrapper.instance().deployPeopleData = mockDeployPeopleData;
+      Promise.resolve(wrapper.instance().getPeopleData())
+        .then(() => wrapper.update())
+        .then(() => wrapper.update())
+        .then(() => expect(mockDeployPeopleData).toHaveBeenCalled());
     });
   });
 
@@ -173,10 +182,16 @@ describe('MainContainer', () => {
     it('should call fetchAllResidentsData after fetching people data', 
       () => {
         wrapper.instance().getPlanetsData();
-        wrapper.update();
         expect(fetchAllResidentsData).toHaveBeenCalled();
       }
     );
+
+    it('should call deployPlanetsData after fetching', () => {
+      wrapper.instance().deployPlanetsData = mockDeployPlanetsData;
+      Promise.resolve(wrapper.instance().getPlanetsData())
+        .then(() => wrapper.update())
+        .then(() => expect(mockDeployPlanetsData).toHaveBeenCalled());
+    });
   });
 
   test('deployPlanetsData should set the state with fresh planets data', () => {
@@ -203,6 +218,12 @@ describe('MainContainer', () => {
     it('should call fetchVehiclesData with optional URL', () => {
       wrapper.instance().getVehiclesData('www.google.com');
       expect(fetchVehiclesData).toHaveBeenCalledWith('www.google.com');
+    });
+
+    it('should call deployVehiclesData after fetching', () => {
+      wrapper.instance().deployVehiclesData = mockDeployVehiclesData;
+      Promise.resolve(wrapper.instance().getVehiclesData())
+        .then(() => expect(mockDeployVehiclesData).toHaveBeenCalled());
     });
   });
 

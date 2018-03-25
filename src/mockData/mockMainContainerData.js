@@ -1,4 +1,17 @@
 /* eslint-disable no-undef */
+export const mockGetDataByRouteId = jest.fn();
+export const mockGetPeopleData = jest.fn();
+export const mockGetPlanetsData = jest.fn();
+export const mockGetVehiclesData = jest.fn();
+export const mockGetPreviousPage = jest.fn();
+export const mockGetNextPage = jest.fn();
+export const mockPersonCards = jest.fn();
+export const mockPlanetCards = jest.fn();
+export const mockVehicleCards = jest.fn();
+export const mockBuildCards = jest.fn();
+export const mockDeployPeopleData = jest.fn();
+export const mockDeployPlanetsData = jest.fn();
+export const mockDeployVehiclesData = jest.fn();
 export const mockInitialMainState = {
   people: [],
   planets: [],
