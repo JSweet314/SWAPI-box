@@ -152,7 +152,8 @@ describe('MainContainer', () => {
       people: [mockPersonCard],
       planets: [],
       vehicles: [],
-      loading: false
+      loading: false,
+      errorStatus: ''
     };
     wrapper.instance().deployPeopleData(mockPeopleData);
     expect(wrapper.state()).toEqual(expected);
@@ -186,7 +187,8 @@ describe('MainContainer', () => {
       people: [],
       planets: [mockPlanetCard],
       vehicles: [],
-      loading: false
+      loading: false,
+      errorStatus: ''
     };
     wrapper.instance().deployPlanetsData(mockPlanetsData);
     expect(wrapper.state()).toEqual(expected);
@@ -213,7 +215,8 @@ describe('MainContainer', () => {
         people: [],
         planets: [],
         vehicles: [mockVehicleCard],
-        loading: false
+        loading: false,
+        errorStatus: ''
       };
       wrapper.instance().deployVehiclesData(mockVehiclesData);
       expect(wrapper.state()).toEqual(expected);

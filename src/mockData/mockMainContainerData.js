@@ -5,7 +5,8 @@ export const mockInitialMainState = {
   vehicles: [],
   next: null,
   previous: null,
-  loading: false
+  loading: false,
+  errorStatus: ''
 };
 export const mockMainProps = {
   favorites: [],

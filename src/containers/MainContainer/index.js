@@ -23,7 +23,8 @@ export default class MainContainer extends Component {
       vehicles: [],
       next: null,
       previous: null,
-      loading: false
+      loading: false,
+      errorStatus: ''
     };
   }
 
@@ -82,7 +83,7 @@ export default class MainContainer extends Component {
       .then(fetchAllHomeworldData)
       .then(fetchAllSpeciesData)
       .then(this.deployPeopleData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({errorStatus: error.message}));
 
   deployPeopleData = peopleData =>
     this.setState({
@@ -107,7 +108,7 @@ export default class MainContainer extends Component {
     fetchPlanetsData(url)
       .then(fetchAllResidentsData)
       .then(this.deployPlanetsData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({ errorStatus: error.message }));
 
   deployPlanetsData = planetsData =>
     this.setState({
@@ -131,7 +132,7 @@ export default class MainContainer extends Component {
   getVehiclesData = (url) =>
     fetchVehiclesData(url)
       .then(this.deployVehiclesData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({ errorStatus: error.message }));
 
   deployVehiclesData = vehiclesData =>
     this.setState({
