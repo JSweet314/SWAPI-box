@@ -7,6 +7,7 @@ import {fetchOpeningCrawl} from '../../apiCalls/fetchOpeningCrawl';
 jest.mock('../../apiCalls/fetchOpeningCrawl');
 describe('ScrollingText', () => {
   let wrapper, mockData;
+  const mockDeployNewCrawl = jest.fn();
   /*eslint-enable no-undef*/
   beforeEach(() => {
     mockData = {
@@ -40,6 +41,13 @@ describe('ScrollingText', () => {
     it('should call fetchOpeningCrawl', () => {
       wrapper.instance().getOpeningCrawl();
       expect(fetchOpeningCrawl).toHaveBeenCalled();
+    });
+
+    it("calls deployNewCrawl after fetching", () => {
+      wrapper.instance().deployNewCrawl = mockDeployNewCrawl;
+      Promise.resolve(wrapper.instance().getOpeningCrawl())
+        .then(() => wrapper.update())
+        .then(() => expect(mockDeployNewCrawl).toHaveBeenCalled());
     });
   });
 });
