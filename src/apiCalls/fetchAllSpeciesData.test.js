@@ -33,4 +33,23 @@ describe('fetchAllSpeciesData', () => {
       fetchAllSpeciesData(mockArgument);
       expect(fetchSpecies).toHaveBeenCalledTimes(2);
     });
+
+  it('should return the data with updated species', () => {
+    const expected = {
+      next: "https://swapi.co/api/people/?page=2&format=json",
+      previous: null,
+      peopleArray: [{
+        name: "Luke Skywalker",
+        homeworld: "Tatooine",
+        population: "200000",
+        species: "Human"
+      }, {
+        name: "Luke Skywalker",
+        homeworld: "Tatooine",
+        population: "200000",
+        species: "Human"
+      }]
+    }
+    expect(fetchAllSpeciesData(mockArgument)).resolves.toEqual(expected);
+  });
 });

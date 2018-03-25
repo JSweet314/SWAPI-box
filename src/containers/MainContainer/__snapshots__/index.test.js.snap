@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainContainer personCards should return an array of PersonCards to render 1`] = `
+exports[`MainContainer personCards should return an array of PersonCards to render (snapshot) 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -166,7 +166,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`MainContainer planetCards should return an array of PlanetCards to render 1`] = `
+exports[`MainContainer planetCards should return an array of PlanetCards to render (snapshot) 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -622,7 +622,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`MainContainer vehicleCards should return an array of VehicleCards to render 1`] = `
+exports[`MainContainer vehicleCards should return an array of VehicleCards to render(snapshot) 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

@@ -32,9 +32,11 @@ export default class OpeningCrawlContainer extends Component {
     if (errorStatus) {
       return (
         <section className="scrolling-text">
-          <h3>Something went wrong...</h3>
-          <h3>Please select a category or try again at a latter time.</h3>
-          <p>{errorStatus}</p>
+          <div className="crawl">
+            <h3>Something went wrong...</h3>
+            <h3>Please select a category or try again at a latter time.</h3>
+            <p>{errorStatus}</p>
+          </div>
         </section>
       );
     }

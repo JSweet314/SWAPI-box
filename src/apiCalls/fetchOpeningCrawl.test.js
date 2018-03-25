@@ -24,4 +24,13 @@ describe('fetchOpeningCrawl', () => {
     fetchOpeningCrawl(1);
     expect(wrangleOpeningCrawlData).toHaveBeenCalledWith(mockFilmFetchResponse);
   });
+
+  it('returns an object of opening crawl data', () => {
+    const expected = {
+      openingCrawl: "I am placeholder text!",
+      title: "A StarWars Movie",
+      releaseDate: "2018-03-23"
+    };
+    expect(fetchOpeningCrawl(1)).resolves.toEqual(expected);
+  });
 });

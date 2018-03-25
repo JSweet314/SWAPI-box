@@ -18,24 +18,33 @@ describe("fetchAllHomeworldData", () => {
       "name": "Luke Skywalker",
       "homeworld": "https://swapi.co/api/planets/1/",
       species: "https://swapi.co/api/species/1/"
+    }, {
+      "name": "Luke Skywalker",
+      "homeworld": "https://swapi.co/api/planets/1/",
+      species: "https://swapi.co/api/species/1/"
     }]
   };
 
   it('should call fetchHomeworld for each person in an array of people', () => {
     fetchAllHomeworldData(mockArgument);
-    expect(fetchHomeworld).toHaveBeenCalledTimes(1);
+    expect(fetchHomeworld).toHaveBeenCalledTimes(2);
   });
 
   it('should return the original object with resident data added', () => {
     const expected = {
       "next": "https://swapi.co/api/people/?page=2&format=json", 
       "previous": null,
-      "peopleArray": [{
+      "peopleArray": [{ 
         "homeworld": "Tatooine",
         "name": "Luke Skywalker",
         "population": "200000", 
         "species": "https://swapi.co/api/species/1/" 
-      }]
+      }, { 
+        "homeworld": "Tatooine", 
+        "name": "Luke Skywalker", 
+        "population": "200000", 
+        "species": "https://swapi.co/api/species/1/" 
+      }] 
     };
     expect(fetchAllHomeworldData(mockArgument)).resolves.toEqual(expected);
   });
