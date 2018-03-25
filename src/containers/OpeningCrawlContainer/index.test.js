@@ -49,5 +49,21 @@ describe('ScrollingText', () => {
         .then(() => wrapper.update())
         .then(() => expect(mockDeployNewCrawl).toHaveBeenCalled());
     });
+
+    it('sets an errorMessage in state if appropriate', () => {
+      
+      // Promise.resolve(wrapper.instance().getOpeningCrawl())
+      //   .then(() => wrapper.update())
+      //   .then(() => wrapper.update())
+      //   .then(() => expect(wrapper.state('errorStatus'))
+      //     .toEqual("Fetch Error"));
+    });
+  });
+  
+  it('should match a snapshot of an error', () => {
+    wrapper.setState(
+      { errorStatus: "This is not the page you are looking for..." }
+    );
+    expect(wrapper).toMatchSnapshot();
   });
 });

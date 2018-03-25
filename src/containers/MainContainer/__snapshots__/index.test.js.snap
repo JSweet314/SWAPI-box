@@ -622,7 +622,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`MainContainer vehicleCards should return an array of vehicleCards to render(snapshot) 1`] = `
+exports[`MainContainer vehicleCards should return an array of VehicleCards to render(snapshot) 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

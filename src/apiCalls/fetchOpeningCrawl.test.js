@@ -31,6 +31,6 @@ describe('fetchOpeningCrawl', () => {
       title: "A StarWars Movie",
       releaseDate: "2018-03-23"
     };
-    expect(fetchOpeningCrawl(1)).resolves.toEqual(expected)
+    expect(fetchOpeningCrawl(1)).resolves.toEqual(expected);
   });
 });

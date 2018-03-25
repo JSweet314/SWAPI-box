@@ -76,15 +76,7 @@ describe('MainContainer', () => {
       wrapper.instance().findClosestData();
       expect(wrapper.state('people')).toEqual([mockPersonCard]);
     });
-
-    it('should call a function if localStorage is not possible', 
-      () => {
-        wrapper.instance().getDataByRouteId = mockGetDataByRouteId;
-        wrapper.instance().findClosestData();
-        expect(mockGetDataByRouteId).toHaveBeenCalled();
-      }
-    );
-
+    
     it('sets loading to true in state if a fetch is needed',
       () => {
         expect(wrapper.state('loading')).toEqual(false);
@@ -93,6 +85,12 @@ describe('MainContainer', () => {
         expect(wrapper.state('loading')).toEqual(true);
       }
     ); 
+
+    it('should call getDataByRouteId after setting loading to true', () => {
+      wrapper.instance().getDataByRouteId = mockGetDataByRouteId;
+      wrapper.instance().findClosestData();
+      expect(mockGetDataByRouteId).toHaveBeenCalled();
+    });
   });
 
   describe('getDataByRouteId', () => {
@@ -451,7 +449,7 @@ describe('MainContainer', () => {
     }
   );
 
-  test('vehicleCards should return an array of vehicleCards to render(snapshot)'
+  test('vehicleCards should return an array of VehicleCards to render(snapshot)'
     , () => {
       wrapper = shallow(
         <MainContainer {...mockMainPropsVehiclesRoute} />,
