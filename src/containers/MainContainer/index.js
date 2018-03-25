@@ -23,7 +23,8 @@ export default class MainContainer extends Component {
       vehicles: [],
       next: null,
       previous: null,
-      loading: false
+      loading: false,
+      errorStatus: ''
     };
   }
 
@@ -82,7 +83,7 @@ export default class MainContainer extends Component {
       .then(fetchAllHomeworldData)
       .then(fetchAllSpeciesData)
       .then(this.deployPeopleData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({errorStatus: error.message}));
 
   deployPeopleData = peopleData =>
     this.setState({
@@ -107,7 +108,7 @@ export default class MainContainer extends Component {
     fetchPlanetsData(url)
       .then(fetchAllResidentsData)
       .then(this.deployPlanetsData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({ errorStatus: error.message }));
 
   deployPlanetsData = planetsData =>
     this.setState({
@@ -131,7 +132,7 @@ export default class MainContainer extends Component {
   getVehiclesData = (url) =>
     fetchVehiclesData(url)
       .then(this.deployVehiclesData)
-      .catch(error => alert(error.message));
+      .catch(error => this.setState({ errorStatus: error.message }));
 
   deployVehiclesData = vehiclesData =>
     this.setState({
@@ -209,8 +210,18 @@ export default class MainContainer extends Component {
 
   render = () => {
     const { handleFavoriteClick, favorites } = this.props;
-    const { next, previous } = this.state;
+    const { next, previous, errorStatus } = this.state;
     const cards = this.buildCards();
+    if (errorStatus) {
+      return (
+        <section className="main-display">
+          <h3>Something went wrong...</h3>
+          <h3>Please select another category or try again at a latter time.</h3>
+          <p>{errorStatus}</p>
+        </section>
+      );
+    }
+
     if (this.props.match.params.id === 'favorites') {
       return (
         <Favorites
@@ -221,7 +232,7 @@ export default class MainContainer extends Component {
 
     return !this.state.loading ?
       (
-        <div className="people-display">
+        <div className="main-display">
           {cards}
           <PageButtons
             handlePageButtonClick={this.handlePageButtonClick}

@@ -12,7 +12,8 @@ describe('ScrollingText', () => {
     mockData = {
       openingCrawl: "I am placeholder text!",
       title: "A StarWars Movie",
-      releaseDate: "2018-03-23"
+      releaseDate: "2018-03-23",
+      errorStatus: ''
     };
     wrapper = shallow(
       <OpeningCrawlContainer />, {disableLifecycleMethods: true}

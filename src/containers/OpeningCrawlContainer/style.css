@@ -31,7 +31,7 @@
 
 @keyframes crawl {
   0% {
-    top: 650px;
+    top: 850px;
     transform: rotateX(20deg) translateZ(0);
     visibility: visible;
   }

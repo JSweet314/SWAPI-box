@@ -5,7 +5,12 @@ import './style.css';
 export default class OpeningCrawlContainer extends Component {
   constructor() {
     super();
-    this.state = {openingCrawl: '', title: '', releaseDate: ''};
+    this.state = {
+      openingCrawl: '',
+      title: '',
+      releaseDate: '',
+      errorStatus: ''
+    };
   }
 
   componentDidMount = () => this.getOpeningCrawl()
@@ -14,7 +19,7 @@ export default class OpeningCrawlContainer extends Component {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
     fetchOpeningCrawl(randomFilmNumber)
       .then(this.deployNewCrawl)
-      .catch(error => alert(error));
+      .catch(error => this.setState({ errorStatus: error.message }));
   }
 
   deployNewCrawl = filmData => {
@@ -23,16 +28,25 @@ export default class OpeningCrawlContainer extends Component {
   };
 
   render() {
-    const {openingCrawl, title, releaseDate} = this.state;
+    const {openingCrawl, title, releaseDate, errorStatus} = this.state;
+    if (errorStatus) {
+      return (
+        <section className="scrolling-text">
+          <h3>Something went wrong...</h3>
+          <h3>Please select a category or try again at a latter time.</h3>
+          <p>{errorStatus}</p>
+        </section>
+      );
+    }
     return (
-      <aside className="scrolling-text">
+      <section className="scrolling-text">
         <div className="crawl">
           <pre>{openingCrawl}</pre>
           <p>{title}</p>
           <p>{releaseDate}</p>
         </div>
         <h3 className="instructions">Select a Category</h3>
-      </aside>
+      </section>
     );
   }
 }
