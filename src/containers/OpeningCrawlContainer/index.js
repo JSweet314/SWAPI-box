@@ -5,7 +5,12 @@ import './style.css';
 export default class OpeningCrawlContainer extends Component {
   constructor() {
     super();
-    this.state = {openingCrawl: '', title: '', releaseDate: ''};
+    this.state = {
+      openingCrawl: '',
+      title: '',
+      releaseDate: '',
+      errorStatus: ''
+    };
   }
 
   componentDidMount = () => this.getOpeningCrawl()
@@ -14,7 +19,7 @@ export default class OpeningCrawlContainer extends Component {
     const randomFilmNumber = Math.floor(Math.random() * 7) + 1;
     fetchOpeningCrawl(randomFilmNumber)
       .then(this.deployNewCrawl)
-      .catch(error => alert(error));
+      .catch(error => this.setState({ errorStatus: error.message }));
   }
 
   deployNewCrawl = filmData => {
