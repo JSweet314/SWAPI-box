@@ -1,0 +1,9 @@
+language: node_js
+node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: t8Fr/rYHQxIiMU/aYoZDK1V2Z8aa66K5RgvAcgBicOYgRjXcOC8NvT2zOSIZOPlUuLIllsOwVL75RNQDnx7hcJufQzd+UgNjvQqHseaWg/52xld3e+Ut8qirfleQZIvp7N+3vpNynX1OgBuwYZVkJFW5R2Mn0+jtaoa7Vg7+nmaKOczxHCFeAio31QKIGKMYgBdbZ/3W33BxlZ90Rf22JXYVtk3R3ANqQKQfhQpnd0e2Qt/Rj/BjkEEoU9rQ6E2Fgi3O4Zc3VT88Z9Zf4drQBc7N8qtTUzxohcX+75SGEWMaTdT651UZA4f+kbUgYgOUn9dXJlPlI3dK+qy6yMkDk3WKzRHs/sW0xgC7d1XaFeqcmdHfcCFAeXhQEhHLcTw1IKHSvTUemNWLBV6YACq7k14+laVNLfCOhs7phwL3ymDEj6jHQD6gZt6Wi3Q+UMjkQyOl1ss5APXul+LgVnOjXv1Dug4GN4baFV5mK6ahFPNa9trkmYaN+nX2Utx7Ck3DZrHOLvYy+2pPr1wYmQCoglqSaYzzpBd+YEFFeft7lYlh66vYi14MfiFsjyiQuLEowKUNkpAVhHYTsn2F4AoRHcwN5+6tVjg792xod0ZNz2/lYq56tT9/ls/dsEx//pRuLhJQWxM5/LMedY8HYDEVPKZqqLU35eVJpZwiiwe09cA=
+  app: swapibox
+  on:
+    repo: JSweet314/SWAPI-box
